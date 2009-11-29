@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="c7fa3143-aed6-452a-b1dd-42cd7631b4db" name="ip@ZAUBERWERKSTATT 2009-11-26 23:46:40" runUser="zauberwerkstatt\ip" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Standard-Testlaufkonfiguration" id="fd143b0b-4677-4fe1-b457-6f320cb3f394">
+    <Deployment runDeploymentRoot="C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestResults\ip_ZAUBERWERKSTATT 2009-11-26 23_46_40">
+      <DeploymentItem filename="C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\Genetic Algorithms\bin\Debug\Genetic Algorithms.dll" />
+    </Deployment>
+    <Hosts skipUnhostableTests="false" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="8" executed="8" passed="8" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2009-11-26T23:46:40.0818939+01:00" queuing="2009-11-26T23:46:44.4571012+01:00" start="2009-11-26T23:46:44.6311055+01:00" finish="2009-11-26T23:46:46.5392002+01:00" />
+  <TestDefinitions>
+    <UnitTest name="TestBoolSumFitness" storage="c:\users\ip\documents\visual studio 2008\projects\genetic algorithms\testproject2\bin\debug\geneticalgorithmstest.dll" id="c56886d5-dedb-302e-560f-7d6494ac586f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="802f380f-5537-4987-96e9-5765dae1c730" />
+      <TestMethod codeBase="C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\GeneticAlgorithmsTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GeneticAlgorithmsTest.GeneticAlgorithmsTest, GeneticAlgorithmsTest" name="TestBoolSumFitness" />
+    </UnitTest>
+    <UnitTest name="TestAsymetricCrossoverRecombinator" storage="c:\users\ip\documents\visual studio 2008\projects\genetic algorithms\testproject2\bin\debug\geneticalgorithmstest.dll" id="2421bfbf-7080-4477-2162-1ee41334efa8">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="0ed318c9-165f-4a3d-ac5c-57ac4fce4ecc" />
+      <TestMethod codeBase="C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\GeneticAlgorithmsTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GeneticAlgorithmsTest.GeneticAlgorithmsTest, GeneticAlgorithmsTest" name="TestAsymetricCrossoverRecombinator" />
+    </UnitTest>
+    <UnitTest name="TestCrossoverRecombinatorException" storage="c:\users\ip\documents\visual studio 2008\projects\genetic algorithms\testproject2\bin\debug\geneticalgorithmstest.dll" id="854ca284-e220-5b8e-9395-04256e2424fd">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="08b041d2-34f9-4ae6-a1d0-d71eb846ad9f" />
+      <TestMethod codeBase="C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\GeneticAlgorithmsTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GeneticAlgorithmsTest.GeneticAlgorithmsTest, GeneticAlgorithmsTest" name="TestCrossoverRecombinatorException" />
+    </UnitTest>
+    <UnitTest name="TestBoolGene" storage="c:\users\ip\documents\visual studio 2008\projects\genetic algorithms\testproject2\bin\debug\geneticalgorithmstest.dll" id="c42d77d0-d2d3-1c01-2cf4-17ef2ebf7937">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="102c6f49-f5c3-4b3a-8cf1-f7760ffe5bff" />
+      <TestMethod codeBase="C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\GeneticAlgorithmsTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GeneticAlgorithmsTest.GeneticAlgorithmsTest, GeneticAlgorithmsTest" name="TestBoolGene" />
+    </UnitTest>
+    <UnitTest name="TestBoolChromosome" storage="c:\users\ip\documents\visual studio 2008\projects\genetic algorithms\testproject2\bin\debug\geneticalgorithmstest.dll" id="613f8c3e-b979-f751-2032-05139698d236">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8cf0f6b1-0102-40af-95a4-763914400f7b" />
+      <TestMethod codeBase="C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\GeneticAlgorithmsTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GeneticAlgorithmsTest.GeneticAlgorithmsTest, GeneticAlgorithmsTest" name="TestBoolChromosome" />
+    </UnitTest>
+    <UnitTest name="TestAsymmetricZipRecombinator" storage="c:\users\ip\documents\visual studio 2008\projects\genetic algorithms\testproject2\bin\debug\geneticalgorithmstest.dll" id="3d637925-288d-6719-3b43-972e1aa56bf1">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="ffe2147c-d18a-4a0a-9829-398138d7c4fe" />
+      <TestMethod codeBase="C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\GeneticAlgorithmsTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GeneticAlgorithmsTest.GeneticAlgorithmsTest, GeneticAlgorithmsTest" name="TestAsymmetricZipRecombinator" />
+    </UnitTest>
+    <UnitTest name="TestGeneticSimulation" storage="c:\users\ip\documents\visual studio 2008\projects\genetic algorithms\testproject2\bin\debug\geneticalgorithmstest.dll" id="1bc62088-5ed8-6de0-a1a2-26ce862841b9">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="9c86f4d9-33cc-4c08-a7cc-f8ce02492ea3" />
+      <TestMethod codeBase="C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\GeneticAlgorithmsTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GeneticAlgorithmsTest.GeneticAlgorithmsTest, GeneticAlgorithmsTest" name="TestGeneticSimulation" />
+    </UnitTest>
+    <UnitTest name="TestCrossoverRecombinator" storage="c:\users\ip\documents\visual studio 2008\projects\genetic algorithms\testproject2\bin\debug\geneticalgorithmstest.dll" id="62ab115f-261a-b95d-499b-cfd1460ab12e">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="4be08257-956b-444d-9eda-6bf1df162b41" />
+      <TestMethod codeBase="C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\GeneticAlgorithmsTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GeneticAlgorithmsTest.GeneticAlgorithmsTest, GeneticAlgorithmsTest" name="TestCrossoverRecombinator" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Nicht in einer Liste enthaltene Ergebnisse" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Alle geladenen Ergebnisse" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="1bc62088-5ed8-6de0-a1a2-26ce862841b9" executionId="9c86f4d9-33cc-4c08-a7cc-f8ce02492ea3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2421bfbf-7080-4477-2162-1ee41334efa8" executionId="0ed318c9-165f-4a3d-ac5c-57ac4fce4ecc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3d637925-288d-6719-3b43-972e1aa56bf1" executionId="ffe2147c-d18a-4a0a-9829-398138d7c4fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="613f8c3e-b979-f751-2032-05139698d236" executionId="8cf0f6b1-0102-40af-95a4-763914400f7b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="62ab115f-261a-b95d-499b-cfd1460ab12e" executionId="4be08257-956b-444d-9eda-6bf1df162b41" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="854ca284-e220-5b8e-9395-04256e2424fd" executionId="08b041d2-34f9-4ae6-a1d0-d71eb846ad9f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c42d77d0-d2d3-1c01-2cf4-17ef2ebf7937" executionId="102c6f49-f5c3-4b3a-8cf1-f7760ffe5bff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c56886d5-dedb-302e-560f-7d6494ac586f" executionId="802f380f-5537-4987-96e9-5765dae1c730" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9c86f4d9-33cc-4c08-a7cc-f8ce02492ea3" testId="1bc62088-5ed8-6de0-a1a2-26ce862841b9" testName="TestGeneticSimulation" computerName="ZAUBERWERKSTATT" duration="00:00:00.4925502" startTime="2009-11-26T23:46:44.7131069+01:00" endTime="2009-11-26T23:46:45.3751403+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0ed318c9-165f-4a3d-ac5c-57ac4fce4ecc" testId="2421bfbf-7080-4477-2162-1ee41334efa8" testName="TestAsymetricCrossoverRecombinator" computerName="ZAUBERWERKSTATT" duration="00:00:00.0012569" startTime="2009-11-26T23:46:45.3791405+01:00" endTime="2009-11-26T23:46:46.3781976+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ffe2147c-d18a-4a0a-9829-398138d7c4fe" testId="3d637925-288d-6719-3b43-972e1aa56bf1" testName="TestAsymmetricZipRecombinator" computerName="ZAUBERWERKSTATT" duration="00:00:00.0014219" startTime="2009-11-26T23:46:46.3871982+01:00" endTime="2009-11-26T23:46:46.4071987+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8cf0f6b1-0102-40af-95a4-763914400f7b" testId="613f8c3e-b979-f751-2032-05139698d236" testName="TestBoolChromosome" computerName="ZAUBERWERKSTATT" duration="00:00:00.0025941" startTime="2009-11-26T23:46:46.4071987+01:00" endTime="2009-11-26T23:46:46.4171988+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4be08257-956b-444d-9eda-6bf1df162b41" testId="62ab115f-261a-b95d-499b-cfd1460ab12e" testName="TestCrossoverRecombinator" computerName="ZAUBERWERKSTATT" duration="00:00:00.0010382" startTime="2009-11-26T23:46:46.4271988+01:00" endTime="2009-11-26T23:46:46.4271988+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="08b041d2-34f9-4ae6-a1d0-d71eb846ad9f" testId="854ca284-e220-5b8e-9395-04256e2424fd" testName="TestCrossoverRecombinatorException" computerName="ZAUBERWERKSTATT" duration="00:00:00.0061711" startTime="2009-11-26T23:46:46.4371988+01:00" endTime="2009-11-26T23:46:46.4471988+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="102c6f49-f5c3-4b3a-8cf1-f7760ffe5bff" testId="c42d77d0-d2d3-1c01-2cf4-17ef2ebf7937" testName="TestBoolGene" computerName="ZAUBERWERKSTATT" duration="00:00:00.0007771" startTime="2009-11-26T23:46:46.4571988+01:00" endTime="2009-11-26T23:46:46.4671988+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="802f380f-5537-4987-96e9-5765dae1c730" testId="c56886d5-dedb-302e-560f-7d6494ac586f" testName="TestBoolSumFitness" computerName="ZAUBERWERKSTATT" duration="00:00:00.0010786" startTime="2009-11-26T23:46:46.4671988+01:00" endTime="2009-11-26T23:46:46.4771988+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

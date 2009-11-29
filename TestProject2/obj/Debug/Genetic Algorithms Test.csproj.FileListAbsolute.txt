@@ -1,0 +1,7 @@
+C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\Genetic Algorithms.dll
+C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\Genetic Algorithms.pdb
+C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\GeneticAlgorithmsTest.dll
+C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\bin\Debug\GeneticAlgorithmsTest.pdb
+C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\obj\Debug\GeneticAlgorithmsTest.dll
+C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\TestProject2\obj\Debug\GeneticAlgorithmsTest.pdb
