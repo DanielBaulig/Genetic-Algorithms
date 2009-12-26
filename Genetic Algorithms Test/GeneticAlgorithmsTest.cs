@@ -5,9 +5,19 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GeneticAlgorithms;
 using GeneticAlgorithms.Example_Classes;
+using System.Collections;
 
 namespace GeneticAlgorithmsTest
 {
+    class Raumschiff
+    {
+        private int aufrufe = 0;
+        public void Beschleunigen(int schub)
+        {
+            Assert.AreEqual(aufrufe++, schub);
+        }
+    }
+
     /// <summary>
     /// Zusammenfassungsbeschreibung für UnitTest1
     /// </summary>
@@ -280,6 +290,19 @@ namespace GeneticAlgorithmsTest
             Chromosome<BoolGene> chrom2 = new Chromosome<BoolGene>(2);
             IRecombinationProvider recom = new CrossoverRecombinator();
             Chromosome<BoolGene> newChrom = chrom1.Recombine(chrom2, recom);
+        }
+
+        [TestMethod]
+        public void TestRaumfahrer()
+        {
+            ArrayList genes = new ArrayList();
+            for (int i = 0; i < 10; i++)
+                genes.Add(new IntGene(i));
+            Raumfahrer raumfahrer = new Raumfahrer(genes);
+            Raumschiff raumschiff = new Raumschiff();
+
+            for (int i = 0; i < 10; i++)
+                raumfahrer.SteuereRaumschiff(raumschiff as GeneticAlgorithms.Raumschiff);
         }
     }
 }

@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Example Classes\IntGene.cs" />
+    <Compile Include="Raumfahrer.cs" />
     <Compile Include="Example Classes\AlphaSelector.cs" />
     <Compile Include="Example Classes\AsymetricCrossoverRecombinator.cs" />
     <Compile Include="Example Classes\AsymmetricZipRecombinator.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="IRecombinationProvider.cs" />
     <Compile Include="ISelectionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raumschiff.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="COPYING.txt" />
