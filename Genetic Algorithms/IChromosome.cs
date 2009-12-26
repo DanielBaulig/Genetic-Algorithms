@@ -39,5 +39,5 @@ namespace GeneticAlgorithms
         }
         void DuplicateGene(int index);
         void DropGene(int index);
-    }
+    }//
 }

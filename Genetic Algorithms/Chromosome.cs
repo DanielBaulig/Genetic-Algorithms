@@ -116,7 +116,7 @@ namespace GeneticAlgorithms
         {
             get
             {
-                return this.genes.Count;
+                return this.genes.Count; 
             }
         }
 
