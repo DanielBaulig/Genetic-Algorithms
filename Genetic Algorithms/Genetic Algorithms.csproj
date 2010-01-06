@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Example Classes\IntGene.cs" />
+    <Compile Include="MondlandungsSimulation.cs" />
     <Compile Include="Raumfahrer.cs" />
     <Compile Include="Example Classes\AlphaSelector.cs" />
     <Compile Include="Example Classes\AsymetricCrossoverRecombinator.cs" />
