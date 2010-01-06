@@ -30,35 +30,18 @@ namespace GeneticAlgorithms
          */
         public void Beschleunigen(int schub)
         {
-            if (hoehe > 0)
+            if (treibstoff > 0)
             {
-                if (treibstoff > 0)
+                if (treibstoff >= schub)
                 {
-                    if (treibstoff >= schub)
-                    {
-                        this.gewicht -= schub;
-                        this.geschwindigkeit += schub;
-                        this.treibstoff -= schub;
-                    }
-                    else
-                    {
-                        this.gewicht -= treibstoff;
-                        this.geschwindigkeit += treibstoff;
-                        this.treibstoff = 0;
-                    }
+                    this.geschwindigkeit += schub;
+                    this.treibstoff -= schub;
                 }
                 else
                 {
-                    System.Console.WriteLine("Objekt kann keinen Schub mehr geben.");
+                    this.geschwindigkeit += treibstoff;
+                    this.treibstoff = 0;
                 }
-
-            }
-            else
-            {
-                /*
-                 *  ToDo Objekt ist gelandet/zerschellt.
-                 */
-                System.Console.WriteLine("Objekt ist gelandet/zerschellt");
             }
         }
 
