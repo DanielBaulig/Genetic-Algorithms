@@ -22,17 +22,17 @@ namespace GeneticAlgorithms
 
         public float ComputeFitness(ArrayList genes)
         {
-            float fitness;
+            float fitness = 0.0;
             Raumfahrer pilot = new Raumfahrer(genes);
             Raumschiff raumschiff = new Raumschiff(pilot, startHoehe, startTreibstoff, raumschiffGewicht);
             pilot.SteuereRaumschiff(raumschiff);
-            while (raumschiff.Hoehe >= 0)
+            while (raumschiff.Hoehe > 0)
             {
                 raumschiff.SimuliereRunde();
             }
 
-            fitness = (1000 - raumschiff.Geschwindigkeit) / 1000 * 0.9 + raumschiff.Treibstoff / startTreibstoff * 0.1;
-
+            fitness = ((1000 - raumschiff.Geschwindigkeit) / 1000 * 0.9) + (raumschiff.Treibstoff / startTreibstoff * 0.1);
+            return fitness;
         }
     }
 }
