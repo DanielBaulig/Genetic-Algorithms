@@ -8,3 +8,6 @@ D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorit
 D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms\obj\Debug\ResolveAssemblyReference.cache
 D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms\obj\Debug\Genetic Algorithms.dll
 D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms\obj\Debug\Genetic Algorithms.pdb
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms\obj\Debug\GeneticAlgorithms.GUI.resources
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms\obj\Debug\GeneticAlgorithms.Properties.Resources.resources
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms\obj\Debug\Genetic Algorithms.csproj.GenerateResource.Cache

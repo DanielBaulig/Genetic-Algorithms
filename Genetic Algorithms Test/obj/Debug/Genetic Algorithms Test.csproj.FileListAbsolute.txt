@@ -14,3 +14,8 @@ C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\Genetic Alg
 C:\Users\ip\Documents\Visual Studio 2008\Projects\Genetic Algorithms\Genetic Algorithms Test\obj\Debug\GeneticAlgorithmsTest.pdb
 D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms Test\obj\Debug\ResolveAssemblyReference.cache
 D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms Test\obj\Debug\GeneticAlgorithmsTest.dll
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms Test\bin\Debug\GeneticAlgorithmsTest.dll
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms Test\bin\Debug\GeneticAlgorithmsTest.pdb
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms Test\bin\Debug\Genetic Algorithms.dll
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms Test\bin\Debug\Genetic Algorithms.pdb
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms Test\obj\Debug\GeneticAlgorithmsTest.pdb
