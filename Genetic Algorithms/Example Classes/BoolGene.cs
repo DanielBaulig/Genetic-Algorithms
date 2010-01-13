@@ -25,58 +25,62 @@ using System;
 
 namespace GeneticAlgorithms.Example_Classes
 {
-    public class IntGene :
+    public class BoolGene :
         IGene
     {
         private static Random randomizer = null;
-        protected int value;
+        protected bool value;
 
-        public IntGene(int value)
+        public BoolGene(bool value)
         {
-            if (IntGene.randomizer == null)
-                IntGene.randomizer = new Random();
+            if (BoolGene.randomizer == null)
+                BoolGene.randomizer = new Random();
             this.value = value;
         }
 
-        public IntGene()
+        public BoolGene()
         {
-            if (IntGene.randomizer == null)
-                IntGene.randomizer = new Random();
+            if (BoolGene.randomizer == null)
+                BoolGene.randomizer = new Random();
             this.Mutate();
         }
 
         public override string ToString()
         {
-            return value.ToString();
+            if (this.value)
+                return "1";
+            else
+                return "0";
+            //return value.ToString();
         }
     
         #region IGene Member
 
         public void Mutate()
         {
-            this.value = randomizer.Next();
+            this.value = !this.value;//Convert.ToBoolean(randomizer.Next(0, 2));
         }
 
         #endregion
 
-        public static implicit operator IntGene(int other)
+        public static implicit operator BoolGene(bool other)
         {
-            return new IntGene(other);
+            return new BoolGene(other);
         }
 
-        public static implicit operator int(IntGene other)
+        public static implicit operator bool(BoolGene other)
         {
             return other.value;
         }
 
         public object Clone()
         {
-            return new IntGene(this.value);
+            return new BoolGene(this.value);
         }
 
         new public bool Equals(object o)
         {
-            return (o as IntGene).value == this.value;
+            return (o as BoolGene).value == this.value;
         }
     }
 
