@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Example Classes\IntGene.cs" />
+    <Compile Include="Example Classes\BoolGene.cs" />
     <Compile Include="MondlandungsSimulation.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -63,7 +63,7 @@
     <Compile Include="Example Classes\BoolGrowthLimitedFitness.cs" />
     <Compile Include="Example Classes\BoolSumFitness.cs" />
     <Compile Include="Example Classes\CrossoverRecombinator.cs" />
-    <Compile Include="Example Classes\BoolGene.cs" />
+    <Compile Include="Example Classes\IntGene.cs" />
     <Compile Include="Chromosome.cs" />
     <Compile Include="Example Classes\PieCakeSelector.cs" />
     <Compile Include="Example Classes\RandomSelector.cs" />

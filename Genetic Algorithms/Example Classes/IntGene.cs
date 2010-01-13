@@ -25,62 +25,58 @@ using System;
 
 namespace GeneticAlgorithms.Example_Classes
 {
-    public class BoolGene :
+    public class IntGene :
         IGene
     {
         private static Random randomizer = null;
-        protected bool value;
+        protected int value;
 
-        public BoolGene(bool value)
+        public IntGene(int value)
         {
-            if (BoolGene.randomizer == null)
-                BoolGene.randomizer = new Random();
+            if (IntGene.randomizer == null)
+                IntGene.randomizer = new Random();
             this.value = value;
         }
 
-        public BoolGene()
+        public IntGene()
         {
-            if (BoolGene.randomizer == null)
-                BoolGene.randomizer = new Random();
+            if (IntGene.randomizer == null)
+                IntGene.randomizer = new Random();
             this.Mutate();
         }
 
         public override string ToString()
         {
-            if (this.value)
-                return "1";
-            else
-                return "0";
-            //return value.ToString();
+            return value.ToString();
         }
     
         #region IGene Member
 
         public void Mutate()
         {
-            this.value = !this.value;//Convert.ToBoolean(randomizer.Next(0, 2));
+            this.value = randomizer.Next();
         }
 
         #endregion
 
-        public static implicit operator BoolGene(bool other)
+        public static implicit operator IntGene(int other)
         {
-            return new BoolGene(other);
+            return new IntGene(other);
         }
 
-        public static implicit operator bool(BoolGene other)
+        public static implicit operator int(IntGene other)
         {
             return other.value;
         }
 
         public object Clone()
         {
-            return new BoolGene(this.value);
+            return new IntGene(this.value);
         }
 
         new public bool Equals(object o)
         {
-            return (o as BoolGene).value == this.value;
+            return (o as IntGene).value == this.value;
         }
     }
 
