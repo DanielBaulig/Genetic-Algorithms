@@ -283,5 +283,48 @@ namespace GeneticAlgorithmsTest
             IRecombinationProvider recom = new CrossoverRecombinator();
             Chromosome<BoolGene> newChrom = chrom1.Recombine(chrom2, recom);
         }
+
+        [TestMethod]
+        public void TestRaumschiff()
+        {
+            ArrayList kommandos = new ArrayList(0);
+            Raumfahrer pilot = new Raumfahrer(kommandos);
+            Raumschiff schiff = new Raumschiff(pilot, 100, 100, 100);
+
+            Assert.AreEqual(100, schiff.Treibstoff);
+            Assert.AreEqual(100, schiff.Hoehe);
+            Assert.AreEqual(100, schiff.Gewicht);
+        }
+
+        [TestMethod]
+        public void TestRaumfahrer()
+        {
+            ArrayList kommandos = new ArrayList(10);
+            for (int i = 0; i < 10; i++)
+                kommandos.Add(new IntGene(1));
+
+            Raumfahrer pilot = new Raumfahrer(kommandos);
+            Assert.AreEqual(10, pilot.Gewicht);
+            Raumschiff schiff = new Raumschiff(pilot, 100, 100, 1);
+            pilot.SteuereRaumschiff(schiff);
+            Assert.AreEqual(100-1, schiff.Treibstoff);
+            Assert.AreEqual(1, schiff.Geschwindigkeit);
+            pilot.SteuereRaumschiff(schiff);
+            Assert.AreEqual(100 - 2, schiff.Treibstoff);
+            Assert.AreEqual(2, schiff.Geschwindigkeit);
+
+        }
+
+        [TestMethod]
+        public void TestMondlandungsSimulation()
+        {
+            ArrayList kommandos = new ArrayList(10);
+            for (int i = 0; i < 10; i++)
+                kommandos.Add(new IntGene(1));
+
+            MondlandungsSimulation sim = new MondlandungsSimulation(100, 100, 1);
+            Assert.AreEqual(10, sim.TestComputeFitness(kommandos));
+
+        }
     }
 }
