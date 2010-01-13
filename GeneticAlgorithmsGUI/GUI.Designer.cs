@@ -35,6 +35,10 @@
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.überToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gb_Simulation = new System.Windows.Forms.GroupBox();
+            this.btn_Zuruecksetzten = new System.Windows.Forms.Button();
+            this.lbl_Rundenazahl = new System.Windows.Forms.Label();
+            this.txt_Rundenazahl = new System.Windows.Forms.TextBox();
+            this.btn_Simuliere = new System.Windows.Forms.Button();
             this.lbl_Selektor = new System.Windows.Forms.Label();
             this.cmb_Selektor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,18 +52,15 @@
             this.txt_Treibstoff = new System.Windows.Forms.TextBox();
             this.txt_Gewicht = new System.Windows.Forms.TextBox();
             this.gb_Rundeninformationen = new System.Windows.Forms.GroupBox();
+            this.lbl_Chromosome = new System.Windows.Forms.Label();
             this.dgv_Population = new System.Windows.Forms.DataGridView();
-            this.btn_Simuliere = new System.Windows.Forms.Button();
-            this.txt_Rundenazahl = new System.Windows.Forms.TextBox();
-            this.lbl_Rundenazahl = new System.Windows.Forms.Label();
-            this.btn_Zuruecksetzten = new System.Windows.Forms.Button();
             this.cLaenge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cGene = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cFitness = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_Chromosome = new System.Windows.Forms.Label();
             this.gb_Simulationsiverlauf = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.zgc_Simulationsgraph = new ZedGraph.ZedGraphControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chk_ = new System.Windows.Forms.CheckBox();
             this.mnu_Menue.SuspendLayout();
             this.gb_Simulation.SuspendLayout();
             this.gb_Rundeninformationen.SuspendLayout();
@@ -90,7 +91,7 @@
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             // 
             // hilfeToolStripMenuItem
@@ -131,6 +132,41 @@
             this.gb_Simulation.TabIndex = 16;
             this.gb_Simulation.TabStop = false;
             this.gb_Simulation.Text = "Simulationsparameter";
+            // 
+            // btn_Zuruecksetzten
+            // 
+            this.btn_Zuruecksetzten.Location = new System.Drawing.Point(498, 114);
+            this.btn_Zuruecksetzten.Name = "btn_Zuruecksetzten";
+            this.btn_Zuruecksetzten.Size = new System.Drawing.Size(86, 23);
+            this.btn_Zuruecksetzten.TabIndex = 31;
+            this.btn_Zuruecksetzten.Text = "Zurücksetzten";
+            this.btn_Zuruecksetzten.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Rundenazahl
+            // 
+            this.lbl_Rundenazahl.AutoSize = true;
+            this.lbl_Rundenazahl.Location = new System.Drawing.Point(291, 117);
+            this.lbl_Rundenazahl.Name = "lbl_Rundenazahl";
+            this.lbl_Rundenazahl.Size = new System.Drawing.Size(70, 13);
+            this.lbl_Rundenazahl.TabIndex = 30;
+            this.lbl_Rundenazahl.Text = "Rundenazahl";
+            // 
+            // txt_Rundenazahl
+            // 
+            this.txt_Rundenazahl.Location = new System.Drawing.Point(367, 114);
+            this.txt_Rundenazahl.Name = "txt_Rundenazahl";
+            this.txt_Rundenazahl.Size = new System.Drawing.Size(44, 20);
+            this.txt_Rundenazahl.TabIndex = 29;
+            this.txt_Rundenazahl.Text = "1";
+            // 
+            // btn_Simuliere
+            // 
+            this.btn_Simuliere.Location = new System.Drawing.Point(417, 114);
+            this.btn_Simuliere.Name = "btn_Simuliere";
+            this.btn_Simuliere.Size = new System.Drawing.Size(75, 23);
+            this.btn_Simuliere.TabIndex = 28;
+            this.btn_Simuliere.Text = "Simuliere";
+            this.btn_Simuliere.UseVisualStyleBackColor = true;
             // 
             // lbl_Selektor
             // 
@@ -242,12 +278,22 @@
             // 
             this.gb_Rundeninformationen.Controls.Add(this.lbl_Chromosome);
             this.gb_Rundeninformationen.Controls.Add(this.dgv_Population);
-            this.gb_Rundeninformationen.Location = new System.Drawing.Point(12, 420);
+            this.gb_Rundeninformationen.Location = new System.Drawing.Point(12, 453);
             this.gb_Rundeninformationen.Name = "gb_Rundeninformationen";
-            this.gb_Rundeninformationen.Size = new System.Drawing.Size(591, 282);
+            this.gb_Rundeninformationen.Size = new System.Drawing.Size(591, 292);
             this.gb_Rundeninformationen.TabIndex = 17;
             this.gb_Rundeninformationen.TabStop = false;
             this.gb_Rundeninformationen.Text = "Rundeninformationen";
+            // 
+            // lbl_Chromosome
+            // 
+            this.lbl_Chromosome.AutoSize = true;
+            this.lbl_Chromosome.Location = new System.Drawing.Point(6, 67);
+            this.lbl_Chromosome.Name = "lbl_Chromosome";
+            this.lbl_Chromosome.Size = new System.Drawing.Size(68, 13);
+            this.lbl_Chromosome.TabIndex = 19;
+            this.lbl_Chromosome.Text = "Chromosome";
+            this.lbl_Chromosome.Click += new System.EventHandler(this.lbl_Chromosome_Click);
             // 
             // dgv_Population
             // 
@@ -268,41 +314,6 @@
             this.dgv_Population.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_Population.Size = new System.Drawing.Size(579, 193);
             this.dgv_Population.TabIndex = 18;
-            // 
-            // btn_Simuliere
-            // 
-            this.btn_Simuliere.Location = new System.Drawing.Point(417, 114);
-            this.btn_Simuliere.Name = "btn_Simuliere";
-            this.btn_Simuliere.Size = new System.Drawing.Size(75, 23);
-            this.btn_Simuliere.TabIndex = 28;
-            this.btn_Simuliere.Text = "Simuliere";
-            this.btn_Simuliere.UseVisualStyleBackColor = true;
-            // 
-            // txt_Rundenazahl
-            // 
-            this.txt_Rundenazahl.Location = new System.Drawing.Point(367, 114);
-            this.txt_Rundenazahl.Name = "txt_Rundenazahl";
-            this.txt_Rundenazahl.Size = new System.Drawing.Size(44, 20);
-            this.txt_Rundenazahl.TabIndex = 29;
-            this.txt_Rundenazahl.Text = "1";
-            // 
-            // lbl_Rundenazahl
-            // 
-            this.lbl_Rundenazahl.AutoSize = true;
-            this.lbl_Rundenazahl.Location = new System.Drawing.Point(291, 117);
-            this.lbl_Rundenazahl.Name = "lbl_Rundenazahl";
-            this.lbl_Rundenazahl.Size = new System.Drawing.Size(70, 13);
-            this.lbl_Rundenazahl.TabIndex = 30;
-            this.lbl_Rundenazahl.Text = "Rundenazahl";
-            // 
-            // btn_Zuruecksetzten
-            // 
-            this.btn_Zuruecksetzten.Location = new System.Drawing.Point(498, 114);
-            this.btn_Zuruecksetzten.Name = "btn_Zuruecksetzten";
-            this.btn_Zuruecksetzten.Size = new System.Drawing.Size(86, 23);
-            this.btn_Zuruecksetzten.TabIndex = 31;
-            this.btn_Zuruecksetzten.Text = "Zurücksetzten";
-            this.btn_Zuruecksetzten.UseVisualStyleBackColor = true;
             // 
             // cLaenge
             // 
@@ -327,37 +338,20 @@
             this.cFitness.ReadOnly = true;
             this.cFitness.Width = 65;
             // 
-            // lbl_Chromosome
-            // 
-            this.lbl_Chromosome.AutoSize = true;
-            this.lbl_Chromosome.Location = new System.Drawing.Point(6, 67);
-            this.lbl_Chromosome.Name = "lbl_Chromosome";
-            this.lbl_Chromosome.Size = new System.Drawing.Size(68, 13);
-            this.lbl_Chromosome.TabIndex = 19;
-            this.lbl_Chromosome.Text = "Chromosome";
-            this.lbl_Chromosome.Click += new System.EventHandler(this.lbl_Chromosome_Click);
-            // 
             // gb_Simulationsiverlauf
             // 
+            this.gb_Simulationsiverlauf.Controls.Add(this.chk_);
             this.gb_Simulationsiverlauf.Controls.Add(this.zgc_Simulationsgraph);
             this.gb_Simulationsiverlauf.Location = new System.Drawing.Point(12, 187);
             this.gb_Simulationsiverlauf.Name = "gb_Simulationsiverlauf";
-            this.gb_Simulationsiverlauf.Size = new System.Drawing.Size(591, 227);
+            this.gb_Simulationsiverlauf.Size = new System.Drawing.Size(591, 260);
             this.gb_Simulationsiverlauf.TabIndex = 18;
             this.gb_Simulationsiverlauf.TabStop = false;
             this.gb_Simulationsiverlauf.Text = "Simulationsverlauf";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(609, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(316, 666);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
             // zgc_Simulationsgraph
             // 
-            this.zgc_Simulationsgraph.Location = new System.Drawing.Point(6, 19);
+            this.zgc_Simulationsgraph.Location = new System.Drawing.Point(6, 45);
             this.zgc_Simulationsgraph.Name = "zgc_Simulationsgraph";
             this.zgc_Simulationsgraph.ScrollGrace = 0;
             this.zgc_Simulationsgraph.ScrollMaxX = 0;
@@ -366,15 +360,34 @@
             this.zgc_Simulationsgraph.ScrollMinX = 0;
             this.zgc_Simulationsgraph.ScrollMinY = 0;
             this.zgc_Simulationsgraph.ScrollMinY2 = 0;
-            this.zgc_Simulationsgraph.Size = new System.Drawing.Size(578, 202);
+            this.zgc_Simulationsgraph.Size = new System.Drawing.Size(578, 206);
             this.zgc_Simulationsgraph.TabIndex = 0;
             this.zgc_Simulationsgraph.Load += new System.EventHandler(this.zedGraphControl1_Load);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(609, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(316, 709);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // chk_
+            // 
+            this.chk_.AutoSize = true;
+            this.chk_.Location = new System.Drawing.Point(6, 23);
+            this.chk_.Name = "chk_";
+            this.chk_.Size = new System.Drawing.Size(80, 17);
+            this.chk_.TabIndex = 1;
+            this.chk_.Text = "checkBox1";
+            this.chk_.UseVisualStyleBackColor = true;
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 708);
+            this.ClientSize = new System.Drawing.Size(937, 757);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gb_Simulationsiverlauf);
             this.Controls.Add(this.gb_Rundeninformationen);
@@ -392,6 +405,7 @@
             this.gb_Rundeninformationen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Population)).EndInit();
             this.gb_Simulationsiverlauf.ResumeLayout(false);
+            this.gb_Simulationsiverlauf.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -431,6 +445,7 @@
         private System.Windows.Forms.GroupBox gb_Simulationsiverlauf;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ZedGraph.ZedGraphControl zgc_Simulationsgraph;
+        private System.Windows.Forms.CheckBox chk_;
 
     }
 }
