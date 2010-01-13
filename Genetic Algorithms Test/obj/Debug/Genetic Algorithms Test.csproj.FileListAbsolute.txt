@@ -19,7 +19,6 @@ D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorit
 D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms Test\bin\Debug\Genetic Algorithms.dll
 D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms Test\bin\Debug\Genetic Algorithms.pdb
 D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms Test\obj\Debug\GeneticAlgorithmsTest.pdb
-<<<<<<< HEAD
 D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms Test\obj\Debug\ResolveAssemblyReference.cache
 D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms Test\obj\Debug\GeneticAlgorithmsTest.dll
 D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms Test\bin\Debug\GeneticAlgorithmsTest.dll
@@ -27,5 +26,10 @@ D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorith
 D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms Test\bin\Debug\Genetic Algorithms.dll
 D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms Test\bin\Debug\Genetic Algorithms.pdb
 D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms Test\obj\Debug\GeneticAlgorithmsTest.pdb
-=======
->>>>>>> 4457dc7e03af46858a71a4ebfbb065c22449e876
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Test\Genetic Algorithms Test\bin\Debug\GeneticAlgorithmsTest.dll
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Test\Genetic Algorithms Test\bin\Debug\GeneticAlgorithmsTest.pdb
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Test\Genetic Algorithms Test\bin\Debug\Genetic Algorithms.dll
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Test\Genetic Algorithms Test\bin\Debug\Genetic Algorithms.pdb
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Test\Genetic Algorithms Test\obj\Debug\ResolveAssemblyReference.cache
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Test\Genetic Algorithms Test\obj\Debug\GeneticAlgorithmsTest.dll
+D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Test\Genetic Algorithms Test\obj\Debug\GeneticAlgorithmsTest.pdb

@@ -284,9 +284,6 @@ namespace GeneticAlgorithmsTest
             Chromosome<BoolGene> newChrom = chrom1.Recombine(chrom2, recom);
         }
 
-<<<<<<< HEAD
-        /*[TestMethod]
-=======
         [TestMethod]
         public void TestRaumschiff()
         {
@@ -300,7 +297,6 @@ namespace GeneticAlgorithmsTest
         }
 
         [TestMethod]
->>>>>>> 4457dc7e03af46858a71a4ebfbb065c22449e876
         public void TestRaumfahrer()
         {
             ArrayList kommandos = new ArrayList(10);
@@ -324,18 +320,13 @@ namespace GeneticAlgorithmsTest
         {
             ArrayList kommandos = new ArrayList(10);
             for (int i = 0; i < 10; i++)
-<<<<<<< HEAD
-                raumfahrer.SteuereRaumschiff(raumschiff as GeneticAlgorithms.Raumschiff);
-        }*/
-=======
                 kommandos.Add(new IntGene(1));
-                
+
             MondlandungsSimulation sim = new MondlandungsSimulation(100, 100, 1);
-            
             Assert.AreEqual(10, sim.TestComputeFitness(kommandos));
 
         }
 
->>>>>>> 4457dc7e03af46858a71a4ebfbb065c22449e876
+
     }
 }
