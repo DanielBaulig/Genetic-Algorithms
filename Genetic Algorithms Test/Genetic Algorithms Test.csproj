@@ -51,9 +51,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Testverweise\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
