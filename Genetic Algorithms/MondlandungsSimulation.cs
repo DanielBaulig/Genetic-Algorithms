@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using GeneticAlgorithms.Example_Classes;
 
 namespace GeneticAlgorithms
 {
-    class MondlandungsSimulation
+    public class MondlandungsSimulation : IFitnessFunctionProvider
     {
         private int startHoehe;
         private int startTreibstoff;
@@ -20,19 +21,38 @@ namespace GeneticAlgorithms
             
         }
 
+        #region IFitnessFunctionProvider Member
+
         public float ComputeFitness(ArrayList genes)
         {
-            float fitness = 0.0;
+            float fitness = 0.0f;
             Raumfahrer pilot = new Raumfahrer(genes);
             Raumschiff raumschiff = new Raumschiff(pilot, startHoehe, startTreibstoff, raumschiffGewicht);
-            pilot.SteuereRaumschiff(raumschiff);
             while (raumschiff.Hoehe > 0)
             {
-                raumschiff.SimuliereRunde();
+               pilot.SteuereRaumschiff(raumschiff); 
+               raumschiff.SimuliereRunde();
             }
 
-            fitness = ((1000 - raumschiff.Geschwindigkeit) / 1000 * 0.9) + (raumschiff.Treibstoff / startTreibstoff * 0.1);
+            fitness = ((1000 - raumschiff.Geschwindigkeit) / 1000 * 0.9f) + (raumschiff.Treibstoff / startTreibstoff * 0.1f);
+            return fitness;
+
+
+        }
+
+        // Methode nur für Unit Tests
+        public float TestComputeFitness(ArrayList genes)
+        {
+            float fitness = 0.0f;
+            Raumfahrer pilot = new Raumfahrer(genes);
+
+            foreach (IntGene gene in genes)
+            {
+                fitness += gene;
+            }
             return fitness;
         }
+
+        #endregion
     }
 }

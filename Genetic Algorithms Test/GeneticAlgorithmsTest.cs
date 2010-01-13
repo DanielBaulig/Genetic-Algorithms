@@ -9,14 +9,6 @@ using System.Collections;
 
 namespace GeneticAlgorithmsTest
 {
-    class Raumschiff
-    {
-        private int aufrufe = 0;
-        public void Beschleunigen(int schub)
-        {
-            Assert.AreEqual(aufrufe++, schub);
-        }
-    }
 
     /// <summary>
     /// Zusammenfassungsbeschreibung für UnitTest1
@@ -293,16 +285,48 @@ namespace GeneticAlgorithmsTest
         }
 
         [TestMethod]
+        public void TestRaumschiff()
+        {
+            ArrayList kommandos = new ArrayList(0);
+            Raumfahrer pilot = new Raumfahrer(kommandos);
+            Raumschiff schiff = new Raumschiff(pilot, 100, 100, 100);
+
+            Assert.AreEqual(100, schiff.Treibstoff);
+            Assert.AreEqual(100, schiff.Hoehe);
+            Assert.AreEqual(100, schiff.Gewicht);
+        }
+
+        [TestMethod]
         public void TestRaumfahrer()
         {
-            ArrayList genes = new ArrayList();
+            ArrayList kommandos = new ArrayList(10);
             for (int i = 0; i < 10; i++)
-                genes.Add(new IntGene(i));
-            Raumfahrer raumfahrer = new Raumfahrer(genes);
-            Raumschiff raumschiff = new Raumschiff();
+                kommandos.Add(new IntGene(1));
 
-            for (int i = 0; i < 10; i++)
-                raumfahrer.SteuereRaumschiff(raumschiff as GeneticAlgorithms.Raumschiff);
+            Raumfahrer pilot = new Raumfahrer(kommandos);
+            Assert.AreEqual(10, pilot.Gewicht);
+            Raumschiff schiff = new Raumschiff(pilot, 100, 100, 1);
+            pilot.SteuereRaumschiff(schiff);
+            Assert.AreEqual(100-1, schiff.Treibstoff);
+            Assert.AreEqual(1, schiff.Geschwindigkeit);
+            pilot.SteuereRaumschiff(schiff);
+            Assert.AreEqual(100 - 2, schiff.Treibstoff);
+            Assert.AreEqual(2, schiff.Geschwindigkeit);
+
         }
+
+        [TestMethod]
+        public void TestMondlandungsSimulation()
+        {
+            ArrayList kommandos = new ArrayList(10);
+            for (int i = 0; i < 10; i++)
+                kommandos.Add(new IntGene(1));
+                
+            MondlandungsSimulation sim = new MondlandungsSimulation(100, 100, 1);
+            
+            Assert.AreEqual(10, sim.TestComputeFitness(kommandos));
+
+        }
+
     }
 }
