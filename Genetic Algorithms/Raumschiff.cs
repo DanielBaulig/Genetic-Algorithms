@@ -23,6 +23,7 @@ namespace GeneticAlgorithms
             this.hoehe = startHoehe;
             this.treibstoff = startTreibstoff;
             this.gewicht = startGewicht;
+            this.geschwindigkeit = 0;
         }
 
         /*

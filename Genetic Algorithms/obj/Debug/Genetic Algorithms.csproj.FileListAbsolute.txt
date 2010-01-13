@@ -12,7 +12,9 @@ D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorit
 D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms\obj\Debug\GeneticAlgorithms.Properties.Resources.resources
 D:\Eigene Dateien\FH Frankfurt\Semester 5\Simulation der Zukunft\Genetic-Algorithms\Genetic Algorithms\obj\Debug\Genetic Algorithms.csproj.GenerateResource.Cache
 D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms\obj\Debug\ResolveAssemblyReference.cache
-D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms\obj\Debug\GeneticAlgorithms.GUI.resources
 D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms\obj\Debug\GeneticAlgorithms.Properties.Resources.resources
 D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms\obj\Debug\Genetic Algorithms.csproj.GenerateResource.Cache
 D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms\obj\Debug\Genetic Algorithms.dll
+D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms\bin\Debug\Genetic Algorithms.dll
+D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms\bin\Debug\Genetic Algorithms.pdb
+D:\Private Jones\FH Frankfurt\5 Semester\Simulation der Zukunft\Genetic Algorithms\obj\Debug\Genetic Algorithms.pdb
