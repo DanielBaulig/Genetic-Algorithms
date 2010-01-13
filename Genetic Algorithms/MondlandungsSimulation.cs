@@ -34,7 +34,7 @@ namespace GeneticAlgorithms
                raumschiff.SimuliereRunde();
             }
 
-            fitness = ((1000 - raumschiff.Geschwindigkeit) / 1000 * 0.9f) + (raumschiff.Treibstoff / startTreibstoff * 0.1f);
+            fitness = ((1000 + raumschiff.Geschwindigkeit) / 1000.0f * 0.9f) + (raumschiff.Treibstoff / (float) startTreibstoff * 0.1f);
 
             return fitness;
 

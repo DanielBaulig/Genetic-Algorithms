@@ -50,7 +50,7 @@ namespace GeneticAlgorithms
         {
             int tmpGewicht = 0;
 
-            tmpGewicht = gewicht + treibstoff + pilot.Gewicht;
+            tmpGewicht = gewicht + pilot.Gewicht;
             geschwindigkeit -= tmpGewicht;
             hoehe += geschwindigkeit;
         }

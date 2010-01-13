@@ -26,7 +26,7 @@ using System.Collections.Generic;
 
 namespace GeneticAlgorithms.Example_Classes
 {
-    class RandomSelector : ISelectionProvider
+    public class RandomSelector : ISelectionProvider
     {
         #region ISelectionProvider Member
 
