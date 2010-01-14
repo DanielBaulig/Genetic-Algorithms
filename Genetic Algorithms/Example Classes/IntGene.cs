@@ -28,6 +28,7 @@ namespace GeneticAlgorithms.Example_Classes
     public class IntGene :
         IGene
     {
+        public static int MaxValue = 100;
         private static Random randomizer = null;
         protected int value;
 
@@ -54,7 +55,7 @@ namespace GeneticAlgorithms.Example_Classes
 
         public void Mutate()
         {
-            this.value = randomizer.Next();
+            this.value = randomizer.Next() % IntGene.MaxValue;
         }
 
         #endregion

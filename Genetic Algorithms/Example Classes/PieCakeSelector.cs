@@ -45,7 +45,7 @@ namespace GeneticAlgorithms.Example_Classes
                 while (selectionPoint > (population[index] as IChromosome).Fitness)
                     selectionPoint -= (population[index++] as IChromosome).Fitness;
             }
-            catch (IndexOutOfRangeException ignore)
+            catch (ArgumentOutOfRangeException ignore)
             {   // kann evtl. aufgrund von numerischen Effekten auftreten, wenn wird letztes Chromosome ausgewählt
                 index--;
             }

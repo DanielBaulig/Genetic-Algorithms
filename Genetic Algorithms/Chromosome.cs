@@ -126,7 +126,7 @@ namespace GeneticAlgorithms
             string resultString = "";
             foreach (Gene gene in genes)
             {
-                resultString += gene.ToString();
+                resultString += gene.ToString() + " ";
             }
             return resultString;
         }

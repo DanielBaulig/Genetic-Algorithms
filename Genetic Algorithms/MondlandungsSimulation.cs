@@ -29,12 +29,17 @@ namespace GeneticAlgorithms
             Raumfahrer pilot = new Raumfahrer(genes);
             Raumschiff raumschiff = new Raumschiff(pilot, startHoehe, startTreibstoff, raumschiffGewicht);
             while (raumschiff.Hoehe > 0)
-            {
-               pilot.SteuereRaumschiff(raumschiff); 
+            { 
                raumschiff.SimuliereRunde();
+               pilot.SteuereRaumschiff(raumschiff);
             }
 
-            fitness = ((1000 + raumschiff.Geschwindigkeit) / 1000.0f * 0.9f) + (raumschiff.Treibstoff / (float) startTreibstoff * 0.1f);
+            int toleranz = Convert.ToInt32(Math.Sqrt((raumschiff.Geschwindigkeit * raumschiff.Geschwindigkeit))) - 5;
+            if (toleranz < 0)
+                toleranz = 0;
+
+            //fitness = ((1000 + raumschiff.Geschwindigkeit) / 1000.0f * 0.9f) + (raumschiff.Treibstoff / (float) startTreibstoff * 0.1f);
+            fitness = 0.8f / (1.0f + toleranz) + (raumschiff.Treibstoff / (float)startTreibstoff * 0.2f);
 
             return fitness;
 

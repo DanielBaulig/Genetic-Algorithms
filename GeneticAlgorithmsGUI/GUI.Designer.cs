@@ -58,7 +58,6 @@
             this.txt_Treibstoff = new System.Windows.Forms.TextBox();
             this.txt_Gewicht = new System.Windows.Forms.TextBox();
             this.gb_Rundeninformationen = new System.Windows.Forms.GroupBox();
-            this.lbl_Chromosome = new System.Windows.Forms.Label();
             this.dgv_Population = new System.Windows.Forms.DataGridView();
             this.cLaenge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cGene = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -368,7 +367,6 @@
             // 
             // gb_Rundeninformationen
             // 
-            this.gb_Rundeninformationen.Controls.Add(this.lbl_Chromosome);
             this.gb_Rundeninformationen.Controls.Add(this.dgv_Population);
             this.gb_Rundeninformationen.Location = new System.Drawing.Point(5, 450);
             this.gb_Rundeninformationen.Name = "gb_Rundeninformationen";
@@ -376,15 +374,6 @@
             this.gb_Rundeninformationen.TabIndex = 17;
             this.gb_Rundeninformationen.TabStop = false;
             this.gb_Rundeninformationen.Text = "Rundeninformationen";
-            // 
-            // lbl_Chromosome
-            // 
-            this.lbl_Chromosome.AutoSize = true;
-            this.lbl_Chromosome.Location = new System.Drawing.Point(6, 67);
-            this.lbl_Chromosome.Name = "lbl_Chromosome";
-            this.lbl_Chromosome.Size = new System.Drawing.Size(68, 13);
-            this.lbl_Chromosome.TabIndex = 19;
-            this.lbl_Chromosome.Text = "Chromosome";
             // 
             // dgv_Population
             // 
@@ -398,7 +387,7 @@
             this.cLaenge,
             this.cGene,
             this.cFitness});
-            this.dgv_Population.Location = new System.Drawing.Point(6, 93);
+            this.dgv_Population.Location = new System.Drawing.Point(6, 17);
             this.dgv_Population.MultiSelect = false;
             this.dgv_Population.Name = "dgv_Population";
             this.dgv_Population.ReadOnly = true;
@@ -542,7 +531,6 @@
             this.gb_Simulation.ResumeLayout(false);
             this.gb_Simulation.PerformLayout();
             this.gb_Rundeninformationen.ResumeLayout(false);
-            this.gb_Rundeninformationen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Population)).EndInit();
             this.gb_Simulationsiverlauf.ResumeLayout(false);
             this.gb_Simulationsiverlauf.PerformLayout();
@@ -581,7 +569,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cLaenge;
         private System.Windows.Forms.DataGridViewTextBoxColumn cGene;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFitness;
-        private System.Windows.Forms.Label lbl_Chromosome;
         private System.Windows.Forms.GroupBox gb_Simulationsiverlauf;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ZedGraph.ZedGraphControl zgc_Simulationsgraph;
