@@ -70,23 +70,24 @@
             this.zgc_Simulationsgraph = new ZedGraph.ZedGraphControl();
             this.chk_Laenge = new System.Windows.Forms.CheckBox();
             this.chk_AVGFitness = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnl_Animation = new System.Windows.Forms.Panel();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Menue.SuspendLayout();
             this.gb_Simulation.SuspendLayout();
             this.gb_Rundeninformationen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Population)).BeginInit();
             this.gb_Simulationsiverlauf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mnu_Menue
             // 
             this.mnu_Menue.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiToolStripMenuItem,
-            this.hilfeToolStripMenuItem});
+            this.hilfeToolStripMenuItem,
+            this.testToolStripMenuItem});
             this.mnu_Menue.Location = new System.Drawing.Point(0, 0);
             this.mnu_Menue.Name = "mnu_Menue";
-            this.mnu_Menue.Size = new System.Drawing.Size(937, 24);
+            this.mnu_Menue.Size = new System.Drawing.Size(908, 24);
             this.mnu_Menue.TabIndex = 9;
             this.mnu_Menue.Text = "mnu_Menue";
             // 
@@ -95,13 +96,13 @@
             this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -110,13 +111,13 @@
             this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.überToolStripMenuItem});
             this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.hilfeToolStripMenuItem.Text = "Hilfe";
             // 
             // überToolStripMenuItem
             // 
             this.überToolStripMenuItem.Name = "überToolStripMenuItem";
-            this.überToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.überToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.überToolStripMenuItem.Text = "Über";
             this.überToolStripMenuItem.Click += new System.EventHandler(this.überToolStripMenuItem_Click);
             // 
@@ -515,20 +516,27 @@
             this.chk_AVGFitness.UseVisualStyleBackColor = true;
             this.chk_AVGFitness.CheckedChanged += new System.EventHandler(this.chk_AVGFitness_CheckedChanged);
             // 
-            // pictureBox1
+            // pnl_Animation
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(602, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(323, 706);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.pnl_Animation.Location = new System.Drawing.Point(602, 42);
+            this.pnl_Animation.Name = "pnl_Animation";
+            this.pnl_Animation.Size = new System.Drawing.Size(300, 700);
+            this.pnl_Animation.TabIndex = 19;
+            this.pnl_Animation.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Animation_Paint);
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 747);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(908, 747);
+            this.Controls.Add(this.pnl_Animation);
             this.Controls.Add(this.gb_Simulationsiverlauf);
             this.Controls.Add(this.gb_Rundeninformationen);
             this.Controls.Add(this.gb_Simulation);
@@ -546,7 +554,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Population)).EndInit();
             this.gb_Simulationsiverlauf.ResumeLayout(false);
             this.gb_Simulationsiverlauf.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,7 +590,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cFitness;
         private System.Windows.Forms.Label lbl_Chromosome;
         private System.Windows.Forms.GroupBox gb_Simulationsiverlauf;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private ZedGraph.ZedGraphControl zgc_Simulationsgraph;
         private System.Windows.Forms.CheckBox chk_AVGFitness;
         private System.Windows.Forms.CheckBox chk_Variation;
@@ -596,6 +602,8 @@
         private System.Windows.Forms.TextBox txt_Verlustrate;
         private System.Windows.Forms.TextBox txt_Mutationsrate;
         private System.Windows.Forms.TextBox txt_Duplikationsrate;
+        private System.Windows.Forms.Panel pnl_Animation;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
 
     }
 }

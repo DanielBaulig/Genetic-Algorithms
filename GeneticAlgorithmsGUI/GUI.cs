@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using GeneticAlgorithms;
@@ -20,6 +22,14 @@ namespace GeneticAlgorithmsGUI
         private MondlandungsSimulation MondSim = null;
         private IRecombinationProvider recombinationProvider = null;
         private ISelectionProvider selectionProvider = null;
+        private Assembly myAssembly = Assembly.GetExecutingAssembly();
+        private Stream strWeltraum = null;
+        private Stream strRaumschiff = null;
+        private Bitmap _backBuffer = null;
+        private Graphics gBuffer = null;
+        private Bitmap bmpWeltraum = null;
+        private Bitmap bmpRaumschiff = null;
+
 
         public GUI()
         {
@@ -66,29 +76,30 @@ namespace GeneticAlgorithmsGUI
             recombinationProvider = new AsymmetricCrossoverRecombinator();
             cmb_Selektor.SelectedIndex = 1;
             selectionProvider = new PieCakeSelector();
+
+            strWeltraum = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Weltraum.bmp");
+            strRaumschiff = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Raumschiff.gif");
+
+            _backBuffer = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
+            gBuffer = Graphics.FromImage(_backBuffer);
+            gBuffer.Clear(Color.White);
+
+            bmpWeltraum = new Bitmap(strWeltraum);
+            bmpRaumschiff = new Bitmap(strRaumschiff);
         }
 
-        private void GUI_Load(object sender, EventArgs e)
+        private void pnl_Animation_Paint(object sender, PaintEventArgs e)
         {
-            /*Graphics g = pe.Graphics;
+            gBuffer.DrawImage(bmpWeltraum, 1, 1, 300, 700);
+            pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
+        }
 
-            Pen bp = new Pen(Color.Black, 2);
-            Pen sp = new Pen(Color.Red, 2);
-
-            Point pt1 = new Point();
-            Point pt2 = new Point();
-
-            double ballX;
-            double ballY;
-
-            double ballRotX;
-            double ballRotY;
-
-            // Draw UFO
-       //     g.DrawImage(
-    
-//            g.DrawLine(bp, pt1, pt2);*/
-
+        public void setzeRaumschiff(int hoehe)
+        {
+            gBuffer.DrawImage(bmpWeltraum, 1, 1, 300, 700);
+            gBuffer.DrawImage(bmpRaumschiff, 100, hoehe, 100, 100);
+            //gBuffer.Dispose();
+            pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
         }
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,6 +242,22 @@ namespace GeneticAlgorithmsGUI
                     recombinationProvider = new AsymmetricCrossoverRecombinator();
                     break;
             }
+        }
+
+        private void GUI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for (int i = 10; i < 600; i+=5)
+            {
+                
+                //System.Threading.Thread.Sleep(1);
+                setzeRaumschiff(i);
+            }
+
         }
 
     }
