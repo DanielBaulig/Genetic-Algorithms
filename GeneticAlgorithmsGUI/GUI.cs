@@ -30,6 +30,7 @@ namespace GeneticAlgorithmsGUI
         private Bitmap bmpWeltraum = null;
         private Bitmap bmpRaumschiff = null;
 
+        private int turn = 0;
 
         public GUI()
         {
@@ -44,6 +45,9 @@ namespace GeneticAlgorithmsGUI
             p.YAxis.Scale.Min = 0.0;
             p.YAxisList.Add("Länge");
             p.YAxisList[1].IsVisible = false;
+            p.YAxisList[1].Scale.MaxAuto = true;
+            
+            p.YAxisList[1].Scale.Min = 0;
             p.YAxisList.Add("Variation");
             p.YAxisList[2].IsVisible = false;
 
@@ -59,24 +63,21 @@ namespace GeneticAlgorithmsGUI
             this.minFitnessCurve = p.AddCurve("min. Fitness", minFitnessList, Color.Red, SymbolType.None);
             this.maxFitnessCurve = p.AddCurve("max. Fitness", maxFitnessList, Color.Blue, SymbolType.None);
 
+            avgLengthCurve.YAxisIndex = 1;
+
             avgFitnessCurve.IsVisible = true;
             avgVariationCurve.IsVisible = false;
             avgLengthCurve.IsVisible = false;
             minFitnessCurve.IsVisible = false;
             maxFitnessCurve.IsVisible = false;
 
-            for (int i = 0; i < 100; i++)
-            {
-                avgFitnessList.Add(i, i / 100.0f);
-            }
-
-            zgc_Simulationsgraph.AxisChange();
-
             cmb_Rekombinator.SelectedIndex = 0;
             recombinationProvider = new AsymmetricCrossoverRecombinator();
             cmb_Selektor.SelectedIndex = 1;
             selectionProvider = new PieCakeSelector();
 
+
+            
             strWeltraum = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Weltraum.bmp");
             strRaumschiff = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Raumschiff.gif");
 
@@ -144,41 +145,52 @@ namespace GeneticAlgorithmsGUI
         {
             avgFitnessCurve.IsVisible = (sender as CheckBox).Checked;
             zgc_Simulationsgraph.GraphPane.YAxisList[0].IsVisible = chk_AVGFitness.Checked || chk_maxFitness.Checked || chk_minFitness.Checked;
+            zgc_Simulationsgraph.AxisChange();
             zgc_Simulationsgraph.Invalidate();
         }
 
         private void chk_Laenge_CheckedChanged(object sender, EventArgs e)
         {
             avgLengthCurve.IsVisible = (sender as CheckBox).Checked;
-            zgc_Simulationsgraph.GraphPane.YAxisList[1].IsVisible = avgFitnessCurve.IsVisible = (sender as CheckBox).Checked;
+            zgc_Simulationsgraph.GraphPane.YAxisList[1].IsVisible = avgLengthCurve.IsVisible = (sender as CheckBox).Checked;
+            zgc_Simulationsgraph.AxisChange();
             zgc_Simulationsgraph.Invalidate();
         }
 
         private void chk_Variation_CheckedChanged(object sender, EventArgs e)
         {
             avgVariationCurve.IsVisible = (sender as CheckBox).Checked;
-            zgc_Simulationsgraph.GraphPane.YAxisList[2].IsVisible = avgFitnessCurve.IsVisible = (sender as CheckBox).Checked;
+            zgc_Simulationsgraph.GraphPane.YAxisList[2].IsVisible = avgVariationCurve.IsVisible = (sender as CheckBox).Checked;
+            zgc_Simulationsgraph.AxisChange();
             zgc_Simulationsgraph.Invalidate();
         }
 
         private void chk_minFitness_CheckedChanged(object sender, EventArgs e)
         {
             minFitnessCurve.IsVisible = (sender as CheckBox).Checked;
-            zgc_Simulationsgraph.GraphPane.YAxisList[0].IsVisible = chk_AVGFitness.Checked || chk_maxFitness.Checked || chk_minFitness.Checked;
+            zgc_Simulationsgraph.GraphPane.YAxisList[0].IsVisible = chk_minFitness.Checked || chk_maxFitness.Checked || chk_minFitness.Checked;
+            zgc_Simulationsgraph.AxisChange();
             zgc_Simulationsgraph.Invalidate();
         }
 
         private void chk_maxFitness_CheckedChanged(object sender, EventArgs e)
         {
             maxFitnessCurve.IsVisible = (sender as CheckBox).Checked;
-            zgc_Simulationsgraph.GraphPane.YAxisList[0].IsVisible = chk_AVGFitness.Checked || chk_maxFitness.Checked || chk_minFitness.Checked;
+            zgc_Simulationsgraph.GraphPane.YAxisList[0].IsVisible = chk_maxFitness.Checked || chk_maxFitness.Checked || chk_minFitness.Checked;
+            zgc_Simulationsgraph.AxisChange();
             zgc_Simulationsgraph.Invalidate();
         }
 
         private void btn_Zuruecksetzten_Click(object sender, EventArgs e)
         {
+            avgLengthList.Clear();
+            avgVariationList.Clear();
+            avgFitnessList.Clear();
+            maxFitnessList.Clear();
+            minFitnessList.Clear();
             GenSim = null;
             MondSim = null;
+            turn = 0;
             cmb_Selektor.Enabled = true;
             cmb_Rekombinator.Enabled = true;
             txt_Chromosomlaenge.Enabled = true;
@@ -188,6 +200,17 @@ namespace GeneticAlgorithmsGUI
             txt_Mutationsrate.Enabled = true;
             txt_Verlustrate.Enabled = true;
             txt_Duplikationsrate.Enabled = true;
+        }
+
+        private void OnSimulationTurn(object sender, EventArgs e)
+        {
+            turn ++;
+            this.avgFitnessList.Add(turn, GenSim.AverageFitness);
+            this.avgLengthList.Add(turn, GenSim.AverageChromosomeLength);
+            if (zgc_Simulationsgraph.GraphPane.YAxisList[1].Scale.Max < GenSim.AverageChromosomeLength)
+                zgc_Simulationsgraph.GraphPane.YAxisList[1].Scale.Max = GenSim.AverageChromosomeLength + 1;
+            this.maxFitnessList.Add(turn, GenSim.MostSuccessfullIndividual.Fitness);
+            this.minFitnessList.Add(turn, GenSim.LeasSuccessfullIndividual.Fitness);
         }
 
         private void btn_Simuliere_Click(object sender, EventArgs e)
@@ -203,10 +226,25 @@ namespace GeneticAlgorithmsGUI
                 txt_Mutationsrate.Enabled = false;
                 txt_Verlustrate.Enabled = false;
                 txt_Duplikationsrate.Enabled = false;
+                IntGene.MaxValue = Convert.ToInt32(txt_Treibstoff.Text);
                 MondSim = new MondlandungsSimulation(Convert.ToInt32(txt_Hoehe.Text), Convert.ToInt32(txt_Treibstoff.Text), Convert.ToInt32(txt_Gewicht.Text));
                 GenSim = new GeneticSimulation<IntGene>(100, Convert.ToInt32(txt_Chromosomlaenge.Text), MondSim, recombinationProvider, selectionProvider);
+                GenSim.SimulationTurn += OnSimulationTurn;
             }
             GenSim.RunSimulation(Convert.ToInt32(txt_Rundenazahl.Text));
+
+            dgv_Population.Rows.Clear();
+
+            dgv_Population.Rows.Add(GenSim.PoppulationSize);
+            for (int i = 0; i < GenSim.PoppulationSize; i++)
+            {
+                dgv_Population.Rows[i].Cells[0].Value = GenSim[i].GeneCount.ToString();
+                dgv_Population.Rows[i].Cells[1].Value = GenSim[i].ToString();
+                dgv_Population.Rows[i].Cells[2].Value = GenSim[i].Fitness.ToString();
+            }
+
+            zgc_Simulationsgraph.AxisChange();
+            zgc_Simulationsgraph.Invalidate();            
         }
 
         private void cmb_Selektor_SelectedIndexChanged(object sender, EventArgs e)

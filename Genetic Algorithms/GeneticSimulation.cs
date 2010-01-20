@@ -58,11 +58,19 @@ namespace GeneticAlgorithms
             return this.femaleSelector.select(this.population, this.totalFitness) as Chromosome<Gene>;
         }
 
+        public ArrayList Population
+        {
+            get
+            {
+                return population;
+            }
+        }
+
         public Chromosome<Gene> this[int index]
         {
             get
             {
-                return this.population[index] as Chromosome<Gene>;
+                return population[index] as Chromosome<Gene>;
             }
         }
 
@@ -209,9 +217,9 @@ namespace GeneticAlgorithms
             this.mostSuccessfullIndividual = null;
             foreach (Chromosome<Gene> chromosome in this.population)
             {
-                if (this.leastSuccessfullIndividual == null || leastSuccessfullIndividual.Fitness > chromosome.Fitness)
+                if (this.leastSuccessfullIndividual == null || this.leastSuccessfullIndividual.Fitness > chromosome.Fitness)
                     this.leastSuccessfullIndividual = chromosome;
-                if (this.mostSuccessfullIndividual == null || mostSuccessfullIndividual.Fitness < chromosome.Fitness)
+                if (this.mostSuccessfullIndividual == null || this.mostSuccessfullIndividual.Fitness < chromosome.Fitness)
                     this.mostSuccessfullIndividual = chromosome;
                 totalFitness += chromosome.Fitness;
                 averageChromosomeLength += chromosome.GeneCount;
