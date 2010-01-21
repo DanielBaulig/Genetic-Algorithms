@@ -280,6 +280,7 @@ namespace GeneticAlgorithmsGUI
             }
             if (sender == btn_AutoSim)
             {
+                btn_SimAbbrechen.Focus();
                 float fitnessGrenze = Convert.ToSingle(txt_Fitness.Text);
                 float startFitness = GenSim.AverageFitness;
                 while (fitnessGrenze + startFitness > GenSim.AverageFitness && !simulationAbbrechen)
