@@ -242,7 +242,7 @@ namespace GeneticAlgorithms
                             newChromosome[i].Mutate();
                         if (this.randomizer.NextDouble() < this.geneDuplicationRate)
                             newChromosome.DuplicateGene(i);
-                        if (this.randomizer.NextDouble() < this.geneDropRate)
+                        if (newChromosome.GeneCount > 1 && this.randomizer.NextDouble() < this.geneDropRate)
                             newChromosome.DropGene(i);
                     }
                     newChromosome.computeFitness(this.fitnessComputer);

@@ -25,11 +25,12 @@ namespace GeneticAlgorithms
             this.naechstesKommando = 0;
         }
 
-        public void SteuereRaumschiff(Raumschiff raumschiff)
+        public int SteuereRaumschiff(Raumschiff raumschiff)
         {
-            raumschiff.Beschleunigen(kommandoListe[naechstesKommando] as IntGene);
+            int schub = raumschiff.Beschleunigen(kommandoListe[naechstesKommando] as IntGene);
             if (++naechstesKommando == kommandoListe.Count)
                 naechstesKommando = 0;
+            return schub;
         }
     }
 }

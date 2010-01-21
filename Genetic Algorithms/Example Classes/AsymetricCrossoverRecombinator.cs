@@ -28,12 +28,15 @@ namespace GeneticAlgorithms.Example_Classes
 {
     public class AsymmetricCrossoverRecombinator : IRecombinationProvider
     {
+
+        Random random = new Random();
         #region IRecombinationProvider Member
 
         public ArrayList Recombine(ArrayList maleGenes, ArrayList femaleGenes)
         {
-            int maleCount = (int)Math.Ceiling(maleGenes.Count / 2.0f);
-            int femaleCount = (int)Math.Floor(femaleGenes.Count / 2.0f);
+            double maleConstraint = random.NextDouble();
+            int maleCount = (int)Math.Ceiling(maleGenes.Count * maleConstraint);
+            int femaleCount = (int)Math.Floor(femaleGenes.Count * (1-maleConstraint));
             ArrayList child = new ArrayList(maleCount + femaleCount);
             child.InsertRange(0, maleGenes.GetRange(0, maleCount));
             child.InsertRange(maleCount, femaleGenes.GetRange(femaleGenes.Count - femaleCount, femaleCount));

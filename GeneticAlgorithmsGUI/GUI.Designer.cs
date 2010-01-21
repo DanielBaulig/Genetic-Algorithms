@@ -41,7 +41,7 @@
             this.txt_Verlustrate = new System.Windows.Forms.TextBox();
             this.txt_Mutationsrate = new System.Windows.Forms.TextBox();
             this.txt_Duplikationsrate = new System.Windows.Forms.TextBox();
-            this.btn_Zuruecksetzten = new System.Windows.Forms.Button();
+            this.btn_Zuruecksetzen = new System.Windows.Forms.Button();
             this.lbl_Rundenazahl = new System.Windows.Forms.Label();
             this.txt_Rundenazahl = new System.Windows.Forms.TextBox();
             this.btn_Simuliere = new System.Windows.Forms.Button();
@@ -58,6 +58,7 @@
             this.txt_Treibstoff = new System.Windows.Forms.TextBox();
             this.txt_Gewicht = new System.Windows.Forms.TextBox();
             this.gb_Rundeninformationen = new System.Windows.Forms.GroupBox();
+            this.btn_Abspielen = new System.Windows.Forms.Button();
             this.dgv_Population = new System.Windows.Forms.DataGridView();
             this.cLaenge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cGene = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +71,6 @@
             this.chk_Laenge = new System.Windows.Forms.CheckBox();
             this.chk_AVGFitness = new System.Windows.Forms.CheckBox();
             this.pnl_Animation = new System.Windows.Forms.Panel();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Menue.SuspendLayout();
             this.gb_Simulation.SuspendLayout();
             this.gb_Rundeninformationen.SuspendLayout();
@@ -82,8 +82,7 @@
             // 
             this.mnu_Menue.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiToolStripMenuItem,
-            this.hilfeToolStripMenuItem,
-            this.testToolStripMenuItem});
+            this.hilfeToolStripMenuItem});
             this.mnu_Menue.Location = new System.Drawing.Point(0, 0);
             this.mnu_Menue.Name = "mnu_Menue";
             this.mnu_Menue.Size = new System.Drawing.Size(908, 24);
@@ -101,7 +100,7 @@
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -128,7 +127,7 @@
             this.gb_Simulation.Controls.Add(this.txt_Verlustrate);
             this.gb_Simulation.Controls.Add(this.txt_Mutationsrate);
             this.gb_Simulation.Controls.Add(this.txt_Duplikationsrate);
-            this.gb_Simulation.Controls.Add(this.btn_Zuruecksetzten);
+            this.gb_Simulation.Controls.Add(this.btn_Zuruecksetzen);
             this.gb_Simulation.Controls.Add(this.lbl_Rundenazahl);
             this.gb_Simulation.Controls.Add(this.txt_Rundenazahl);
             this.gb_Simulation.Controls.Add(this.btn_Simuliere);
@@ -184,7 +183,7 @@
             this.txt_Verlustrate.Name = "txt_Verlustrate";
             this.txt_Verlustrate.Size = new System.Drawing.Size(100, 20);
             this.txt_Verlustrate.TabIndex = 34;
-            this.txt_Verlustrate.Text = "0";
+            this.txt_Verlustrate.Text = "0,001";
             this.txt_Verlustrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_Verlustrate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
@@ -194,7 +193,7 @@
             this.txt_Mutationsrate.Name = "txt_Mutationsrate";
             this.txt_Mutationsrate.Size = new System.Drawing.Size(100, 20);
             this.txt_Mutationsrate.TabIndex = 33;
-            this.txt_Mutationsrate.Text = "0.01";
+            this.txt_Mutationsrate.Text = "0,01";
             this.txt_Mutationsrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_Mutationsrate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
@@ -204,19 +203,19 @@
             this.txt_Duplikationsrate.Name = "txt_Duplikationsrate";
             this.txt_Duplikationsrate.Size = new System.Drawing.Size(100, 20);
             this.txt_Duplikationsrate.TabIndex = 32;
-            this.txt_Duplikationsrate.Text = "0";
+            this.txt_Duplikationsrate.Text = "0,001";
             this.txt_Duplikationsrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_Duplikationsrate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
-            // btn_Zuruecksetzten
+            // btn_Zuruecksetzen
             // 
-            this.btn_Zuruecksetzten.Location = new System.Drawing.Point(482, 114);
-            this.btn_Zuruecksetzten.Name = "btn_Zuruecksetzten";
-            this.btn_Zuruecksetzten.Size = new System.Drawing.Size(86, 23);
-            this.btn_Zuruecksetzten.TabIndex = 31;
-            this.btn_Zuruecksetzten.Text = "Zurücksetzten";
-            this.btn_Zuruecksetzten.UseVisualStyleBackColor = true;
-            this.btn_Zuruecksetzten.Click += new System.EventHandler(this.btn_Zuruecksetzten_Click);
+            this.btn_Zuruecksetzen.Location = new System.Drawing.Point(482, 114);
+            this.btn_Zuruecksetzen.Name = "btn_Zuruecksetzen";
+            this.btn_Zuruecksetzen.Size = new System.Drawing.Size(86, 23);
+            this.btn_Zuruecksetzen.TabIndex = 31;
+            this.btn_Zuruecksetzen.Text = "Zurücksetzen";
+            this.btn_Zuruecksetzen.UseVisualStyleBackColor = true;
+            this.btn_Zuruecksetzen.Click += new System.EventHandler(this.btn_Zuruecksetzten_Click);
             // 
             // lbl_Rundenazahl
             // 
@@ -368,6 +367,7 @@
             // 
             // gb_Rundeninformationen
             // 
+            this.gb_Rundeninformationen.Controls.Add(this.btn_Abspielen);
             this.gb_Rundeninformationen.Controls.Add(this.dgv_Population);
             this.gb_Rundeninformationen.Location = new System.Drawing.Point(5, 450);
             this.gb_Rundeninformationen.Name = "gb_Rundeninformationen";
@@ -375,6 +375,17 @@
             this.gb_Rundeninformationen.TabIndex = 17;
             this.gb_Rundeninformationen.TabStop = false;
             this.gb_Rundeninformationen.Text = "Rundeninformationen";
+            // 
+            // btn_Abspielen
+            // 
+            this.btn_Abspielen.Enabled = false;
+            this.btn_Abspielen.Location = new System.Drawing.Point(510, 216);
+            this.btn_Abspielen.Name = "btn_Abspielen";
+            this.btn_Abspielen.Size = new System.Drawing.Size(75, 23);
+            this.btn_Abspielen.TabIndex = 19;
+            this.btn_Abspielen.Text = "Abspielen";
+            this.btn_Abspielen.UseVisualStyleBackColor = true;
+            this.btn_Abspielen.Click += new System.EventHandler(this.btn_Abspielen_Click);
             // 
             // dgv_Population
             // 
@@ -513,13 +524,6 @@
             this.pnl_Animation.TabIndex = 19;
             this.pnl_Animation.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Animation_Paint);
             // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.testToolStripMenuItem.Text = "Test";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
-            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,7 +576,7 @@
         private System.Windows.Forms.TextBox txt_Rundenazahl;
         private System.Windows.Forms.Button btn_Simuliere;
         private System.Windows.Forms.Label lbl_Rundenazahl;
-        private System.Windows.Forms.Button btn_Zuruecksetzten;
+        private System.Windows.Forms.Button btn_Zuruecksetzen;
         private System.Windows.Forms.DataGridViewTextBoxColumn cLaenge;
         private System.Windows.Forms.DataGridViewTextBoxColumn cGene;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFitness;
@@ -590,7 +594,7 @@
         private System.Windows.Forms.TextBox txt_Mutationsrate;
         private System.Windows.Forms.TextBox txt_Duplikationsrate;
         private System.Windows.Forms.Panel pnl_Animation;
-        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.Button btn_Abspielen;
 
     }
 }

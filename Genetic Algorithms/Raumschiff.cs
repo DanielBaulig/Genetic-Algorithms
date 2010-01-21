@@ -29,7 +29,7 @@ namespace GeneticAlgorithms
         /*
          *  treibstoff, gewicht und geschwindigkeit wird verändert.
          */
-        public void Beschleunigen(int schub)
+        public int Beschleunigen(int schub)
         {
             if (treibstoff > 0)
             {
@@ -37,21 +37,23 @@ namespace GeneticAlgorithms
                 {
                     this.geschwindigkeit += schub;
                     this.treibstoff -= schub;
+                    return schub;
                 }
                 else
                 {
                     this.geschwindigkeit += treibstoff;
+                    int tmpTreibstoff = this.treibstoff;
                     this.treibstoff = 0;
+                    return tmpTreibstoff;
                 }
             }
+            else
+                return 0;
         }
 
         public void SimuliereRunde()
         {
-            int tmpGewicht = 0;
-
-            tmpGewicht = gewicht + pilot.Gewicht;
-            geschwindigkeit -= tmpGewicht;
+            geschwindigkeit -= gewicht + pilot.Gewicht;
             hoehe += geschwindigkeit;
         }
 

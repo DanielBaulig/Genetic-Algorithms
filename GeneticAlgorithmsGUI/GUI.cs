@@ -22,13 +22,15 @@ namespace GeneticAlgorithmsGUI
         private MondlandungsSimulation MondSim = null;
         private IRecombinationProvider recombinationProvider = null;
         private ISelectionProvider selectionProvider = null;
-        private Assembly myAssembly = Assembly.GetExecutingAssembly();
-        private Stream strWeltraum = null;
-        private Stream strRaumschiff = null;
         private Bitmap _backBuffer = null;
         private Graphics gBuffer = null;
         private Bitmap bmpWeltraum = null;
+        private Bitmap bmpRaumschiffIntakt = null;
+        private Bitmap bmpRaumschiffKaputt = null;
         private Bitmap bmpRaumschiff = null;
+        private Bitmap bmpTriebwerk = null;
+
+        private int letzteHoehe = 0;
 
         private int turn = 0;
 
@@ -76,17 +78,21 @@ namespace GeneticAlgorithmsGUI
             cmb_Selektor.SelectedIndex = 1;
             selectionProvider = new PieCakeSelector();
 
-
+            Assembly myAssembly = Assembly.GetExecutingAssembly();
+            Stream stream = null;
             
-            strWeltraum = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Weltraum.bmp");
-            strRaumschiff = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Raumschiff.gif");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Weltraum.bmp");
+            bmpWeltraum = new Bitmap(stream);
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Raumschiff.gif");
+            bmpRaumschiffIntakt = new Bitmap(stream);
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Explosion.gif");
+            bmpRaumschiffKaputt = new Bitmap(stream);
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Triebwerk.gif");
+            bmpTriebwerk = new Bitmap(stream);
 
             _backBuffer = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
             gBuffer = Graphics.FromImage(_backBuffer);
             gBuffer.Clear(Color.White);
-
-            bmpWeltraum = new Bitmap(strWeltraum);
-            bmpRaumschiff = new Bitmap(strRaumschiff);
         }
 
         private void pnl_Animation_Paint(object sender, PaintEventArgs e)
@@ -95,10 +101,17 @@ namespace GeneticAlgorithmsGUI
             pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
         }
 
-        public void setzeRaumschiff(int hoehe)
+        public void setzeRaumschiff(int hoehe, int schub)
         {
             gBuffer.DrawImage(bmpWeltraum, 1, 1, 300, 700);
-            gBuffer.DrawImage(bmpRaumschiff, 100, hoehe, 100, 100);
+            int yPosition = 600/Convert.ToInt32(txt_Hoehe.Text);
+            yPosition *= hoehe;
+            yPosition = 600 - yPosition;
+
+            int skalierterSchub = schub * 2;
+
+            gBuffer.DrawImage(bmpTriebwerk, 150 - (skalierterSchub / 2), yPosition + 65, skalierterSchub, skalierterSchub);
+            gBuffer.DrawImage(bmpRaumschiff, 100, yPosition, 100, 100);
             //gBuffer.Dispose();
             pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
         }
@@ -200,6 +213,8 @@ namespace GeneticAlgorithmsGUI
             txt_Mutationsrate.Enabled = true;
             txt_Verlustrate.Enabled = true;
             txt_Duplikationsrate.Enabled = true;
+            dgv_Population.Rows.Clear();
+            btn_Abspielen.Enabled = false;
         }
 
         private void OnSimulationTurn(object sender, EventArgs e)
@@ -215,8 +230,10 @@ namespace GeneticAlgorithmsGUI
 
         private void btn_Simuliere_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             if (GenSim == null)
             {
+                btn_Abspielen.Enabled = true;
                 txt_Chromosomlaenge.Enabled = false;
                 cmb_Rekombinator.Enabled = false;
                 cmb_Selektor.Enabled = false;
@@ -230,6 +247,9 @@ namespace GeneticAlgorithmsGUI
                 MondSim = new MondlandungsSimulation(Convert.ToInt32(txt_Hoehe.Text), Convert.ToInt32(txt_Treibstoff.Text), Convert.ToInt32(txt_Gewicht.Text));
                 GenSim = new GeneticSimulation<IntGene>(100, Convert.ToInt32(txt_Chromosomlaenge.Text), MondSim, recombinationProvider, selectionProvider);
                 GenSim.SimulationTurn += OnSimulationTurn;
+                GenSim.GeneMutationRate = Convert.ToDouble(txt_Mutationsrate.Text);
+                GenSim.GeneDuplicationRate = Convert.ToDouble(txt_Duplikationsrate.Text);
+                GenSim.GeneDropRate = Convert.ToDouble(txt_Verlustrate.Text);
             }
             GenSim.RunSimulation(Convert.ToInt32(txt_Rundenazahl.Text));
 
@@ -241,10 +261,12 @@ namespace GeneticAlgorithmsGUI
                 dgv_Population.Rows[i].Cells[0].Value = GenSim[i].GeneCount.ToString();
                 dgv_Population.Rows[i].Cells[1].Value = GenSim[i].ToString();
                 dgv_Population.Rows[i].Cells[2].Value = GenSim[i].Fitness.ToString();
+                dgv_Population.Rows[i].Tag = GenSim[i];
             }
 
             zgc_Simulationsgraph.AxisChange();
-            zgc_Simulationsgraph.Invalidate();            
+            zgc_Simulationsgraph.Invalidate();
+            Cursor = Cursors.Default;
         }
 
         private void cmb_Selektor_SelectedIndexChanged(object sender, EventArgs e)
@@ -293,12 +315,68 @@ namespace GeneticAlgorithmsGUI
             {
                 
                 //System.Threading.Thread.Sleep(1);
-                setzeRaumschiff(i);
+                
             }
 
+        }
+
+        private void OnMondlandungsSimulationTurn(object sender, EventArgs e)
+        {
+            MondlandungsSimulationEventArgs mondlandungsArgs = e as MondlandungsSimulationEventArgs;
+            this.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Geschwindigkeit);
+            float floatHoehe = letzteHoehe;
+            if (mondlandungsArgs.Raumschiff.Geschwindigkeit  > 0)
+                while (floatHoehe < mondlandungsArgs.Raumschiff.Hoehe)
+                {
+                    floatHoehe += mondlandungsArgs.Raumschiff.Geschwindigkeit / 10.0f;
+                    System.Threading.Thread.Sleep(10);
+                    setzeRaumschiff(Convert.ToInt32(floatHoehe), mondlandungsArgs.Raumschiff.Geschwindigkeit);
+                }
+            else
+                while (floatHoehe > mondlandungsArgs.Raumschiff.Hoehe)
+                {
+                    floatHoehe += mondlandungsArgs.Raumschiff.Geschwindigkeit / 10.0f;
+                    System.Threading.Thread.Sleep(10);
+                    if (floatHoehe <= 0)
+                    {
+                        setzeRaumschiff(0, mondlandungsArgs.Schub);
+                    }
+                    else
+                        setzeRaumschiff(Convert.ToInt32(floatHoehe), mondlandungsArgs.Schub);
+                }
+            letzteHoehe = mondlandungsArgs.Raumschiff.Hoehe;
+
+            if (letzteHoehe <= 0)
+                if ((mondlandungsArgs.Raumschiff.Geschwindigkeit + 10) < 0)
+                {
+                    bmpRaumschiff = bmpRaumschiffKaputt;
+                    setzeRaumschiff(0, 0);
+                }
+                else
+                {
+                    setzeRaumschiff(0, 0);
+                }
+            
+            //setzeRaumschiff(letzteHoehe, mondlandungsArgs.Schub);
+            //System.Threading.Thread.Sleep(1);
+        }
+
+        private void btn_Abspielen_Click(object sender, EventArgs e)
+        {
+            if (dgv_Population.SelectedRows.Count > 0)
+            {
+                Cursor = Cursors.WaitCursor;
+                bmpRaumschiff = bmpRaumschiffIntakt;
+                letzteHoehe = Convert.ToInt32(txt_Hoehe.Text);
+                MondSim.SimulationTurn += OnMondlandungsSimulationTurn;
+                (dgv_Population.SelectedRows[0].Tag as Chromosome<IntGene>).computeFitness(MondSim);
+                MondSim.SimulationTurn -= OnMondlandungsSimulationTurn;
+                Cursor = Cursors.Default;
+            }
         }
 
     }
 
 }
 
+ 
