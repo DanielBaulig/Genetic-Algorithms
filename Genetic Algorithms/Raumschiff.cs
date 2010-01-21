@@ -11,19 +11,21 @@ namespace GeneticAlgorithms
         private int gewicht;
         private int geschwindigkeit;
         private int hoehe;
+        private bool nutzeRaumfahrerGewicht;
         private Raumfahrer pilot;
 
 
         /*
         *  Konstruktor
         */
-        public Raumschiff(Raumfahrer pilot, int startHoehe, int startTreibstoff, int startGewicht)
+        public Raumschiff(Raumfahrer pilot, int startHoehe, int startTreibstoff, int startGewicht, bool nutzeRaumfahrerGewicht)
         {
             this.pilot = pilot;
             this.hoehe = startHoehe;
             this.treibstoff = startTreibstoff;
             this.gewicht = startGewicht;
             this.geschwindigkeit = 0;
+            this.nutzeRaumfahrerGewicht = nutzeRaumfahrerGewicht;
         }
 
         /*
@@ -53,7 +55,9 @@ namespace GeneticAlgorithms
 
         public void SimuliereRunde()
         {
-            geschwindigkeit -= gewicht + pilot.Gewicht;
+            geschwindigkeit -= gewicht;
+            if (nutzeRaumfahrerGewicht)
+                geschwindigkeit -= pilot.Gewicht;
             hoehe += geschwindigkeit;
         }
 

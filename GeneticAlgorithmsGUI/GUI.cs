@@ -29,6 +29,7 @@ namespace GeneticAlgorithmsGUI
         private Bitmap bmpRaumschiffKaputt = null;
         private Bitmap bmpRaumschiff = null;
         private Bitmap bmpTriebwerk = null;
+        private bool simulationAbbrechen = false;
 
         private int letzteHoehe = 0;
 
@@ -97,16 +98,21 @@ namespace GeneticAlgorithmsGUI
 
         private void pnl_Animation_Paint(object sender, PaintEventArgs e)
         {
-            gBuffer.DrawImage(bmpWeltraum, 1, 1, 300, 700);
+            drawClearBackground();
+        }
+
+        private void drawClearBackground()
+        {
+            gBuffer.DrawImage(bmpWeltraum, 1, 1, 300, 650);
             pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
         }
 
         public void setzeRaumschiff(int hoehe, int schub)
         {
-            gBuffer.DrawImage(bmpWeltraum, 1, 1, 300, 700);
-            int yPosition = 600/Convert.ToInt32(txt_Hoehe.Text);
+            gBuffer.DrawImage(bmpWeltraum, 0, 0, 300, 650);
+            int yPosition = 550/Convert.ToInt32(txt_Hoehe.Text);
             yPosition *= hoehe;
-            yPosition = 600 - yPosition;
+            yPosition = 550 - yPosition;
 
             int skalierterSchub = schub * 2;
 
@@ -130,11 +136,12 @@ namespace GeneticAlgorithmsGUI
         {
             try
             {
-                Convert.ToInt32((sender as TextBox).Text);
+                if (Convert.ToInt32((sender as TextBox).Text) < 0)
+                    throw new FormatException();
             }
             catch (FormatException exception)
             {
-                MessageBox.Show("Kein Ganzzahlwert!");
+                MessageBox.Show("Kein positiver Ganzzahlwert!");
                 (sender as TextBox).SelectAll();
                 e.Cancel = true;
             }
@@ -144,11 +151,12 @@ namespace GeneticAlgorithmsGUI
         {
             try
             {
-                Convert.ToDouble((sender as TextBox).Text);
+                if (Convert.ToDouble((sender as TextBox).Text) < 0)
+                    throw new FormatException();
             }
             catch (FormatException exception)
             {
-                MessageBox.Show("Kein Gleitkommawert!");
+                MessageBox.Show("Kein positiver Gleitkommawert!");
                 (sender as TextBox).SelectAll();
                 e.Cancel = true;
             }
@@ -215,17 +223,36 @@ namespace GeneticAlgorithmsGUI
             txt_Duplikationsrate.Enabled = true;
             dgv_Population.Rows.Clear();
             btn_Abspielen.Enabled = false;
+            //zgc_Simulationsgraph.GraphPane.CurveList.Clear();
+            zgc_Simulationsgraph.GraphPane.GraphObjList.Clear();
+            zgc_Simulationsgraph.AxisChange();
+            zgc_Simulationsgraph.Invalidate();
+            drawClearBackground();
+            GraphPane p = zgc_Simulationsgraph.GraphPane;
+            p.YAxisList[1].Scale.Max = 10;
+            p.YAxisList[1].Scale.MaxAuto = true;
         }
 
         private void OnSimulationTurn(object sender, EventArgs e)
         {
             turn ++;
+            if (simulationAbbrechen)
+            {
+                GenSim.AbortSimulation();
+                simulationAbbrechen = false;
+            }
             this.avgFitnessList.Add(turn, GenSim.AverageFitness);
             this.avgLengthList.Add(turn, GenSim.AverageChromosomeLength);
             if (zgc_Simulationsgraph.GraphPane.YAxisList[1].Scale.Max < GenSim.AverageChromosomeLength)
                 zgc_Simulationsgraph.GraphPane.YAxisList[1].Scale.Max = GenSim.AverageChromosomeLength + 1;
             this.maxFitnessList.Add(turn, GenSim.MostSuccessfullIndividual.Fitness);
             this.minFitnessList.Add(turn, GenSim.LeasSuccessfullIndividual.Fitness);
+            if (turn % 10 == 0 && chk_Live.Checked)
+            {
+                zgc_Simulationsgraph.AxisChange();
+                zgc_Simulationsgraph.Invalidate();
+            }
+            Application.DoEvents();
         }
 
         private void btn_Simuliere_Click(object sender, EventArgs e)
@@ -244,14 +271,26 @@ namespace GeneticAlgorithmsGUI
                 txt_Verlustrate.Enabled = false;
                 txt_Duplikationsrate.Enabled = false;
                 IntGene.MaxValue = Convert.ToInt32(txt_Treibstoff.Text);
-                MondSim = new MondlandungsSimulation(Convert.ToInt32(txt_Hoehe.Text), Convert.ToInt32(txt_Treibstoff.Text), Convert.ToInt32(txt_Gewicht.Text));
+                MondSim = new MondlandungsSimulation(Convert.ToInt32(txt_Hoehe.Text), Convert.ToInt32(txt_Treibstoff.Text), Convert.ToInt32(txt_Gewicht.Text), tsmi_RaumfahrerGewicht.Checked);
                 GenSim = new GeneticSimulation<IntGene>(100, Convert.ToInt32(txt_Chromosomlaenge.Text), MondSim, recombinationProvider, selectionProvider);
                 GenSim.SimulationTurn += OnSimulationTurn;
                 GenSim.GeneMutationRate = Convert.ToDouble(txt_Mutationsrate.Text);
                 GenSim.GeneDuplicationRate = Convert.ToDouble(txt_Duplikationsrate.Text);
                 GenSim.GeneDropRate = Convert.ToDouble(txt_Verlustrate.Text);
             }
-            GenSim.RunSimulation(Convert.ToInt32(txt_Rundenazahl.Text));
+            if (sender == btn_AutoSim)
+            {
+                float fitnessGrenze = Convert.ToSingle(txt_Fitness.Text);
+                float startFitness = GenSim.AverageFitness;
+                while (fitnessGrenze + startFitness > GenSim.AverageFitness && !simulationAbbrechen)
+                {
+                    Application.DoEvents();
+                    GenSim.RunSimulation();
+                }
+                simulationAbbrechen = false;
+            }
+            else
+                GenSim.RunSimulation(Convert.ToInt32(txt_Rundenazahl.Text));
 
             dgv_Population.Rows.Clear();
 
@@ -306,24 +345,23 @@ namespace GeneticAlgorithmsGUI
 
         private void GUI_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void testToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            for (int i = 10; i < 600; i+=5)
-            {
-                
-                //System.Threading.Thread.Sleep(1);
-                
-            }
-
+            /*
+            Width = Screen.PrimaryScreen.Bounds.Width;
+            Height = Screen.PrimaryScreen.Bounds.Height;
+            Left = 0;
+            Top = 0;
+             */
         }
 
         private void OnMondlandungsSimulationTurn(object sender, EventArgs e)
         {
             MondlandungsSimulationEventArgs mondlandungsArgs = e as MondlandungsSimulationEventArgs;
-            this.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Geschwindigkeit);
+            //this.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Geschwindigkeit);
+            lbl_AktGeschwindigkeit.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Geschwindigkeit);
+            lbl_AktHoehe.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Hoehe);
+            lbl_AktSchub.Text = Convert.ToString(mondlandungsArgs.Schub);
+            lbl_AktTank.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Treibstoff);
+            Application.DoEvents();
             float floatHoehe = letzteHoehe;
             if (mondlandungsArgs.Raumschiff.Geschwindigkeit  > 0)
                 while (floatHoehe < mondlandungsArgs.Raumschiff.Hoehe)
@@ -373,6 +411,26 @@ namespace GeneticAlgorithmsGUI
                 MondSim.SimulationTurn -= OnMondlandungsSimulationTurn;
                 Cursor = Cursors.Default;
             }
+        }
+
+        private void lbl_Rundenazahl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_SimAbbrechen_Click(object sender, EventArgs e)
+        {
+            simulationAbbrechen = true;
+        }
+
+        private void gewichtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (sender as ToolStripMenuItem).Checked = !(sender as ToolStripMenuItem).Checked;
+        }
+
+        private void chk_Live_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

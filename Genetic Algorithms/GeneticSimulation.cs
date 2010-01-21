@@ -45,6 +45,7 @@ namespace GeneticAlgorithms
         private Chromosome<Gene> mostSuccessfullIndividual;
         private Chromosome<Gene> leastSuccessfullIndividual;
         protected Random randomizer;
+        private bool abort = false;
 
         protected ArrayList population;
 
@@ -72,6 +73,11 @@ namespace GeneticAlgorithms
             {
                 return population[index] as Chromosome<Gene>;
             }
+        }
+
+        public void AbortSimulation()
+        {
+            abort = true;
         }
 
         public int PoppulationSize
@@ -264,7 +270,14 @@ namespace GeneticAlgorithms
         public void RunSimulation(int turns)
         {
             for (int i = 0; i < turns; i++)
+            {
                 this.RunSimulation();
+                if (abort)
+                {
+                    abort = false;
+                    break;
+                }
+            }
         }
     }
 }

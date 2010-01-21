@@ -289,7 +289,7 @@ namespace GeneticAlgorithmsTest
         {
             ArrayList kommandos = new ArrayList(0);
             Raumfahrer pilot = new Raumfahrer(kommandos);
-            Raumschiff schiff = new Raumschiff(pilot, 100, 100, 100);
+            Raumschiff schiff = new Raumschiff(pilot, 100, 100, 100, true);
 
             Assert.AreEqual(100, schiff.Treibstoff);
             Assert.AreEqual(100, schiff.Hoehe);
@@ -305,7 +305,7 @@ namespace GeneticAlgorithmsTest
 
             Raumfahrer pilot = new Raumfahrer(kommandos);
             Assert.AreEqual(10, pilot.Gewicht);
-            Raumschiff schiff = new Raumschiff(pilot, 100, 100, 1);
+            Raumschiff schiff = new Raumschiff(pilot, 100, 100, 1, true);
             pilot.SteuereRaumschiff(schiff);
             Assert.AreEqual(100-1, schiff.Treibstoff);
             Assert.AreEqual(1, schiff.Geschwindigkeit);
@@ -322,7 +322,7 @@ namespace GeneticAlgorithmsTest
             for (int i = 0; i < 10; i++)
                 kommandos.Add(new IntGene(1));
 
-            MondlandungsSimulation sim = new MondlandungsSimulation(100, 100, 1);
+            MondlandungsSimulation sim = new MondlandungsSimulation(100, 100, 1, true);
             Assert.AreEqual(10, sim.TestComputeFitness(kommandos));
 
         }

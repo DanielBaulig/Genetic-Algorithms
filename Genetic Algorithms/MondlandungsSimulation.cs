@@ -40,15 +40,16 @@ namespace GeneticAlgorithms
         private int startHoehe;
         private int startTreibstoff;
         private int raumschiffGewicht;
+        private bool nutzeRaumfahrerGewicht;
 
         public OnSimulationTurn SimulationTurn;
 
-        public MondlandungsSimulation(int raumschiffStartHoehe, int raumschiffStartTreibstoff, int raumschiffStartGewicht)
+        public MondlandungsSimulation(int raumschiffStartHoehe, int raumschiffStartTreibstoff, int raumschiffStartGewicht, bool nutzeRaumfahrerGewicht)
         {
             startHoehe = raumschiffStartHoehe;
             startTreibstoff = raumschiffStartTreibstoff;
             raumschiffGewicht = raumschiffStartGewicht;
-            
+            this.nutzeRaumfahrerGewicht = nutzeRaumfahrerGewicht;
         }
 
         #region IFitnessFunctionProvider Member
@@ -57,7 +58,7 @@ namespace GeneticAlgorithms
         {
             float fitness = 0.0f;
             Raumfahrer pilot = new Raumfahrer(genes);
-            Raumschiff raumschiff = new Raumschiff(pilot, startHoehe, startTreibstoff, raumschiffGewicht);
+            Raumschiff raumschiff = new Raumschiff(pilot, startHoehe, startTreibstoff, raumschiffGewicht, nutzeRaumfahrerGewicht);
             int schub = 0;
             while (raumschiff.Hoehe > 0)
             {
