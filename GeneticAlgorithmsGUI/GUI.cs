@@ -28,7 +28,10 @@ namespace GeneticAlgorithmsGUI
         private Bitmap bmpRaumschiffIntakt = null;
         private Bitmap bmpRaumschiffKaputt = null;
         private Bitmap bmpRaumschiff = null;
+        private Bitmap bmpRaumschiffLeer = null;
         private Bitmap bmpTriebwerk = null;
+        private Bitmap bmpRaumfahrer = null;
+        private Bitmap bmpFahne = null;
         private bool simulationAbbrechen = false;
 
         private int letzteHoehe = 0;
@@ -90,6 +93,12 @@ namespace GeneticAlgorithmsGUI
             bmpRaumschiffKaputt = new Bitmap(stream);
             stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Triebwerk.gif");
             bmpTriebwerk = new Bitmap(stream);
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Raumschiff_leer.gif");
+            bmpRaumschiffLeer = new Bitmap(stream);
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Raumfahrer.gif");
+            bmpRaumfahrer = new Bitmap(stream);
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Fahne.png");
+            bmpFahne = new Bitmap(stream);
 
             _backBuffer = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
             gBuffer = Graphics.FromImage(_backBuffer);
@@ -354,6 +363,13 @@ namespace GeneticAlgorithmsGUI
              */
         }
 
+        private void setzeRaumfahrer(int x)
+        {
+            setzeRaumschiff(0, 0);
+            gBuffer.DrawImage(bmpRaumfahrer, x, 590, 25, 50);
+            pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
+        }
+
         private void OnMondlandungsSimulationTurn(object sender, EventArgs e)
         {
             MondlandungsSimulationEventArgs mondlandungsArgs = e as MondlandungsSimulationEventArgs;
@@ -394,6 +410,29 @@ namespace GeneticAlgorithmsGUI
                 else
                 {
                     setzeRaumschiff(0, 0);
+                    System.Threading.Thread.Sleep(500);
+                    bmpRaumschiff = bmpRaumschiffLeer;
+                    setzeRaumschiff(0, 0);
+                    System.Threading.Thread.Sleep(500);
+                    setzeRaumfahrer(100);
+                    System.Threading.Thread.Sleep(100);
+                    setzeRaumfahrer(110);
+                    System.Threading.Thread.Sleep(100);
+                    setzeRaumfahrer(120);
+                    System.Threading.Thread.Sleep(100);
+                    setzeRaumfahrer(130);
+                    System.Threading.Thread.Sleep(100);
+                    setzeRaumfahrer(140);
+                    System.Threading.Thread.Sleep(100);
+                    setzeRaumfahrer(150);
+                    System.Threading.Thread.Sleep(100);
+                    setzeRaumfahrer(160);
+                    System.Threading.Thread.Sleep(100);
+                    setzeRaumfahrer(170);
+                    System.Threading.Thread.Sleep(100);
+                    gBuffer.DrawImage(bmpFahne, 200, 560, 37, 75);
+                    pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
+
                 }
             
             //setzeRaumschiff(letzteHoehe, mondlandungsArgs.Schub);

@@ -91,9 +91,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Raumschiff.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Weltraum.bmp" />
   </ItemGroup>
   <ItemGroup>
@@ -103,7 +100,11 @@
     <EmbeddedResource Include="Explosion.gif" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Fahne.png" />
     <Content Include="Mond.ico" />
+    <EmbeddedResource Include="Raumfahrer.gif" />
+    <EmbeddedResource Include="Raumschiff.gif" />
+    <EmbeddedResource Include="Raumschiff_leer.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

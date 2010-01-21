@@ -67,8 +67,8 @@ namespace GeneticAlgorithms
                 if (SimulationTurn != null)
                     SimulationTurn(this, new MondlandungsSimulationEventArgs(raumschiff, schub));
             }
-            if (SimulationTurn != null)
-                SimulationTurn(this, new MondlandungsSimulationEventArgs(raumschiff, schub));
+            /*if (SimulationTurn != null)
+                SimulationTurn(this, new MondlandungsSimulationEventArgs(raumschiff, schub));*/
             // Convert.ToInt32(Math.Sqrt((raumschiff.Hoehe * raumschiff.Hoehe))) +  
             /*int toleranz = Convert.ToInt32(Math.Sqrt((raumschiff.Geschwindigkeit * raumschiff.Geschwindigkeit))) - 5;
             if (toleranz < 0)

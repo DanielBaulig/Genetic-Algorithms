@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
             this.mnu_Menue = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_Einstellungen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_RaumfahrerGewicht = new System.Windows.Forms.ToolStripMenuItem();
+            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.überToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gb_Simulation = new System.Windows.Forms.GroupBox();
@@ -87,12 +87,13 @@
             this.lbl_AktSchub = new System.Windows.Forms.Label();
             this.lbl_AnzSchub = new System.Windows.Forms.Label();
             this.lbl_AktTank = new System.Windows.Forms.Label();
-            this.lbl_AnzTank = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mnu_Menue.SuspendLayout();
             this.gb_Simulation.SuspendLayout();
             this.gb_Rundeninformationen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Population)).BeginInit();
             this.gb_Simulationsiverlauf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mnu_Menue
@@ -116,19 +117,12 @@
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
             // 
-            // beendenToolStripMenuItem
-            // 
-            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.beendenToolStripMenuItem.Text = "Beenden";
-            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
-            // 
             // tsmi_Einstellungen
             // 
             this.tsmi_Einstellungen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_RaumfahrerGewicht});
             this.tsmi_Einstellungen.Name = "tsmi_Einstellungen";
-            this.tsmi_Einstellungen.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_Einstellungen.Size = new System.Drawing.Size(145, 22);
             this.tsmi_Einstellungen.Text = "Einstellungen";
             // 
             // tsmi_RaumfahrerGewicht
@@ -137,6 +131,13 @@
             this.tsmi_RaumfahrerGewicht.Size = new System.Drawing.Size(182, 22);
             this.tsmi_RaumfahrerGewicht.Text = "Raumfahrer Gewicht";
             this.tsmi_RaumfahrerGewicht.Click += new System.EventHandler(this.gewichtToolStripMenuItem_Click);
+            // 
+            // beendenToolStripMenuItem
+            // 
+            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.beendenToolStripMenuItem.Text = "Beenden";
+            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
             // hilfeToolStripMenuItem
             // 
@@ -641,22 +642,22 @@
             // lbl_AnzGeschwindigkeit
             // 
             this.lbl_AnzGeschwindigkeit.AutoSize = true;
-            this.lbl_AnzGeschwindigkeit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AnzGeschwindigkeit.Location = new System.Drawing.Point(816, 18);
+            this.lbl_AnzGeschwindigkeit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_AnzGeschwindigkeit.Location = new System.Drawing.Point(830, 9);
             this.lbl_AnzGeschwindigkeit.Name = "lbl_AnzGeschwindigkeit";
-            this.lbl_AnzGeschwindigkeit.Size = new System.Drawing.Size(41, 16);
+            this.lbl_AnzGeschwindigkeit.Size = new System.Drawing.Size(31, 26);
             this.lbl_AnzGeschwindigkeit.TabIndex = 20;
-            this.lbl_AnzGeschwindigkeit.Text = "km/h";
+            this.lbl_AnzGeschwindigkeit.Text = "v:";
             // 
             // lbl_AnzHoehe
             // 
             this.lbl_AnzHoehe.AutoSize = true;
-            this.lbl_AnzHoehe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_AnzHoehe.Location = new System.Drawing.Point(717, 19);
+            this.lbl_AnzHoehe.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.lbl_AnzHoehe.Location = new System.Drawing.Point(737, 9);
             this.lbl_AnzHoehe.Name = "lbl_AnzHoehe";
-            this.lbl_AnzHoehe.Size = new System.Drawing.Size(45, 16);
+            this.lbl_AnzHoehe.Size = new System.Drawing.Size(32, 26);
             this.lbl_AnzHoehe.TabIndex = 21;
-            this.lbl_AnzHoehe.Text = "Höhe";
+            this.lbl_AnzHoehe.Text = "h:";
             // 
             // lbl_AktHoehe
             // 
@@ -682,12 +683,12 @@
             // lbl_AnzSchub
             // 
             this.lbl_AnzSchub.AutoSize = true;
-            this.lbl_AnzSchub.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_AnzSchub.Location = new System.Drawing.Point(905, 19);
+            this.lbl_AnzSchub.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.lbl_AnzSchub.Location = new System.Drawing.Point(928, 9);
             this.lbl_AnzSchub.Name = "lbl_AnzSchub";
-            this.lbl_AnzSchub.Size = new System.Drawing.Size(51, 16);
+            this.lbl_AnzSchub.Size = new System.Drawing.Size(32, 26);
             this.lbl_AnzSchub.TabIndex = 0;
-            this.lbl_AnzSchub.Text = "Schub";
+            this.lbl_AnzSchub.Text = "a:";
             // 
             // lbl_AktTank
             // 
@@ -700,23 +701,23 @@
             this.lbl_AktTank.TabIndex = 24;
             this.lbl_AktTank.Text = "0";
             // 
-            // lbl_AnzTank
+            // pictureBox1
             // 
-            this.lbl_AnzTank.AutoSize = true;
-            this.lbl_AnzTank.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_AnzTank.Location = new System.Drawing.Point(620, 18);
-            this.lbl_AnzTank.Name = "lbl_AnzTank";
-            this.lbl_AnzTank.Size = new System.Drawing.Size(43, 16);
-            this.lbl_AnzTank.TabIndex = 23;
-            this.lbl_AnzTank.Text = "Tank";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(627, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 696);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_AktTank);
-            this.Controls.Add(this.lbl_AnzTank);
             this.Controls.Add(this.lbl_AnzSchub);
             this.Controls.Add(this.lbl_AktSchub);
             this.Controls.Add(this.lbl_AktHoehe);
@@ -733,6 +734,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnu_Menue;
             this.Name = "GUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mondlandung";
             this.Load += new System.EventHandler(this.GUI_Load);
             this.mnu_Menue.ResumeLayout(false);
@@ -743,6 +745,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Population)).EndInit();
             this.gb_Simulationsiverlauf.ResumeLayout(false);
             this.gb_Simulationsiverlauf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -806,8 +809,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_Einstellungen;
         private System.Windows.Forms.ToolStripMenuItem tsmi_RaumfahrerGewicht;
         private System.Windows.Forms.Label lbl_AktTank;
-        private System.Windows.Forms.Label lbl_AnzTank;
         private System.Windows.Forms.CheckBox chk_Live;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }
