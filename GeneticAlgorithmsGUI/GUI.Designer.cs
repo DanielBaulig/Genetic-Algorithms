@@ -29,12 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
             this.mnu_Menue = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_Einstellungen = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_RaumfahrerGewicht = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.überToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gb_Simulation = new System.Windows.Forms.GroupBox();
+            this.btn_SimAbbrechen = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_Fitness = new System.Windows.Forms.TextBox();
             this.btn_AutoSim = new System.Windows.Forms.Button();
             this.lbl_Verlustrate = new System.Windows.Forms.Label();
             this.lbl_Mutationsrate = new System.Windows.Forms.Label();
@@ -66,6 +72,7 @@
             this.cGene = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cFitness = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_Simulationsiverlauf = new System.Windows.Forms.GroupBox();
+            this.chk_Live = new System.Windows.Forms.CheckBox();
             this.chk_maxFitness = new System.Windows.Forms.CheckBox();
             this.chk_minFitness = new System.Windows.Forms.CheckBox();
             this.chk_Variation = new System.Windows.Forms.CheckBox();
@@ -79,14 +86,8 @@
             this.lbl_AktHoehe = new System.Windows.Forms.Label();
             this.lbl_AktSchub = new System.Windows.Forms.Label();
             this.lbl_AnzSchub = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_Fitness = new System.Windows.Forms.TextBox();
-            this.btn_SimAbbrechen = new System.Windows.Forms.Button();
-            this.tsmi_Einstellungen = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_RaumfahrerGewicht = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_AktTank = new System.Windows.Forms.Label();
             this.lbl_AnzTank = new System.Windows.Forms.Label();
-            this.chk_Live = new System.Windows.Forms.CheckBox();
             this.mnu_Menue.SuspendLayout();
             this.gb_Simulation.SuspendLayout();
             this.gb_Rundeninformationen.SuspendLayout();
@@ -112,28 +113,43 @@
             this.beendenToolStripMenuItem,
             this.tsmi_Einstellungen});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
+            // 
+            // tsmi_Einstellungen
+            // 
+            this.tsmi_Einstellungen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_RaumfahrerGewicht});
+            this.tsmi_Einstellungen.Name = "tsmi_Einstellungen";
+            this.tsmi_Einstellungen.Size = new System.Drawing.Size(145, 22);
+            this.tsmi_Einstellungen.Text = "Einstellungen";
+            // 
+            // tsmi_RaumfahrerGewicht
+            // 
+            this.tsmi_RaumfahrerGewicht.Name = "tsmi_RaumfahrerGewicht";
+            this.tsmi_RaumfahrerGewicht.Size = new System.Drawing.Size(182, 22);
+            this.tsmi_RaumfahrerGewicht.Text = "Raumfahrer Gewicht";
+            this.tsmi_RaumfahrerGewicht.Click += new System.EventHandler(this.gewichtToolStripMenuItem_Click);
             // 
             // hilfeToolStripMenuItem
             // 
             this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.überToolStripMenuItem});
             this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.hilfeToolStripMenuItem.Text = "Hilfe";
             // 
             // überToolStripMenuItem
             // 
             this.überToolStripMenuItem.Name = "überToolStripMenuItem";
-            this.überToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.überToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.überToolStripMenuItem.Text = "Über";
             this.überToolStripMenuItem.Click += new System.EventHandler(this.überToolStripMenuItem_Click);
             // 
@@ -171,6 +187,35 @@
             this.gb_Simulation.TabIndex = 16;
             this.gb_Simulation.TabStop = false;
             this.gb_Simulation.Text = "Simulationsparameter";
+            // 
+            // btn_SimAbbrechen
+            // 
+            this.btn_SimAbbrechen.Location = new System.Drawing.Point(561, 67);
+            this.btn_SimAbbrechen.Name = "btn_SimAbbrechen";
+            this.btn_SimAbbrechen.Size = new System.Drawing.Size(86, 23);
+            this.btn_SimAbbrechen.TabIndex = 41;
+            this.btn_SimAbbrechen.Text = "Abbrechen";
+            this.btn_SimAbbrechen.UseVisualStyleBackColor = true;
+            this.btn_SimAbbrechen.Click += new System.EventHandler(this.btn_SimAbbrechen_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(558, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Fitness";
+            // 
+            // txt_Fitness
+            // 
+            this.txt_Fitness.Location = new System.Drawing.Point(604, 20);
+            this.txt_Fitness.Name = "txt_Fitness";
+            this.txt_Fitness.Size = new System.Drawing.Size(43, 20);
+            this.txt_Fitness.TabIndex = 39;
+            this.txt_Fitness.Text = "0,3";
+            this.txt_Fitness.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_Fitness.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
             // btn_AutoSim
             // 
@@ -490,6 +535,18 @@
             this.gb_Simulationsiverlauf.TabStop = false;
             this.gb_Simulationsiverlauf.Text = "Simulationsverlauf";
             // 
+            // chk_Live
+            // 
+            this.chk_Live.AutoSize = true;
+            this.chk_Live.Location = new System.Drawing.Point(574, 337);
+            this.chk_Live.Name = "chk_Live";
+            this.chk_Live.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.chk_Live.Size = new System.Drawing.Size(94, 17);
+            this.chk_Live.TabIndex = 6;
+            this.chk_Live.Text = "Live Zeichnen";
+            this.chk_Live.UseVisualStyleBackColor = true;
+            this.chk_Live.CheckedChanged += new System.EventHandler(this.chk_Live_CheckedChanged);
+            // 
             // chk_maxFitness
             // 
             this.chk_maxFitness.AutoSize = true;
@@ -632,50 +689,6 @@
             this.lbl_AnzSchub.TabIndex = 0;
             this.lbl_AnzSchub.Text = "Schub";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(558, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Fitness";
-            // 
-            // txt_Fitness
-            // 
-            this.txt_Fitness.Location = new System.Drawing.Point(604, 20);
-            this.txt_Fitness.Name = "txt_Fitness";
-            this.txt_Fitness.Size = new System.Drawing.Size(43, 20);
-            this.txt_Fitness.TabIndex = 39;
-            this.txt_Fitness.Text = "0,3";
-            this.txt_Fitness.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Fitness.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
-            // 
-            // btn_SimAbbrechen
-            // 
-            this.btn_SimAbbrechen.Location = new System.Drawing.Point(561, 67);
-            this.btn_SimAbbrechen.Name = "btn_SimAbbrechen";
-            this.btn_SimAbbrechen.Size = new System.Drawing.Size(86, 23);
-            this.btn_SimAbbrechen.TabIndex = 41;
-            this.btn_SimAbbrechen.Text = "Abbrechen";
-            this.btn_SimAbbrechen.UseVisualStyleBackColor = true;
-            this.btn_SimAbbrechen.Click += new System.EventHandler(this.btn_SimAbbrechen_Click);
-            // 
-            // tsmi_Einstellungen
-            // 
-            this.tsmi_Einstellungen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_RaumfahrerGewicht});
-            this.tsmi_Einstellungen.Name = "tsmi_Einstellungen";
-            this.tsmi_Einstellungen.Size = new System.Drawing.Size(152, 22);
-            this.tsmi_Einstellungen.Text = "Einstellungen";
-            // 
-            // tsmi_RaumfahrerGewicht
-            // 
-            this.tsmi_RaumfahrerGewicht.Name = "tsmi_RaumfahrerGewicht";
-            this.tsmi_RaumfahrerGewicht.Size = new System.Drawing.Size(183, 22);
-            this.tsmi_RaumfahrerGewicht.Text = "Raumfahrer Gewicht";
-            this.tsmi_RaumfahrerGewicht.Click += new System.EventHandler(this.gewichtToolStripMenuItem_Click);
-            // 
             // lbl_AktTank
             // 
             this.lbl_AktTank.AutoSize = true;
@@ -697,18 +710,6 @@
             this.lbl_AnzTank.TabIndex = 23;
             this.lbl_AnzTank.Text = "Tank";
             // 
-            // chk_Live
-            // 
-            this.chk_Live.AutoSize = true;
-            this.chk_Live.Location = new System.Drawing.Point(574, 337);
-            this.chk_Live.Name = "chk_Live";
-            this.chk_Live.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chk_Live.Size = new System.Drawing.Size(94, 17);
-            this.chk_Live.TabIndex = 6;
-            this.chk_Live.Text = "Live Zeichnen";
-            this.chk_Live.UseVisualStyleBackColor = true;
-            this.chk_Live.CheckedChanged += new System.EventHandler(this.chk_Live_CheckedChanged);
-            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -729,6 +730,7 @@
             this.Controls.Add(this.mnu_Menue);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnu_Menue;
             this.Name = "GUI";
             this.Text = "Mondlandung";
