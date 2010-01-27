@@ -65,7 +65,6 @@
             this.txt_Treibstoff = new System.Windows.Forms.TextBox();
             this.txt_Gewicht = new System.Windows.Forms.TextBox();
             this.gb_Rundeninformationen = new System.Windows.Forms.GroupBox();
-            this.btn_Abbrechen = new System.Windows.Forms.Button();
             this.btn_Abspielen = new System.Windows.Forms.Button();
             this.dgv_Population = new System.Windows.Forms.DataGridView();
             this.cLaenge = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,7 +113,7 @@
             this.tsmi_Einstellungen,
             this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
             // 
             // tsmi_Einstellungen
@@ -122,20 +121,20 @@
             this.tsmi_Einstellungen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_RaumfahrerGewicht});
             this.tsmi_Einstellungen.Name = "tsmi_Einstellungen";
-            this.tsmi_Einstellungen.Size = new System.Drawing.Size(148, 22);
+            this.tsmi_Einstellungen.Size = new System.Drawing.Size(145, 22);
             this.tsmi_Einstellungen.Text = "Einstellungen";
             // 
             // tsmi_RaumfahrerGewicht
             // 
             this.tsmi_RaumfahrerGewicht.Name = "tsmi_RaumfahrerGewicht";
-            this.tsmi_RaumfahrerGewicht.Size = new System.Drawing.Size(183, 22);
+            this.tsmi_RaumfahrerGewicht.Size = new System.Drawing.Size(182, 22);
             this.tsmi_RaumfahrerGewicht.Text = "Raumfahrer Gewicht";
             this.tsmi_RaumfahrerGewicht.Click += new System.EventHandler(this.gewichtToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -144,13 +143,13 @@
             this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.überToolStripMenuItem});
             this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.hilfeToolStripMenuItem.Text = "Hilfe";
             // 
             // überToolStripMenuItem
             // 
             this.überToolStripMenuItem.Name = "überToolStripMenuItem";
-            this.überToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.überToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.überToolStripMenuItem.Text = "Über";
             this.überToolStripMenuItem.Click += new System.EventHandler(this.überToolStripMenuItem_Click);
             // 
@@ -261,7 +260,7 @@
             this.txt_Verlustrate.Name = "txt_Verlustrate";
             this.txt_Verlustrate.Size = new System.Drawing.Size(55, 20);
             this.txt_Verlustrate.TabIndex = 34;
-            this.txt_Verlustrate.Text = "0,001";
+            this.txt_Verlustrate.Text = "0,000";
             this.txt_Verlustrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_Verlustrate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
@@ -271,7 +270,7 @@
             this.txt_Mutationsrate.Name = "txt_Mutationsrate";
             this.txt_Mutationsrate.Size = new System.Drawing.Size(55, 20);
             this.txt_Mutationsrate.TabIndex = 33;
-            this.txt_Mutationsrate.Text = "0,01";
+            this.txt_Mutationsrate.Text = "0,010";
             this.txt_Mutationsrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_Mutationsrate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
@@ -281,7 +280,7 @@
             this.txt_Duplikationsrate.Name = "txt_Duplikationsrate";
             this.txt_Duplikationsrate.Size = new System.Drawing.Size(55, 20);
             this.txt_Duplikationsrate.TabIndex = 32;
-            this.txt_Duplikationsrate.Text = "0,001";
+            this.txt_Duplikationsrate.Text = "0,000";
             this.txt_Duplikationsrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_Duplikationsrate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
@@ -303,7 +302,6 @@
             this.lbl_Rundenazahl.Size = new System.Drawing.Size(45, 13);
             this.lbl_Rundenazahl.TabIndex = 30;
             this.lbl_Rundenazahl.Text = "Runden";
-            this.lbl_Rundenazahl.Click += new System.EventHandler(this.lbl_Rundenazahl_Click);
             // 
             // txt_Rundenazahl
             // 
@@ -446,7 +444,6 @@
             // 
             // gb_Rundeninformationen
             // 
-            this.gb_Rundeninformationen.Controls.Add(this.btn_Abbrechen);
             this.gb_Rundeninformationen.Controls.Add(this.btn_Abspielen);
             this.gb_Rundeninformationen.Controls.Add(this.dgv_Population);
             this.gb_Rundeninformationen.Location = new System.Drawing.Point(5, 510);
@@ -456,20 +453,10 @@
             this.gb_Rundeninformationen.TabStop = false;
             this.gb_Rundeninformationen.Text = "Rundeninformationen";
             // 
-            // btn_Abbrechen
-            // 
-            this.btn_Abbrechen.Enabled = false;
-            this.btn_Abbrechen.Location = new System.Drawing.Point(591, 151);
-            this.btn_Abbrechen.Name = "btn_Abbrechen";
-            this.btn_Abbrechen.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abbrechen.TabIndex = 20;
-            this.btn_Abbrechen.Text = "Abbrechen";
-            this.btn_Abbrechen.UseVisualStyleBackColor = true;
-            // 
             // btn_Abspielen
             // 
             this.btn_Abspielen.Enabled = false;
-            this.btn_Abspielen.Location = new System.Drawing.Point(591, 122);
+            this.btn_Abspielen.Location = new System.Drawing.Point(591, 139);
             this.btn_Abspielen.Name = "btn_Abspielen";
             this.btn_Abspielen.Size = new System.Drawing.Size(75, 23);
             this.btn_Abspielen.TabIndex = 19;
@@ -494,6 +481,7 @@
             this.dgv_Population.Name = "dgv_Population";
             this.dgv_Population.ReadOnly = true;
             this.dgv_Population.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgv_Population.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Population.Size = new System.Drawing.Size(578, 155);
             this.dgv_Population.TabIndex = 18;
             // 
@@ -546,7 +534,6 @@
             this.chk_Live.TabIndex = 6;
             this.chk_Live.Text = "Live Zeichnen";
             this.chk_Live.UseVisualStyleBackColor = true;
-            this.chk_Live.CheckedChanged += new System.EventHandler(this.chk_Live_CheckedChanged);
             // 
             // chk_maxFitness
             // 
@@ -733,6 +720,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnu_Menue;
+            this.MaximizeBox = false;
             this.Name = "GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mondlandung";
@@ -796,7 +784,6 @@
         private System.Windows.Forms.Panel pnl_Animation;
         private System.Windows.Forms.Button btn_Abspielen;
         private System.Windows.Forms.Button btn_AutoSim;
-        private System.Windows.Forms.Button btn_Abbrechen;
         private System.Windows.Forms.Label lbl_AktGeschwindigkeit;
         private System.Windows.Forms.Label lbl_AnzGeschwindigkeit;
         private System.Windows.Forms.Label lbl_AnzHoehe;

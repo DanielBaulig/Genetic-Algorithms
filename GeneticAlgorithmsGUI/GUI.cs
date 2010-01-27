@@ -119,15 +119,13 @@ namespace GeneticAlgorithmsGUI
         public void setzeRaumschiff(int hoehe, int schub)
         {
             gBuffer.DrawImage(bmpWeltraum, 0, 0, 300, 650);
-            int yPosition = 550/Convert.ToInt32(txt_Hoehe.Text);
+            float yPosition = 550.0f/Convert.ToInt64(txt_Hoehe.Text);
             yPosition *= hoehe;
             yPosition = 550 - yPosition;
-
             int skalierterSchub = schub * 2;
 
             gBuffer.DrawImage(bmpTriebwerk, 150 - (skalierterSchub / 2), yPosition + 65, skalierterSchub, skalierterSchub);
-            gBuffer.DrawImage(bmpRaumschiff, 100, yPosition, 100, 100);
-            //gBuffer.Dispose();
+            gBuffer.DrawImage(bmpRaumschiff, 100, Convert.ToInt32(yPosition), 100, 100);
             pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
         }
 
@@ -138,7 +136,7 @@ namespace GeneticAlgorithmsGUI
 
         private void überToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, "Mondlandungs-Simulation mit genetischen Algorithmen.\n\n © 2010 Daniel Baulig, Sven Sperner, Jonas Heil, Christian Kleemann");
+            MessageBox.Show(this, "Mondlandungs-Simulation mit genetischen Algorithmen.\n\n © 2010 Daniel Baulig, Sven Sperner, Jonas Heil, Christian Kleemann", "Über");
         }
 
         private void txt_Int_Validating(object sender, CancelEventArgs e)
@@ -289,6 +287,9 @@ namespace GeneticAlgorithmsGUI
             }
             if (sender == btn_AutoSim)
             {
+                btn_AutoSim.Enabled = false;
+                btn_Simuliere.Enabled = false;
+                btn_Zuruecksetzen.Enabled = false;
                 btn_SimAbbrechen.Focus();
                 float fitnessGrenze = Convert.ToSingle(txt_Fitness.Text);
                 float startFitness = GenSim.AverageFitness;
@@ -298,6 +299,9 @@ namespace GeneticAlgorithmsGUI
                     GenSim.RunSimulation();
                 }
                 simulationAbbrechen = false;
+                btn_Simuliere.Enabled = true;
+                btn_Zuruecksetzen.Enabled = true;
+                btn_AutoSim.Enabled = true;
             }
             else
                 GenSim.RunSimulation(Convert.ToInt32(txt_Rundenazahl.Text));
@@ -385,7 +389,7 @@ namespace GeneticAlgorithmsGUI
                 {
                     floatHoehe += mondlandungsArgs.Raumschiff.Geschwindigkeit / 10.0f;
                     System.Threading.Thread.Sleep(10);
-                    setzeRaumschiff(Convert.ToInt32(floatHoehe), mondlandungsArgs.Raumschiff.Geschwindigkeit);
+                    setzeRaumschiff(Convert.ToInt32(floatHoehe), mondlandungsArgs.Schub);
                 }
             else
                 while (floatHoehe > mondlandungsArgs.Raumschiff.Hoehe)
@@ -443,6 +447,7 @@ namespace GeneticAlgorithmsGUI
         {
             if (dgv_Population.SelectedRows.Count > 0)
             {
+                btn_Abspielen.Enabled = false;
                 Cursor = Cursors.WaitCursor;
                 bmpRaumschiff = bmpRaumschiffIntakt;
                 letzteHoehe = Convert.ToInt32(txt_Hoehe.Text);
@@ -450,12 +455,8 @@ namespace GeneticAlgorithmsGUI
                 (dgv_Population.SelectedRows[0].Tag as Chromosome<IntGene>).computeFitness(MondSim);
                 MondSim.SimulationTurn -= OnMondlandungsSimulationTurn;
                 Cursor = Cursors.Default;
+                btn_Abspielen.Enabled = true;
             }
-        }
-
-        private void lbl_Rundenazahl_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_SimAbbrechen_Click(object sender, EventArgs e)
@@ -467,12 +468,6 @@ namespace GeneticAlgorithmsGUI
         {
             (sender as ToolStripMenuItem).Checked = !(sender as ToolStripMenuItem).Checked;
         }
-
-        private void chk_Live_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 
 }
