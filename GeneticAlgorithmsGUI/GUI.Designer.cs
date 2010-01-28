@@ -64,7 +64,7 @@
             this.txt_Hoehe = new System.Windows.Forms.TextBox();
             this.txt_Treibstoff = new System.Windows.Forms.TextBox();
             this.txt_Gewicht = new System.Windows.Forms.TextBox();
-            this.gb_Rundeninformationen = new System.Windows.Forms.GroupBox();
+            this.gb_Population = new System.Windows.Forms.GroupBox();
             this.btn_Abspielen = new System.Windows.Forms.Button();
             this.dgv_Population = new System.Windows.Forms.DataGridView();
             this.cLaenge = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +74,6 @@
             this.chk_Live = new System.Windows.Forms.CheckBox();
             this.chk_maxFitness = new System.Windows.Forms.CheckBox();
             this.chk_minFitness = new System.Windows.Forms.CheckBox();
-            this.chk_Variation = new System.Windows.Forms.CheckBox();
             this.zgc_Simulationsgraph = new ZedGraph.ZedGraphControl();
             this.chk_Laenge = new System.Windows.Forms.CheckBox();
             this.chk_AVGFitness = new System.Windows.Forms.CheckBox();
@@ -89,7 +88,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mnu_Menue.SuspendLayout();
             this.gb_Simulation.SuspendLayout();
-            this.gb_Rundeninformationen.SuspendLayout();
+            this.gb_Population.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Population)).BeginInit();
             this.gb_Simulationsiverlauf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -113,7 +112,7 @@
             this.tsmi_Einstellungen,
             this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
             // 
             // tsmi_Einstellungen
@@ -121,20 +120,20 @@
             this.tsmi_Einstellungen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_RaumfahrerGewicht});
             this.tsmi_Einstellungen.Name = "tsmi_Einstellungen";
-            this.tsmi_Einstellungen.Size = new System.Drawing.Size(145, 22);
+            this.tsmi_Einstellungen.Size = new System.Drawing.Size(148, 22);
             this.tsmi_Einstellungen.Text = "Einstellungen";
             // 
             // tsmi_RaumfahrerGewicht
             // 
             this.tsmi_RaumfahrerGewicht.Name = "tsmi_RaumfahrerGewicht";
-            this.tsmi_RaumfahrerGewicht.Size = new System.Drawing.Size(182, 22);
+            this.tsmi_RaumfahrerGewicht.Size = new System.Drawing.Size(183, 22);
             this.tsmi_RaumfahrerGewicht.Text = "Raumfahrer Gewicht";
             this.tsmi_RaumfahrerGewicht.Click += new System.EventHandler(this.gewichtToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -143,13 +142,13 @@
             this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.überToolStripMenuItem});
             this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.hilfeToolStripMenuItem.Text = "Hilfe";
             // 
             // überToolStripMenuItem
             // 
             this.überToolStripMenuItem.Name = "überToolStripMenuItem";
-            this.überToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.überToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.überToolStripMenuItem.Text = "Über";
             this.überToolStripMenuItem.Click += new System.EventHandler(this.überToolStripMenuItem_Click);
             // 
@@ -203,15 +202,15 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(558, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 40;
-            this.label1.Text = "Fitness";
+            this.label1.Text = "Δ Fitness";
             // 
             // txt_Fitness
             // 
-            this.txt_Fitness.Location = new System.Drawing.Point(604, 20);
+            this.txt_Fitness.Location = new System.Drawing.Point(614, 20);
             this.txt_Fitness.Name = "txt_Fitness";
-            this.txt_Fitness.Size = new System.Drawing.Size(43, 20);
+            this.txt_Fitness.Size = new System.Drawing.Size(33, 20);
             this.txt_Fitness.TabIndex = 39;
             this.txt_Fitness.Text = "0,3";
             this.txt_Fitness.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -442,16 +441,16 @@
             this.txt_Gewicht.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_Gewicht.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
             // 
-            // gb_Rundeninformationen
+            // gb_Population
             // 
-            this.gb_Rundeninformationen.Controls.Add(this.btn_Abspielen);
-            this.gb_Rundeninformationen.Controls.Add(this.dgv_Population);
-            this.gb_Rundeninformationen.Location = new System.Drawing.Point(5, 510);
-            this.gb_Rundeninformationen.Name = "gb_Rundeninformationen";
-            this.gb_Rundeninformationen.Size = new System.Drawing.Size(674, 182);
-            this.gb_Rundeninformationen.TabIndex = 17;
-            this.gb_Rundeninformationen.TabStop = false;
-            this.gb_Rundeninformationen.Text = "Rundeninformationen";
+            this.gb_Population.Controls.Add(this.btn_Abspielen);
+            this.gb_Population.Controls.Add(this.dgv_Population);
+            this.gb_Population.Location = new System.Drawing.Point(5, 510);
+            this.gb_Population.Name = "gb_Population";
+            this.gb_Population.Size = new System.Drawing.Size(674, 182);
+            this.gb_Population.TabIndex = 17;
+            this.gb_Population.TabStop = false;
+            this.gb_Population.Text = "Population";
             // 
             // btn_Abspielen
             // 
@@ -513,7 +512,6 @@
             this.gb_Simulationsiverlauf.Controls.Add(this.chk_Live);
             this.gb_Simulationsiverlauf.Controls.Add(this.chk_maxFitness);
             this.gb_Simulationsiverlauf.Controls.Add(this.chk_minFitness);
-            this.gb_Simulationsiverlauf.Controls.Add(this.chk_Variation);
             this.gb_Simulationsiverlauf.Controls.Add(this.zgc_Simulationsgraph);
             this.gb_Simulationsiverlauf.Controls.Add(this.chk_Laenge);
             this.gb_Simulationsiverlauf.Controls.Add(this.chk_AVGFitness);
@@ -556,18 +554,6 @@
             this.chk_minFitness.Text = "min Fitness";
             this.chk_minFitness.UseVisualStyleBackColor = true;
             this.chk_minFitness.CheckedChanged += new System.EventHandler(this.chk_minFitness_CheckedChanged);
-            // 
-            // chk_Variation
-            // 
-            this.chk_Variation.AutoSize = true;
-            this.chk_Variation.Location = new System.Drawing.Point(149, 338);
-            this.chk_Variation.Name = "chk_Variation";
-            this.chk_Variation.Size = new System.Drawing.Size(78, 17);
-            this.chk_Variation.TabIndex = 3;
-            this.chk_Variation.Text = "Ø Variation";
-            this.chk_Variation.UseVisualStyleBackColor = true;
-            this.chk_Variation.Visible = false;
-            this.chk_Variation.CheckedChanged += new System.EventHandler(this.chk_Variation_CheckedChanged);
             // 
             // zgc_Simulationsgraph
             // 
@@ -702,7 +688,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 684);
+            this.ClientSize = new System.Drawing.Size(990, 697);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_AktTank);
             this.Controls.Add(this.lbl_AnzSchub);
@@ -713,7 +699,7 @@
             this.Controls.Add(this.pnl_Animation);
             this.Controls.Add(this.lbl_AktGeschwindigkeit);
             this.Controls.Add(this.gb_Simulationsiverlauf);
-            this.Controls.Add(this.gb_Rundeninformationen);
+            this.Controls.Add(this.gb_Population);
             this.Controls.Add(this.gb_Simulation);
             this.Controls.Add(this.mnu_Menue);
             this.DoubleBuffered = true;
@@ -724,12 +710,12 @@
             this.Name = "GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mondlandung";
-            this.Load += new System.EventHandler(this.GUI_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GUI_FormClosing);
             this.mnu_Menue.ResumeLayout(false);
             this.mnu_Menue.PerformLayout();
             this.gb_Simulation.ResumeLayout(false);
             this.gb_Simulation.PerformLayout();
-            this.gb_Rundeninformationen.ResumeLayout(false);
+            this.gb_Population.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Population)).EndInit();
             this.gb_Simulationsiverlauf.ResumeLayout(false);
             this.gb_Simulationsiverlauf.PerformLayout();
@@ -759,7 +745,7 @@
         private System.Windows.Forms.TextBox txt_Hoehe;
         private System.Windows.Forms.TextBox txt_Treibstoff;
         private System.Windows.Forms.TextBox txt_Gewicht;
-        private System.Windows.Forms.GroupBox gb_Rundeninformationen;
+        private System.Windows.Forms.GroupBox gb_Population;
         private System.Windows.Forms.DataGridView dgv_Population;
         private System.Windows.Forms.TextBox txt_Rundenazahl;
         private System.Windows.Forms.Button btn_Simuliere;
@@ -771,7 +757,6 @@
         private System.Windows.Forms.GroupBox gb_Simulationsiverlauf;
         private ZedGraph.ZedGraphControl zgc_Simulationsgraph;
         private System.Windows.Forms.CheckBox chk_AVGFitness;
-        private System.Windows.Forms.CheckBox chk_Variation;
         private System.Windows.Forms.CheckBox chk_Laenge;
         private System.Windows.Forms.CheckBox chk_maxFitness;
         private System.Windows.Forms.CheckBox chk_minFitness;

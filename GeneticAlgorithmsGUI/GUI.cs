@@ -33,58 +33,59 @@ namespace GeneticAlgorithmsGUI
         private Bitmap bmpRaumfahrer = null;
         private Bitmap bmpFahne = null;
         private bool simulationAbbrechen = false;
+        private bool closingApplication = false;
 
         private int letzteHoehe = 0;
 
         private int turn = 0;
 
+        /// <summary>
+        /// Konstruktor - Initialisierung der Bedienoberfläche
+        /// </summary>
         public GUI()
         {
             InitializeComponent();
-            GraphPane p = zgc_Simulationsgraph.GraphPane;
-            p.Title.Text = "Population";
-            p.XAxis.Title.Text = "Runden";
-            p.XAxis.Scale.Min = 1;
-            p.XAxis.Scale.MaxAuto = true;
-            p.YAxis.Title.Text = "Fitness";
-            p.YAxis.Scale.Max = 1.0;
-            p.YAxis.Scale.Min = 0.0;
-            p.YAxisList.Add("Länge");
-            p.YAxisList[1].IsVisible = false;
-            p.YAxisList[1].Scale.MaxAuto = true;
-            
-            p.YAxisList[1].Scale.Min = 0;
-            p.YAxisList.Add("Variation");
-            p.YAxisList[2].IsVisible = false;
+            //Initialisireung des ZedGraph
+            GraphPane graphPane = zgc_Simulationsgraph.GraphPane;
+            graphPane.Title.Text = "Population";
+            graphPane.XAxis.Title.Text = "Runden";
+            graphPane.XAxis.Scale.Min = 1;
+            graphPane.XAxis.Scale.MaxAuto = true;
+            graphPane.YAxis.Title.Text = "Fitness";
+            graphPane.YAxis.Scale.Max = 1.0;
+            graphPane.YAxis.Scale.Min = 0.0;
+            graphPane.YAxisList.Add("Länge");
+            graphPane.YAxisList[1].IsVisible = false;
+            graphPane.YAxisList[1].Scale.MaxAuto = true;
+            graphPane.YAxisList[1].Scale.Min = 0;
 
+            //Initialisireung der Graphen
             this.avgFitnessList = new PointPairList();
             this.avgLengthList = new PointPairList();
             this.avgVariationList = new PointPairList();
             this.maxFitnessList = new PointPairList();
             this.minFitnessList = new PointPairList();
-
-            this.avgFitnessCurve = p.AddCurve("Ø Fitness", avgFitnessList, Color.Green, SymbolType.None);
-            this.avgLengthCurve = p.AddCurve("Ø Länge", avgLengthList, Color.Purple, SymbolType.None);
-            this.avgVariationCurve = p.AddCurve("Ø Varation", avgVariationList, Color.Yellow, SymbolType.None);
-            this.minFitnessCurve = p.AddCurve("min. Fitness", minFitnessList, Color.Red, SymbolType.None);
-            this.maxFitnessCurve = p.AddCurve("max. Fitness", maxFitnessList, Color.Blue, SymbolType.None);
-
+            this.avgFitnessCurve = graphPane.AddCurve("Ø Fitness", avgFitnessList, Color.Green, SymbolType.None);
+            this.avgLengthCurve = graphPane.AddCurve("Ø Länge", avgLengthList, Color.Purple, SymbolType.None);
+            this.minFitnessCurve = graphPane.AddCurve("min. Fitness", minFitnessList, Color.Red, SymbolType.None);
+            this.maxFitnessCurve = graphPane.AddCurve("max. Fitness", maxFitnessList, Color.Blue, SymbolType.None);
             avgLengthCurve.YAxisIndex = 1;
-
             avgFitnessCurve.IsVisible = true;
-            avgVariationCurve.IsVisible = false;
             avgLengthCurve.IsVisible = false;
             minFitnessCurve.IsVisible = false;
             maxFitnessCurve.IsVisible = false;
 
+            //Initialisireung der ComboBoxen
             cmb_Rekombinator.SelectedIndex = 0;
             recombinationProvider = new AsymmetricCrossoverRecombinator();
             cmb_Selektor.SelectedIndex = 1;
             selectionProvider = new PieCakeSelector();
 
+            //Assembly erzeugen
             Assembly myAssembly = Assembly.GetExecutingAssembly();
             Stream stream = null;
             
+            // Bilder aus den Ressourcen der Assembly holen
             stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Weltraum.bmp");
             bmpWeltraum = new Bitmap(stream);
             stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Raumschiff.gif");
@@ -100,22 +101,38 @@ namespace GeneticAlgorithmsGUI
             stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Fahne.png");
             bmpFahne = new Bitmap(stream);
 
+            //Initialisierung des DoubleBuffer
             _backBuffer = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
             gBuffer = Graphics.FromImage(_backBuffer);
             gBuffer.Clear(Color.White);
         }
 
+
+        /// <summary>
+        /// Paint Ereignis
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void pnl_Animation_Paint(object sender, PaintEventArgs e)
         {
             drawClearBackground();
         }
 
+
+        /// <summary>
+        /// leere Weltraum-/Mondlandschaft zeichnen
+        /// </summary>
         private void drawClearBackground()
         {
             gBuffer.DrawImage(bmpWeltraum, 1, 1, 300, 650);
             pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
         }
 
+        /// <summary>
+        /// Raumschiffbild auf dem Hintergrund in bestimmter Höhe platzieren
+        /// </summary>
+        /// <param name="hoehe">Höhe des Raumschiffs</param>
+        /// <param name="schub">gegebener Schub</param>
         public void setzeRaumschiff(int hoehe, int schub)
         {
             gBuffer.DrawImage(bmpWeltraum, 0, 0, 300, 650);
@@ -129,16 +146,32 @@ namespace GeneticAlgorithmsGUI
             pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
         }
 
+        /// <summary>
+        /// Beenden der Anwendung
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// "Über"-Dialogfenster anzeigen
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void überToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, "Mondlandungs-Simulation mit genetischen Algorithmen.\n\n © 2010 Daniel Baulig, Sven Sperner, Jonas Heil, Christian Kleemann", "Über");
+            MessageBox.Show(this, "Mondlandungs-Simulation mit genetischen Algorithmen\n\nVersion 1.0\n\nEntwickelt von Daniel Baulig, Jonas Heil, Christian Kleemann, Sven Sperner", "Über");
         }
 
+
+        /// <summary>
+        /// Validierung eines eingegebenen Ganzzahl-Parameters
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void txt_Int_Validating(object sender, CancelEventArgs e)
         {
             try
@@ -154,6 +187,11 @@ namespace GeneticAlgorithmsGUI
             }
         }
 
+        /// <summary>
+        /// Validierung eines eingegebenen Fliesskomma-Parameters
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void txt_Float_Validating(object sender, CancelEventArgs e)
         {
             try
@@ -169,6 +207,11 @@ namespace GeneticAlgorithmsGUI
             }
         }
 
+        /// <summary>
+        /// Durchschnittliche Fitness der Population ein-/ausblenden
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void chk_AVGFitness_CheckedChanged(object sender, EventArgs e)
         {
             avgFitnessCurve.IsVisible = (sender as CheckBox).Checked;
@@ -177,6 +220,11 @@ namespace GeneticAlgorithmsGUI
             zgc_Simulationsgraph.Invalidate();
         }
 
+        /// <summary>
+        /// Durchschnittliche Chromosomlänge der Population ein-/ausblenden
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void chk_Laenge_CheckedChanged(object sender, EventArgs e)
         {
             avgLengthCurve.IsVisible = (sender as CheckBox).Checked;
@@ -185,30 +233,37 @@ namespace GeneticAlgorithmsGUI
             zgc_Simulationsgraph.Invalidate();
         }
 
-        private void chk_Variation_CheckedChanged(object sender, EventArgs e)
-        {
-            avgVariationCurve.IsVisible = (sender as CheckBox).Checked;
-            zgc_Simulationsgraph.GraphPane.YAxisList[2].IsVisible = avgVariationCurve.IsVisible = (sender as CheckBox).Checked;
-            zgc_Simulationsgraph.AxisChange();
-            zgc_Simulationsgraph.Invalidate();
-        }
-
+        /// <summary>
+        /// Minimale Fitness der Population ein-/ausblenden
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void chk_minFitness_CheckedChanged(object sender, EventArgs e)
         {
             minFitnessCurve.IsVisible = (sender as CheckBox).Checked;
-            zgc_Simulationsgraph.GraphPane.YAxisList[0].IsVisible = chk_minFitness.Checked || chk_maxFitness.Checked || chk_minFitness.Checked;
+            zgc_Simulationsgraph.GraphPane.YAxisList[0].IsVisible = chk_AVGFitness.Checked || chk_maxFitness.Checked || chk_minFitness.Checked;
             zgc_Simulationsgraph.AxisChange();
             zgc_Simulationsgraph.Invalidate();
         }
 
+        /// <summary>
+        /// Maximale Fitness der Population ein-/ausblenden
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void chk_maxFitness_CheckedChanged(object sender, EventArgs e)
         {
             maxFitnessCurve.IsVisible = (sender as CheckBox).Checked;
-            zgc_Simulationsgraph.GraphPane.YAxisList[0].IsVisible = chk_maxFitness.Checked || chk_maxFitness.Checked || chk_minFitness.Checked;
+            zgc_Simulationsgraph.GraphPane.YAxisList[0].IsVisible = chk_AVGFitness.Checked || chk_maxFitness.Checked || chk_minFitness.Checked;
             zgc_Simulationsgraph.AxisChange();
             zgc_Simulationsgraph.Invalidate();
         }
 
+        /// <summary>
+        /// Simulationsergebnisse zurücksetzen
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void btn_Zuruecksetzten_Click(object sender, EventArgs e)
         {
             avgLengthList.Clear();
@@ -230,16 +285,31 @@ namespace GeneticAlgorithmsGUI
             txt_Duplikationsrate.Enabled = true;
             dgv_Population.Rows.Clear();
             btn_Abspielen.Enabled = false;
-            //zgc_Simulationsgraph.GraphPane.CurveList.Clear();
+            lbl_AktGeschwindigkeit.Text = "0";
+            lbl_AktHoehe.Text = "0";
+            lbl_AktSchub.Text = "0";
+            lbl_AktTank.Text = "0";
+            chk_AVGFitness.Checked = true;
+            chk_maxFitness.Checked = false;
+            chk_minFitness.Checked = false;
+            chk_Laenge.Checked = false;
+            chk_Live.Checked = false;
             zgc_Simulationsgraph.GraphPane.GraphObjList.Clear();
             zgc_Simulationsgraph.AxisChange();
             zgc_Simulationsgraph.Invalidate();
             drawClearBackground();
             GraphPane p = zgc_Simulationsgraph.GraphPane;
+            zgc_Simulationsgraph.ZoomOutAll(p);
             p.YAxisList[1].Scale.Max = 10;
             p.YAxisList[1].Scale.MaxAuto = true;
+
         }
 
+        /// <summary>
+        /// Simulationsrunde durchlaufen
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void OnSimulationTurn(object sender, EventArgs e)
         {
             turn ++;
@@ -262,9 +332,19 @@ namespace GeneticAlgorithmsGUI
             Application.DoEvents();
         }
 
+        /// <summary>
+        /// Simulation starten
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void btn_Simuliere_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
+            btn_Simuliere.Enabled = false;
+            btn_Zuruecksetzen.Enabled = false;
+            btn_AutoSim.Enabled = false;
+            btn_SimAbbrechen.Focus();
+            //erster Durchlauf der Simulation
             if (GenSim == null)
             {
                 btn_Abspielen.Enabled = true;
@@ -285,11 +365,9 @@ namespace GeneticAlgorithmsGUI
                 GenSim.GeneDuplicationRate = Convert.ToDouble(txt_Duplikationsrate.Text);
                 GenSim.GeneDropRate = Convert.ToDouble(txt_Verlustrate.Text);
             }
+            //automatisierte Simulation bis Erreichen der Delta-Fitness
             if (sender == btn_AutoSim)
             {
-                btn_AutoSim.Enabled = false;
-                btn_Simuliere.Enabled = false;
-                btn_Zuruecksetzen.Enabled = false;
                 btn_SimAbbrechen.Focus();
                 float fitnessGrenze = Convert.ToSingle(txt_Fitness.Text);
                 float startFitness = GenSim.AverageFitness;
@@ -303,25 +381,37 @@ namespace GeneticAlgorithmsGUI
                 btn_Zuruecksetzen.Enabled = true;
                 btn_AutoSim.Enabled = true;
             }
+            //einfache Simulation mit angegebener Rundenzahl
             else
                 GenSim.RunSimulation(Convert.ToInt32(txt_Rundenazahl.Text));
 
-            dgv_Population.Rows.Clear();
-
-            dgv_Population.Rows.Add(GenSim.PoppulationSize);
-            for (int i = 0; i < GenSim.PoppulationSize; i++)
+            if (!closingApplication)
             {
-                dgv_Population.Rows[i].Cells[0].Value = GenSim[i].GeneCount.ToString();
-                dgv_Population.Rows[i].Cells[1].Value = GenSim[i].ToString();
-                dgv_Population.Rows[i].Cells[2].Value = GenSim[i].Fitness.ToString();
-                dgv_Population.Rows[i].Tag = GenSim[i];
-            }
+                dgv_Population.Rows.Clear();
 
-            zgc_Simulationsgraph.AxisChange();
-            zgc_Simulationsgraph.Invalidate();
-            Cursor = Cursors.Default;
+                dgv_Population.Rows.Add(GenSim.PoppulationSize);
+                for (int i = 0; i < GenSim.PoppulationSize; i++)
+                {
+                    dgv_Population.Rows[i].Cells[0].Value = GenSim[i].GeneCount.ToString();
+                    dgv_Population.Rows[i].Cells[1].Value = GenSim[i].ToString();
+                    dgv_Population.Rows[i].Cells[2].Value = GenSim[i].Fitness.ToString();
+                    dgv_Population.Rows[i].Tag = GenSim[i];
+                }
+
+                zgc_Simulationsgraph.AxisChange();
+                zgc_Simulationsgraph.Invalidate();
+                Cursor = Cursors.Default;
+                btn_Simuliere.Enabled = true;
+                btn_Zuruecksetzen.Enabled = true;
+                btn_AutoSim.Enabled = true;
+            }
         }
 
+        /// <summary>
+        /// Selektor ausgewählt
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void cmb_Selektor_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch ((sender as ComboBox).SelectedIndex)
@@ -341,6 +431,11 @@ namespace GeneticAlgorithmsGUI
             }
         }
 
+        /// <summary>
+        /// Rekombinator ausgewählt
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void cmb_Rekombinator_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch ((sender as ComboBox).SelectedIndex)
@@ -357,16 +452,10 @@ namespace GeneticAlgorithmsGUI
             }
         }
 
-        private void GUI_Load(object sender, EventArgs e)
-        {
-            /*
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
-            Left = 0;
-            Top = 0;
-             */
-        }
-
+        /// <summary>
+        /// Raumfahrer und Raumschiff in bestimmter Höhe auf den Hintergrund zeichnen
+        /// </summary>
+        /// <param name="x">Höhe</param>
         private void setzeRaumfahrer(int x)
         {
             setzeRaumschiff(0, 0);
@@ -374,75 +463,93 @@ namespace GeneticAlgorithmsGUI
             pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
         }
 
+        /// <summary>
+        /// Mondlandungsssimulationsrunde durchlaufen
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void OnMondlandungsSimulationTurn(object sender, EventArgs e)
         {
             MondlandungsSimulationEventArgs mondlandungsArgs = e as MondlandungsSimulationEventArgs;
-            //this.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Geschwindigkeit);
             lbl_AktGeschwindigkeit.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Geschwindigkeit);
             lbl_AktHoehe.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Hoehe);
             lbl_AktSchub.Text = Convert.ToString(mondlandungsArgs.Schub);
             lbl_AktTank.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Treibstoff);
             Application.DoEvents();
-            float floatHoehe = letzteHoehe;
-            if (mondlandungsArgs.Raumschiff.Geschwindigkeit  > 0)
-                while (floatHoehe < mondlandungsArgs.Raumschiff.Hoehe)
-                {
-                    floatHoehe += mondlandungsArgs.Raumschiff.Geschwindigkeit / 10.0f;
-                    System.Threading.Thread.Sleep(10);
-                    setzeRaumschiff(Convert.ToInt32(floatHoehe), mondlandungsArgs.Schub);
-                }
-            else
-                while (floatHoehe > mondlandungsArgs.Raumschiff.Hoehe)
-                {
-                    floatHoehe += mondlandungsArgs.Raumschiff.Geschwindigkeit / 10.0f;
-                    System.Threading.Thread.Sleep(10);
-                    if (floatHoehe <= 0)
+            if (!closingApplication)
+            {
+                float floatHoehe = letzteHoehe;
+                //Raumschiff fliegt aufwärts
+                if (mondlandungsArgs.Raumschiff.Geschwindigkeit > 0)
+                    while (floatHoehe < mondlandungsArgs.Raumschiff.Hoehe)
                     {
-                        setzeRaumschiff(0, mondlandungsArgs.Schub);
+                        floatHoehe += mondlandungsArgs.Raumschiff.Geschwindigkeit / 10.0f;
+                        System.Threading.Thread.Sleep(10);
+                        setzeRaumschiff(Convert.ToInt32(floatHoehe), mondlandungsArgs.Schub);
+                    }
+                //Raumschiff fliegt abwärts
+                else
+                    while (floatHoehe > mondlandungsArgs.Raumschiff.Hoehe)
+                    {
+                        floatHoehe += mondlandungsArgs.Raumschiff.Geschwindigkeit / 10.0f;
+                        System.Threading.Thread.Sleep(10);
+                        if (floatHoehe <= 0)
+                        {
+                            setzeRaumschiff(0, mondlandungsArgs.Schub);
+                        }
+                        else
+                            setzeRaumschiff(Convert.ToInt32(floatHoehe), mondlandungsArgs.Schub);
+                    }
+                letzteHoehe = mondlandungsArgs.Raumschiff.Hoehe;
+
+
+                //Raumschiff ist gelandet
+                if (letzteHoehe <= 0)
+                {
+                    if ((mondlandungsArgs.Raumschiff.Geschwindigkeit + 10) < 0)
+                    {
+                        bmpRaumschiff = bmpRaumschiffKaputt;
+                        setzeRaumschiff(0, 0);
                     }
                     else
-                        setzeRaumschiff(Convert.ToInt32(floatHoehe), mondlandungsArgs.Schub);
+                    {
+                        //wegsehen: ugly code!
+                        //Raumfahrer-Animation
+                        setzeRaumschiff(0, 0);
+                        System.Threading.Thread.Sleep(500);
+                        bmpRaumschiff = bmpRaumschiffLeer;
+                        setzeRaumschiff(0, 0);
+                        System.Threading.Thread.Sleep(500);
+                        setzeRaumfahrer(100);
+                        System.Threading.Thread.Sleep(100);
+                        setzeRaumfahrer(110);
+                        System.Threading.Thread.Sleep(100);
+                        setzeRaumfahrer(120);
+                        System.Threading.Thread.Sleep(100);
+                        setzeRaumfahrer(130);
+                        System.Threading.Thread.Sleep(100);
+                        setzeRaumfahrer(140);
+                        System.Threading.Thread.Sleep(100);
+                        setzeRaumfahrer(150);
+                        System.Threading.Thread.Sleep(100);
+                        setzeRaumfahrer(160);
+                        System.Threading.Thread.Sleep(100);
+                        setzeRaumfahrer(170);
+                        System.Threading.Thread.Sleep(100);
+                        gBuffer.DrawImage(bmpFahne, 200, 560, 37, 75);
+                        pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
+                        //end of ugly code!
+                    }
                 }
-            letzteHoehe = mondlandungsArgs.Raumschiff.Hoehe;
-
-            if (letzteHoehe <= 0)
-                if ((mondlandungsArgs.Raumschiff.Geschwindigkeit + 10) < 0)
-                {
-                    bmpRaumschiff = bmpRaumschiffKaputt;
-                    setzeRaumschiff(0, 0);
-                }
-                else
-                {
-                    setzeRaumschiff(0, 0);
-                    System.Threading.Thread.Sleep(500);
-                    bmpRaumschiff = bmpRaumschiffLeer;
-                    setzeRaumschiff(0, 0);
-                    System.Threading.Thread.Sleep(500);
-                    setzeRaumfahrer(100);
-                    System.Threading.Thread.Sleep(100);
-                    setzeRaumfahrer(110);
-                    System.Threading.Thread.Sleep(100);
-                    setzeRaumfahrer(120);
-                    System.Threading.Thread.Sleep(100);
-                    setzeRaumfahrer(130);
-                    System.Threading.Thread.Sleep(100);
-                    setzeRaumfahrer(140);
-                    System.Threading.Thread.Sleep(100);
-                    setzeRaumfahrer(150);
-                    System.Threading.Thread.Sleep(100);
-                    setzeRaumfahrer(160);
-                    System.Threading.Thread.Sleep(100);
-                    setzeRaumfahrer(170);
-                    System.Threading.Thread.Sleep(100);
-                    gBuffer.DrawImage(bmpFahne, 200, 560, 37, 75);
-                    pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
-
-                }
-            
-            //setzeRaumschiff(letzteHoehe, mondlandungsArgs.Schub);
-            //System.Threading.Thread.Sleep(1);
+            }
+             
         }
 
+        /// <summary>
+        /// Abspielen einer Mondlandung mit aus Populationsliste gewähltem Chromosom
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void btn_Abspielen_Click(object sender, EventArgs e)
         {
             if (dgv_Population.SelectedRows.Count > 0)
@@ -459,14 +566,35 @@ namespace GeneticAlgorithmsGUI
             }
         }
 
+        /// <summary>
+        /// Simulationsdurchlauf abbrechen
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void btn_SimAbbrechen_Click(object sender, EventArgs e)
         {
             simulationAbbrechen = true;
         }
 
+        /// <summary>
+        /// Gewicht des Raumfahrers zum Raumschiffgewicht hinzuzählen / abziehen
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
         private void gewichtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (sender as ToolStripMenuItem).Checked = !(sender as ToolStripMenuItem).Checked;
+        }
+
+        /// <summary>
+        /// Abbrechen evtl. laufender Simulation beim Beenden des Programms.
+        /// </summary>
+        /// <param name="sender">aufrufendes Objekt</param>
+        /// <param name="e">EreignisObjekt</param>
+        private void GUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            simulationAbbrechen = true;
+            closingApplication = true;
         }
     }
 
