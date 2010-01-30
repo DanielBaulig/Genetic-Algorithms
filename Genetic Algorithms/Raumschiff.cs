@@ -5,6 +5,9 @@ using System.Text;
 
 namespace GeneticAlgorithms
 {
+    /// <summary>
+    /// Repräsentiert ein Raumschiff mit den Eigenschaften Treibstoff, Gewicht, Geschwindigkeit, Höhe und einem Raumfahrer
+    /// </summary>
     public class Raumschiff
     {
         private int treibstoff;
@@ -15,9 +18,14 @@ namespace GeneticAlgorithms
         private Raumfahrer pilot;
 
 
-        /*
-        *  Konstruktor
-        */
+        /// <summary>
+        /// Konstruktor des Raumschiffs
+        /// </summary>
+        /// <param name="pilot">Pilot, der das Raumschiff steuern soll</param>
+        /// <param name="startHoehe">Die Starthöhe des Raumschiffs</param>
+        /// <param name="startTreibstoff">Der Starttreibstoff des Raumschiffs</param>
+        /// <param name="startGewicht">Das Startgewicht des Raumschiffs</param>
+        /// <param name="nutzeRaumfahrerGewicht">Gibt an, ob das Gewicht des Raumfahrers mit einberechnet werden soll</param>
         public Raumschiff(Raumfahrer pilot, int startHoehe, int startTreibstoff, int startGewicht, bool nutzeRaumfahrerGewicht)
         {
             this.pilot = pilot;
@@ -28,9 +36,11 @@ namespace GeneticAlgorithms
             this.nutzeRaumfahrerGewicht = nutzeRaumfahrerGewicht;
         }
 
-        /*
-         *  treibstoff, gewicht und geschwindigkeit wird verändert.
-         */
+        /// <summary>
+        /// Beschleunigt das Raumschiff, wenn genügend Treibstoff übrig ist und berechnet anschließend die neuen Werte für Geschwindigkeit und Treibstoff
+        /// </summary>
+        /// <param name="schub">Anzahl der zu gebenden Schubs</param>
+        /// <returns>Tatsächlich gegegebener Schub</returns>
         public int Beschleunigen(int schub)
         {
             if (treibstoff > 0)
@@ -53,6 +63,9 @@ namespace GeneticAlgorithms
                 return 0;
         }
 
+        /// <summary>
+        /// Simuliert eine Runde, berechnet die neue Höhe und Geschwindigkeit
+        /// </summary>
         public void SimuliereRunde()
         {
             geschwindigkeit -= gewicht;

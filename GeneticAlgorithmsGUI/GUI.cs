@@ -163,7 +163,7 @@ namespace GeneticAlgorithmsGUI
         /// <param name="e">EreignisObjekt</param>
         private void überToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, "Mondlandungs-Simulation mit genetischen Algorithmen\n\nVersion 1.0\n\nEntwickelt von Daniel Baulig, Jonas Heil, Christian Kleemann, Sven Sperner", "Über");
+            MessageBox.Show(this, "Mondlandungs-Simulation mit genetischen Algorithmen\n\nVersion 1.0\n\nEntwickelt von Daniel Baulig, Jonas Heil, Christian Kleemann, Sven Sperner\n\nZedGraph Control von http://www.zedgraph.org unter LGPL", "Über");
         }
 
 
