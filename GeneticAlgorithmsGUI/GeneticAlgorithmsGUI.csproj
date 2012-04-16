@@ -13,10 +13,10 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>Mond.ico</ApplicationIcon>
-    <ManifestCertificateThumbprint>2DDB1920197623A7B2FA30151724EB4EDB1A2936</ManifestCertificateThumbprint>
-    <ManifestKeyFile>GeneticAlgorithmsGUI_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>C34F6D4F9EE9ABFF79FF99EF16A3FCACB7F719CF</ManifestCertificateThumbprint>
+    <ManifestKeyFile>GeneticAlgorithmsGUI_1_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -93,7 +93,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="GeneticAlgorithmsGUI_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
