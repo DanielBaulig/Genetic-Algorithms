@@ -3,7 +3,8 @@ This repository includes 3 C# projects in a single solution
 
 1. Genetic Algorithms Library (GAL)
 2. Unit-Tests for GAL
-3. GUI application build on GAL
+3. GUI application built on GAL (DE)
+4. GUI application built on GAL (EN)
 
 ## Build & Run
 To run the GUI application simply build the solution and run the executable artifact.
