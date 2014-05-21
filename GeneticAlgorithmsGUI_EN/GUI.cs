@@ -76,9 +76,9 @@ namespace GeneticAlgorithmsGUI_EN
             maxFitnessCurve.IsVisible = false;
 
             // Initialisation of the ComboBox
-            cmb_Rekombinator.SelectedIndex = 0;
+            cmb_Recombinator.SelectedIndex = 0;
             recombinationProvider = new AsymmetricCrossoverRecombinator();
-            cmb_Selektor.SelectedIndex = 1;
+            cmb_Selector.SelectedIndex = 1;
             selectionProvider = new PieCakeSelector();
 
             // Assembly Creation
@@ -274,25 +274,25 @@ namespace GeneticAlgorithmsGUI_EN
             GenSim = null;
             MoonSim = null;
             turn = 0;
-            cmb_Selektor.Enabled = true;
-            cmb_Rekombinator.Enabled = true;
-            txt_Chromosomlaenge.Enabled = true;
-            txt_Gewicht.Enabled = true;
+            cmb_Selector.Enabled = true;
+            cmb_Recombinator.Enabled = true;
+            txt_ChromosomeLength.Enabled = true;
+            txt_Weight.Enabled = true;
             txt_Height.Enabled = true;
-            txt_Treibstoff.Enabled = true;
-            txt_Mutationsrate.Enabled = true;
-            txt_Verlustrate.Enabled = true;
-            txt_Duplikationsrate.Enabled = true;
+            txt_Engine.Enabled = true;
+            txt_MutationsRate.Enabled = true;
+            txt_LossRate.Enabled = true;
+            txt_DuplicationsRate.Enabled = true;
             dgv_Population.Rows.Clear();
-            btn_Abspielen.Enabled = false;
-            lbl_AktGeschwindigkeit.Text = "0";
-            lbl_AktHoehe.Text = "0";
-            lbl_AktSchub.Text = "0";
-            lbl_AktTank.Text = "0";
+            btn_Play.Enabled = false;
+            lbl_SpeedValue.Text = "0";
+            lbl_HeightValue.Text = "0";
+            lbl_ThrustValue.Text = "0";
+            lbl_TankValue.Text = "0";
             chk_AVGFitness.Checked = true;
             chk_maxFitness.Checked = false;
             chk_minFitness.Checked = false;
-            chk_Laenge.Checked = false;
+            chk_Length.Checked = false;
             chk_Live.Checked = false;
             zgc_Simulationsgraph.GraphPane.GraphObjList.Clear();
             zgc_Simulationsgraph.AxisChange();
@@ -340,35 +340,35 @@ namespace GeneticAlgorithmsGUI_EN
         private void btn_Simuliere_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-            btn_Simuliere.Enabled = false;
-            btn_Zuruecksetzen.Enabled = false;
+            btn_Simulate.Enabled = false;
+            btn_Reset.Enabled = false;
             btn_AutoSim.Enabled = false;
-            btn_SimAbbrechen.Focus();
+            btn_SimAbort.Focus();
             //erster Durchlauf der Simulation
             if (GenSim == null)
             {
-                btn_Abspielen.Enabled = true;
-                txt_Chromosomlaenge.Enabled = false;
-                cmb_Rekombinator.Enabled = false;
-                cmb_Selektor.Enabled = false;
-                txt_Gewicht.Enabled = false;
+                btn_Play.Enabled = true;
+                txt_ChromosomeLength.Enabled = false;
+                cmb_Recombinator.Enabled = false;
+                cmb_Selector.Enabled = false;
+                txt_Weight.Enabled = false;
                 txt_Height.Enabled = false;
-                txt_Treibstoff.Enabled = false;
-                txt_Mutationsrate.Enabled = false;
-                txt_Verlustrate.Enabled = false;
-                txt_Duplikationsrate.Enabled = false;
-                IntGene.MaxValue = Convert.ToInt32(txt_Treibstoff.Text);
-                MoonSim = new MondlandungsSimulation(Convert.ToInt32(txt_Height.Text), Convert.ToInt32(txt_Treibstoff.Text), Convert.ToInt32(txt_Gewicht.Text), tsmi_RaumfahrerGewicht.Checked);
-                GenSim = new GeneticSimulation<IntGene>(100, Convert.ToInt32(txt_Chromosomlaenge.Text), MoonSim, recombinationProvider, selectionProvider);
+                txt_Engine.Enabled = false;
+                txt_MutationsRate.Enabled = false;
+                txt_LossRate.Enabled = false;
+                txt_DuplicationsRate.Enabled = false;
+                IntGene.MaxValue = Convert.ToInt32(txt_Engine.Text);
+                MoonSim = new MondlandungsSimulation(Convert.ToInt32(txt_Height.Text), Convert.ToInt32(txt_Engine.Text), Convert.ToInt32(txt_Weight.Text), tsmi_SpacemanHeight.Checked);
+                GenSim = new GeneticSimulation<IntGene>(100, Convert.ToInt32(txt_ChromosomeLength.Text), MoonSim, recombinationProvider, selectionProvider);
                 GenSim.SimulationTurn += OnSimulationTurn;
-                GenSim.GeneMutationRate = Convert.ToDouble(txt_Mutationsrate.Text);
-                GenSim.GeneDuplicationRate = Convert.ToDouble(txt_Duplikationsrate.Text);
-                GenSim.GeneDropRate = Convert.ToDouble(txt_Verlustrate.Text);
+                GenSim.GeneMutationRate = Convert.ToDouble(txt_MutationsRate.Text);
+                GenSim.GeneDuplicationRate = Convert.ToDouble(txt_DuplicationsRate.Text);
+                GenSim.GeneDropRate = Convert.ToDouble(txt_LossRate.Text);
             }
             //automatisierte Simulation bis Erreichen der Delta-Fitness
             if (sender == btn_AutoSim)
             {
-                btn_SimAbbrechen.Focus();
+                btn_SimAbort.Focus();
                 float fitnessGrenze = Convert.ToSingle(txt_Fitness.Text);
                 float startFitness = GenSim.AverageFitness;
                 while (fitnessGrenze + startFitness > GenSim.AverageFitness && !simulationAbort)
@@ -377,13 +377,13 @@ namespace GeneticAlgorithmsGUI_EN
                     GenSim.RunSimulation();
                 }
                 simulationAbort = false;
-                btn_Simuliere.Enabled = true;
-                btn_Zuruecksetzen.Enabled = true;
+                btn_Simulate.Enabled = true;
+                btn_Reset.Enabled = true;
                 btn_AutoSim.Enabled = true;
             }
             //einfache Simulation mit angegebener Rundenzahl
             else
-                GenSim.RunSimulation(Convert.ToInt32(txt_Rundenazahl.Text));
+                GenSim.RunSimulation(Convert.ToInt32(txt_RoundNumber.Text));
 
             if (!closingApplication)
             {
@@ -401,8 +401,8 @@ namespace GeneticAlgorithmsGUI_EN
                 zgc_Simulationsgraph.AxisChange();
                 zgc_Simulationsgraph.Invalidate();
                 Cursor = Cursors.Default;
-                btn_Simuliere.Enabled = true;
-                btn_Zuruecksetzen.Enabled = true;
+                btn_Simulate.Enabled = true;
+                btn_Reset.Enabled = true;
                 btn_AutoSim.Enabled = true;
             }
         }
@@ -471,10 +471,10 @@ namespace GeneticAlgorithmsGUI_EN
         private void OnMondlandungsSimulationTurn(object sender, EventArgs e)
         {
             MondlandungsSimulationEventArgs mondlandungsArgs = e as MondlandungsSimulationEventArgs;
-            lbl_AktGeschwindigkeit.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Geschwindigkeit);
-            lbl_AktHoehe.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Hoehe);
-            lbl_AktSchub.Text = Convert.ToString(mondlandungsArgs.Schub);
-            lbl_AktTank.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Treibstoff);
+            lbl_SpeedValue.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Geschwindigkeit);
+            lbl_HeightValue.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Hoehe);
+            lbl_ThrustValue.Text = Convert.ToString(mondlandungsArgs.Schub);
+            lbl_TankValue.Text = Convert.ToString(mondlandungsArgs.Raumschiff.Treibstoff);
             Application.DoEvents();
             if (!closingApplication)
             {
@@ -554,7 +554,7 @@ namespace GeneticAlgorithmsGUI_EN
         {
             if (dgv_Population.SelectedRows.Count > 0)
             {
-                btn_Abspielen.Enabled = false;
+                btn_Play.Enabled = false;
                 Cursor = Cursors.WaitCursor;
                 bmpSpaceship = bmpSpaceshipIntact;
                 finalHeight = Convert.ToInt32(txt_Height.Text);
@@ -562,7 +562,7 @@ namespace GeneticAlgorithmsGUI_EN
                 (dgv_Population.SelectedRows[0].Tag as Chromosome<IntGene>).computeFitness(MoonSim);
                 MoonSim.SimulationTurn -= OnMondlandungsSimulationTurn;
                 Cursor = Cursors.Default;
-                btn_Abspielen.Enabled = true;
+                btn_Play.Enabled = true;
             }
         }
 

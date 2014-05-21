@@ -31,155 +31,155 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
             this.mnu_Menue = new System.Windows.Forms.MenuStrip();
-            this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_Einstellungen = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_RaumfahrerGewicht = new System.Windows.Forms.ToolStripMenuItem();
-            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.überToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_Settings = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_SpacemanHeight = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gb_Simulation = new System.Windows.Forms.GroupBox();
-            this.btn_SimAbbrechen = new System.Windows.Forms.Button();
+            this.btn_SimAbort = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_Fitness = new System.Windows.Forms.TextBox();
             this.btn_AutoSim = new System.Windows.Forms.Button();
-            this.lbl_Verlustrate = new System.Windows.Forms.Label();
-            this.lbl_Mutationsrate = new System.Windows.Forms.Label();
-            this.lbl_Duplikationsrate = new System.Windows.Forms.Label();
-            this.txt_Verlustrate = new System.Windows.Forms.TextBox();
-            this.txt_Mutationsrate = new System.Windows.Forms.TextBox();
-            this.txt_Duplikationsrate = new System.Windows.Forms.TextBox();
-            this.btn_Zuruecksetzen = new System.Windows.Forms.Button();
-            this.lbl_Rundenazahl = new System.Windows.Forms.Label();
-            this.txt_Rundenazahl = new System.Windows.Forms.TextBox();
-            this.btn_Simuliere = new System.Windows.Forms.Button();
-            this.lbl_Selektor = new System.Windows.Forms.Label();
-            this.cmb_Selektor = new System.Windows.Forms.ComboBox();
-            this.lbl_Chromosomlaenge = new System.Windows.Forms.Label();
-            this.txt_Chromosomlaenge = new System.Windows.Forms.TextBox();
-            this.lbl_Rekombinator = new System.Windows.Forms.Label();
-            this.cmb_Rekombinator = new System.Windows.Forms.ComboBox();
-            this.lbl_Hoehe = new System.Windows.Forms.Label();
-            this.lbl_Treibstoff = new System.Windows.Forms.Label();
-            this.lbl_Gewicht = new System.Windows.Forms.Label();
+            this.lbl_LossRate = new System.Windows.Forms.Label();
+            this.lbl_MutationsRate = new System.Windows.Forms.Label();
+            this.lbl_DuplicationsRate = new System.Windows.Forms.Label();
+            this.txt_LossRate = new System.Windows.Forms.TextBox();
+            this.txt_MutationsRate = new System.Windows.Forms.TextBox();
+            this.txt_DuplicationsRate = new System.Windows.Forms.TextBox();
+            this.btn_Reset = new System.Windows.Forms.Button();
+            this.lbl_RoundNumber = new System.Windows.Forms.Label();
+            this.txt_RoundNumber = new System.Windows.Forms.TextBox();
+            this.btn_Simulate = new System.Windows.Forms.Button();
+            this.lbl_Selector = new System.Windows.Forms.Label();
+            this.cmb_Selector = new System.Windows.Forms.ComboBox();
+            this.lbl_ChromosomeLength = new System.Windows.Forms.Label();
+            this.txt_ChromosomeLength = new System.Windows.Forms.TextBox();
+            this.lbl_Recombinator = new System.Windows.Forms.Label();
+            this.cmb_Recombinator = new System.Windows.Forms.ComboBox();
+            this.lbl_Height = new System.Windows.Forms.Label();
+            this.lbl_Engine = new System.Windows.Forms.Label();
+            this.lbl_Weight = new System.Windows.Forms.Label();
             this.txt_Height = new System.Windows.Forms.TextBox();
-            this.txt_Treibstoff = new System.Windows.Forms.TextBox();
-            this.txt_Gewicht = new System.Windows.Forms.TextBox();
+            this.txt_Engine = new System.Windows.Forms.TextBox();
+            this.txt_Weight = new System.Windows.Forms.TextBox();
             this.gb_Population = new System.Windows.Forms.GroupBox();
-            this.btn_Abspielen = new System.Windows.Forms.Button();
+            this.btn_Play = new System.Windows.Forms.Button();
             this.dgv_Population = new System.Windows.Forms.DataGridView();
             this.cLaenge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cGene = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cFitness = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gb_Simulationsiverlauf = new System.Windows.Forms.GroupBox();
+            this.gb_SimulationResults = new System.Windows.Forms.GroupBox();
             this.chk_Live = new System.Windows.Forms.CheckBox();
             this.chk_maxFitness = new System.Windows.Forms.CheckBox();
             this.chk_minFitness = new System.Windows.Forms.CheckBox();
             this.zgc_Simulationsgraph = new ZedGraph.ZedGraphControl();
-            this.chk_Laenge = new System.Windows.Forms.CheckBox();
+            this.chk_Length = new System.Windows.Forms.CheckBox();
             this.chk_AVGFitness = new System.Windows.Forms.CheckBox();
             this.pnl_Animation = new System.Windows.Forms.Panel();
-            this.lbl_AktGeschwindigkeit = new System.Windows.Forms.Label();
-            this.lbl_AnzGeschwindigkeit = new System.Windows.Forms.Label();
-            this.lbl_AnzHoehe = new System.Windows.Forms.Label();
-            this.lbl_AktHoehe = new System.Windows.Forms.Label();
-            this.lbl_AktSchub = new System.Windows.Forms.Label();
-            this.lbl_AnzSchub = new System.Windows.Forms.Label();
-            this.lbl_AktTank = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_SpeedValue = new System.Windows.Forms.Label();
+            this.lbl_SpeedLabel = new System.Windows.Forms.Label();
+            this.lbl_HeightLabel = new System.Windows.Forms.Label();
+            this.lbl_HeightValue = new System.Windows.Forms.Label();
+            this.lbl_ThrustValue = new System.Windows.Forms.Label();
+            this.lbl_ThrustLabel = new System.Windows.Forms.Label();
+            this.lbl_TankValue = new System.Windows.Forms.Label();
+            this.TankLabel = new System.Windows.Forms.PictureBox();
             this.mnu_Menue.SuspendLayout();
             this.gb_Simulation.SuspendLayout();
             this.gb_Population.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Population)).BeginInit();
-            this.gb_Simulationsiverlauf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gb_SimulationResults.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TankLabel)).BeginInit();
             this.SuspendLayout();
             // 
             // mnu_Menue
             // 
             this.mnu_Menue.BackColor = System.Drawing.SystemColors.Control;
             this.mnu_Menue.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dateiToolStripMenuItem,
-            this.hilfeToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.mnu_Menue.Location = new System.Drawing.Point(0, 0);
             this.mnu_Menue.Name = "mnu_Menue";
             this.mnu_Menue.Size = new System.Drawing.Size(990, 24);
             this.mnu_Menue.TabIndex = 9;
             this.mnu_Menue.Text = "mnu_Menue";
             // 
-            // dateiToolStripMenuItem
+            // fileToolStripMenuItem
             // 
-            this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_Einstellungen,
-            this.beendenToolStripMenuItem});
-            this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.dateiToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_Settings,
+            this.quitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
             // tsmi_Einstellungen
             // 
-            this.tsmi_Einstellungen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_RaumfahrerGewicht});
-            this.tsmi_Einstellungen.Name = "tsmi_Einstellungen";
-            this.tsmi_Einstellungen.Size = new System.Drawing.Size(116, 22);
-            this.tsmi_Einstellungen.Text = "Settings";
+            this.tsmi_Settings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_SpacemanHeight});
+            this.tsmi_Settings.Name = "tsmi_Einstellungen";
+            this.tsmi_Settings.Size = new System.Drawing.Size(116, 22);
+            this.tsmi_Settings.Text = "Settings";
             // 
             // tsmi_RaumfahrerGewicht
             // 
-            this.tsmi_RaumfahrerGewicht.Name = "tsmi_RaumfahrerGewicht";
-            this.tsmi_RaumfahrerGewicht.Size = new System.Drawing.Size(182, 22);
-            this.tsmi_RaumfahrerGewicht.Text = "Raumfahrer Gewicht";
-            this.tsmi_RaumfahrerGewicht.Click += new System.EventHandler(this.gewichtToolStripMenuItem_Click);
+            this.tsmi_SpacemanHeight.Name = "tsmi_RaumfahrerGewicht";
+            this.tsmi_SpacemanHeight.Size = new System.Drawing.Size(170, 22);
+            this.tsmi_SpacemanHeight.Text = "Spaceman Weight";
+            this.tsmi_SpacemanHeight.Click += new System.EventHandler(this.gewichtToolStripMenuItem_Click);
             // 
-            // beendenToolStripMenuItem
+            // quitToolStripMenuItem
             // 
-            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.beendenToolStripMenuItem.Text = "Quit";
-            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.quitToolStripMenuItem.Text = "Quit";
+            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
-            // hilfeToolStripMenuItem
+            // helpToolStripMenuItem
             // 
-            this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.überToolStripMenuItem});
-            this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.hilfeToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
             // 
-            // überToolStripMenuItem
+            // aboutToolStripMenuItem
             // 
-            this.überToolStripMenuItem.Name = "überToolStripMenuItem";
-            this.überToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.überToolStripMenuItem.Text = "About";
-            this.überToolStripMenuItem.Click += new System.EventHandler(this.überToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.überToolStripMenuItem_Click);
             // 
             // gb_Simulation
             // 
-            this.gb_Simulation.Controls.Add(this.btn_SimAbbrechen);
+            this.gb_Simulation.Controls.Add(this.btn_SimAbort);
             this.gb_Simulation.Controls.Add(this.label1);
             this.gb_Simulation.Controls.Add(this.txt_Fitness);
             this.gb_Simulation.Controls.Add(this.btn_AutoSim);
-            this.gb_Simulation.Controls.Add(this.lbl_Verlustrate);
-            this.gb_Simulation.Controls.Add(this.lbl_Mutationsrate);
-            this.gb_Simulation.Controls.Add(this.lbl_Duplikationsrate);
-            this.gb_Simulation.Controls.Add(this.txt_Verlustrate);
-            this.gb_Simulation.Controls.Add(this.txt_Mutationsrate);
-            this.gb_Simulation.Controls.Add(this.txt_Duplikationsrate);
-            this.gb_Simulation.Controls.Add(this.btn_Zuruecksetzen);
-            this.gb_Simulation.Controls.Add(this.lbl_Rundenazahl);
-            this.gb_Simulation.Controls.Add(this.txt_Rundenazahl);
-            this.gb_Simulation.Controls.Add(this.btn_Simuliere);
-            this.gb_Simulation.Controls.Add(this.lbl_Selektor);
-            this.gb_Simulation.Controls.Add(this.cmb_Selektor);
-            this.gb_Simulation.Controls.Add(this.lbl_Chromosomlaenge);
-            this.gb_Simulation.Controls.Add(this.txt_Chromosomlaenge);
-            this.gb_Simulation.Controls.Add(this.lbl_Rekombinator);
-            this.gb_Simulation.Controls.Add(this.cmb_Rekombinator);
-            this.gb_Simulation.Controls.Add(this.lbl_Hoehe);
-            this.gb_Simulation.Controls.Add(this.lbl_Treibstoff);
-            this.gb_Simulation.Controls.Add(this.lbl_Gewicht);
+            this.gb_Simulation.Controls.Add(this.lbl_LossRate);
+            this.gb_Simulation.Controls.Add(this.lbl_MutationsRate);
+            this.gb_Simulation.Controls.Add(this.lbl_DuplicationsRate);
+            this.gb_Simulation.Controls.Add(this.txt_LossRate);
+            this.gb_Simulation.Controls.Add(this.txt_MutationsRate);
+            this.gb_Simulation.Controls.Add(this.txt_DuplicationsRate);
+            this.gb_Simulation.Controls.Add(this.btn_Reset);
+            this.gb_Simulation.Controls.Add(this.lbl_RoundNumber);
+            this.gb_Simulation.Controls.Add(this.txt_RoundNumber);
+            this.gb_Simulation.Controls.Add(this.btn_Simulate);
+            this.gb_Simulation.Controls.Add(this.lbl_Selector);
+            this.gb_Simulation.Controls.Add(this.cmb_Selector);
+            this.gb_Simulation.Controls.Add(this.lbl_ChromosomeLength);
+            this.gb_Simulation.Controls.Add(this.txt_ChromosomeLength);
+            this.gb_Simulation.Controls.Add(this.lbl_Recombinator);
+            this.gb_Simulation.Controls.Add(this.cmb_Recombinator);
+            this.gb_Simulation.Controls.Add(this.lbl_Height);
+            this.gb_Simulation.Controls.Add(this.lbl_Engine);
+            this.gb_Simulation.Controls.Add(this.lbl_Weight);
             this.gb_Simulation.Controls.Add(this.txt_Height);
-            this.gb_Simulation.Controls.Add(this.txt_Treibstoff);
-            this.gb_Simulation.Controls.Add(this.txt_Gewicht);
+            this.gb_Simulation.Controls.Add(this.txt_Engine);
+            this.gb_Simulation.Controls.Add(this.txt_Weight);
             this.gb_Simulation.Location = new System.Drawing.Point(5, 36);
             this.gb_Simulation.Name = "gb_Simulation";
             this.gb_Simulation.Size = new System.Drawing.Size(674, 102);
@@ -189,13 +189,13 @@
             // 
             // btn_SimAbbrechen
             // 
-            this.btn_SimAbbrechen.Location = new System.Drawing.Point(580, 65);
-            this.btn_SimAbbrechen.Name = "btn_SimAbbrechen";
-            this.btn_SimAbbrechen.Size = new System.Drawing.Size(86, 23);
-            this.btn_SimAbbrechen.TabIndex = 41;
-            this.btn_SimAbbrechen.Text = "Abort";
-            this.btn_SimAbbrechen.UseVisualStyleBackColor = true;
-            this.btn_SimAbbrechen.Click += new System.EventHandler(this.btn_SimAbbrechen_Click);
+            this.btn_SimAbort.Location = new System.Drawing.Point(580, 65);
+            this.btn_SimAbort.Name = "btn_SimAbbrechen";
+            this.btn_SimAbort.Size = new System.Drawing.Size(86, 23);
+            this.btn_SimAbort.TabIndex = 41;
+            this.btn_SimAbort.Text = "Abort";
+            this.btn_SimAbort.UseVisualStyleBackColor = true;
+            this.btn_SimAbort.Click += new System.EventHandler(this.btn_SimAbbrechen_Click);
             // 
             // label1
             // 
@@ -228,188 +228,188 @@
             // 
             // lbl_Verlustrate
             // 
-            this.lbl_Verlustrate.AutoSize = true;
-            this.lbl_Verlustrate.Location = new System.Drawing.Point(361, 73);
-            this.lbl_Verlustrate.Name = "lbl_Verlustrate";
-            this.lbl_Verlustrate.Size = new System.Drawing.Size(55, 13);
-            this.lbl_Verlustrate.TabIndex = 37;
-            this.lbl_Verlustrate.Text = "Loss Rate";
+            this.lbl_LossRate.AutoSize = true;
+            this.lbl_LossRate.Location = new System.Drawing.Point(361, 73);
+            this.lbl_LossRate.Name = "lbl_Verlustrate";
+            this.lbl_LossRate.Size = new System.Drawing.Size(55, 13);
+            this.lbl_LossRate.TabIndex = 37;
+            this.lbl_LossRate.Text = "Loss Rate";
             // 
             // lbl_Mutationsrate
             // 
-            this.lbl_Mutationsrate.AutoSize = true;
-            this.lbl_Mutationsrate.Location = new System.Drawing.Point(337, 49);
-            this.lbl_Mutationsrate.Name = "lbl_Mutationsrate";
-            this.lbl_Mutationsrate.Size = new System.Drawing.Size(79, 13);
-            this.lbl_Mutationsrate.TabIndex = 36;
-            this.lbl_Mutationsrate.Text = "Mutations Rate";
+            this.lbl_MutationsRate.AutoSize = true;
+            this.lbl_MutationsRate.Location = new System.Drawing.Point(337, 49);
+            this.lbl_MutationsRate.Name = "lbl_Mutationsrate";
+            this.lbl_MutationsRate.Size = new System.Drawing.Size(79, 13);
+            this.lbl_MutationsRate.TabIndex = 36;
+            this.lbl_MutationsRate.Text = "Mutations Rate";
             // 
             // lbl_Duplikationsrate
             // 
-            this.lbl_Duplikationsrate.AutoSize = true;
-            this.lbl_Duplikationsrate.Location = new System.Drawing.Point(328, 20);
-            this.lbl_Duplikationsrate.Name = "lbl_Duplikationsrate";
-            this.lbl_Duplikationsrate.Size = new System.Drawing.Size(86, 13);
-            this.lbl_Duplikationsrate.TabIndex = 35;
-            this.lbl_Duplikationsrate.Text = "Duplication Rate";
+            this.lbl_DuplicationsRate.AutoSize = true;
+            this.lbl_DuplicationsRate.Location = new System.Drawing.Point(328, 20);
+            this.lbl_DuplicationsRate.Name = "lbl_Duplikationsrate";
+            this.lbl_DuplicationsRate.Size = new System.Drawing.Size(86, 13);
+            this.lbl_DuplicationsRate.TabIndex = 35;
+            this.lbl_DuplicationsRate.Text = "Duplication Rate";
             // 
             // txt_Verlustrate
             // 
-            this.txt_Verlustrate.Location = new System.Drawing.Point(422, 70);
-            this.txt_Verlustrate.Name = "txt_Verlustrate";
-            this.txt_Verlustrate.Size = new System.Drawing.Size(55, 20);
-            this.txt_Verlustrate.TabIndex = 34;
-            this.txt_Verlustrate.Text = "0,000";
-            this.txt_Verlustrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Verlustrate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
+            this.txt_LossRate.Location = new System.Drawing.Point(422, 70);
+            this.txt_LossRate.Name = "txt_Verlustrate";
+            this.txt_LossRate.Size = new System.Drawing.Size(55, 20);
+            this.txt_LossRate.TabIndex = 34;
+            this.txt_LossRate.Text = "0,000";
+            this.txt_LossRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_LossRate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
             // txt_Mutationsrate
             // 
-            this.txt_Mutationsrate.Location = new System.Drawing.Point(422, 45);
-            this.txt_Mutationsrate.Name = "txt_Mutationsrate";
-            this.txt_Mutationsrate.Size = new System.Drawing.Size(55, 20);
-            this.txt_Mutationsrate.TabIndex = 33;
-            this.txt_Mutationsrate.Text = "0,010";
-            this.txt_Mutationsrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Mutationsrate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
+            this.txt_MutationsRate.Location = new System.Drawing.Point(422, 45);
+            this.txt_MutationsRate.Name = "txt_Mutationsrate";
+            this.txt_MutationsRate.Size = new System.Drawing.Size(55, 20);
+            this.txt_MutationsRate.TabIndex = 33;
+            this.txt_MutationsRate.Text = "0,010";
+            this.txt_MutationsRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_MutationsRate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
             // txt_Duplikationsrate
             // 
-            this.txt_Duplikationsrate.Location = new System.Drawing.Point(422, 17);
-            this.txt_Duplikationsrate.Name = "txt_Duplikationsrate";
-            this.txt_Duplikationsrate.Size = new System.Drawing.Size(55, 20);
-            this.txt_Duplikationsrate.TabIndex = 32;
-            this.txt_Duplikationsrate.Text = "0,000";
-            this.txt_Duplikationsrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Duplikationsrate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
+            this.txt_DuplicationsRate.Location = new System.Drawing.Point(422, 17);
+            this.txt_DuplicationsRate.Name = "txt_Duplikationsrate";
+            this.txt_DuplicationsRate.Size = new System.Drawing.Size(55, 20);
+            this.txt_DuplicationsRate.TabIndex = 32;
+            this.txt_DuplicationsRate.Text = "0,000";
+            this.txt_DuplicationsRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_DuplicationsRate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
-            // btn_Zuruecksetzen
+            // btn_Reset
             // 
-            this.btn_Zuruecksetzen.Location = new System.Drawing.Point(488, 65);
-            this.btn_Zuruecksetzen.Name = "btn_Zuruecksetzen";
-            this.btn_Zuruecksetzen.Size = new System.Drawing.Size(86, 23);
-            this.btn_Zuruecksetzen.TabIndex = 31;
-            this.btn_Zuruecksetzen.Text = "Return";
-            this.btn_Zuruecksetzen.UseVisualStyleBackColor = true;
-            this.btn_Zuruecksetzen.Click += new System.EventHandler(this.btn_Zuruecksetzten_Click);
+            this.btn_Reset.Location = new System.Drawing.Point(488, 65);
+            this.btn_Reset.Name = "btn_Reset";
+            this.btn_Reset.Size = new System.Drawing.Size(86, 23);
+            this.btn_Reset.TabIndex = 31;
+            this.btn_Reset.Text = "Reset";
+            this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Zuruecksetzten_Click);
             // 
-            // lbl_Rundenazahl
+            // lbl_RoundNumber
             // 
-            this.lbl_Rundenazahl.AutoSize = true;
-            this.lbl_Rundenazahl.Location = new System.Drawing.Point(483, 20);
-            this.lbl_Rundenazahl.Name = "lbl_Rundenazahl";
-            this.lbl_Rundenazahl.Size = new System.Drawing.Size(44, 13);
-            this.lbl_Rundenazahl.TabIndex = 30;
-            this.lbl_Rundenazahl.Text = "Rounds";
+            this.lbl_RoundNumber.AutoSize = true;
+            this.lbl_RoundNumber.Location = new System.Drawing.Point(483, 20);
+            this.lbl_RoundNumber.Name = "lbl_RoundNumber";
+            this.lbl_RoundNumber.Size = new System.Drawing.Size(44, 13);
+            this.lbl_RoundNumber.TabIndex = 30;
+            this.lbl_RoundNumber.Text = "Rounds";
             // 
-            // txt_Rundenazahl
+            // txt_RoundNumber
             // 
-            this.txt_Rundenazahl.Location = new System.Drawing.Point(531, 17);
-            this.txt_Rundenazahl.Name = "txt_Rundenazahl";
-            this.txt_Rundenazahl.Size = new System.Drawing.Size(43, 20);
-            this.txt_Rundenazahl.TabIndex = 29;
-            this.txt_Rundenazahl.Text = "1";
-            this.txt_Rundenazahl.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Rundenazahl.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
+            this.txt_RoundNumber.Location = new System.Drawing.Point(531, 17);
+            this.txt_RoundNumber.Name = "txt_RoundNumber";
+            this.txt_RoundNumber.Size = new System.Drawing.Size(43, 20);
+            this.txt_RoundNumber.TabIndex = 29;
+            this.txt_RoundNumber.Text = "1";
+            this.txt_RoundNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_RoundNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
             // 
-            // btn_Simuliere
+            // btn_Simulate
             // 
-            this.btn_Simuliere.Location = new System.Drawing.Point(488, 41);
-            this.btn_Simuliere.Name = "btn_Simuliere";
-            this.btn_Simuliere.Size = new System.Drawing.Size(86, 23);
-            this.btn_Simuliere.TabIndex = 28;
-            this.btn_Simuliere.Text = "Simulate";
-            this.btn_Simuliere.UseVisualStyleBackColor = true;
-            this.btn_Simuliere.Click += new System.EventHandler(this.btn_Simuliere_Click);
+            this.btn_Simulate.Location = new System.Drawing.Point(488, 41);
+            this.btn_Simulate.Name = "btn_Simulate";
+            this.btn_Simulate.Size = new System.Drawing.Size(86, 23);
+            this.btn_Simulate.TabIndex = 28;
+            this.btn_Simulate.Text = "Simulate";
+            this.btn_Simulate.UseVisualStyleBackColor = true;
+            this.btn_Simulate.Click += new System.EventHandler(this.btn_Simuliere_Click);
             // 
-            // lbl_Selektor
+            // lbl_Selector
             // 
-            this.lbl_Selektor.AutoSize = true;
-            this.lbl_Selektor.Location = new System.Drawing.Point(197, 23);
-            this.lbl_Selektor.Name = "lbl_Selektor";
-            this.lbl_Selektor.Size = new System.Drawing.Size(46, 13);
-            this.lbl_Selektor.TabIndex = 27;
-            this.lbl_Selektor.Text = "Selector";
+            this.lbl_Selector.AutoSize = true;
+            this.lbl_Selector.Location = new System.Drawing.Point(197, 23);
+            this.lbl_Selector.Name = "lbl_Selector";
+            this.lbl_Selector.Size = new System.Drawing.Size(46, 13);
+            this.lbl_Selector.TabIndex = 27;
+            this.lbl_Selector.Text = "Selector";
             // 
-            // cmb_Selektor
+            // cmb_Selector
             // 
-            this.cmb_Selektor.FormattingEnabled = true;
-            this.cmb_Selektor.Items.AddRange(new object[] {
+            this.cmb_Selector.FormattingEnabled = true;
+            this.cmb_Selector.Items.AddRange(new object[] {
             "Alpha",
             "PieCake",
             "Random"});
-            this.cmb_Selektor.Location = new System.Drawing.Point(249, 19);
-            this.cmb_Selektor.Name = "cmb_Selektor";
-            this.cmb_Selektor.Size = new System.Drawing.Size(75, 21);
-            this.cmb_Selektor.TabIndex = 26;
-            this.cmb_Selektor.SelectedIndexChanged += new System.EventHandler(this.cmb_Selektor_SelectedIndexChanged);
+            this.cmb_Selector.Location = new System.Drawing.Point(249, 19);
+            this.cmb_Selector.Name = "cmb_Selector";
+            this.cmb_Selector.Size = new System.Drawing.Size(75, 21);
+            this.cmb_Selector.TabIndex = 26;
+            this.cmb_Selector.SelectedIndexChanged += new System.EventHandler(this.cmb_Selektor_SelectedIndexChanged);
             // 
-            // lbl_Chromosomlaenge
+            // lbl_ChromosomeLength
             // 
-            this.lbl_Chromosomlaenge.AutoSize = true;
-            this.lbl_Chromosomlaenge.Location = new System.Drawing.Point(142, 75);
-            this.lbl_Chromosomlaenge.Name = "lbl_Chromosomlaenge";
-            this.lbl_Chromosomlaenge.Size = new System.Drawing.Size(101, 13);
-            this.lbl_Chromosomlaenge.TabIndex = 25;
-            this.lbl_Chromosomlaenge.Text = "ChromosomeLength";
+            this.lbl_ChromosomeLength.AutoSize = true;
+            this.lbl_ChromosomeLength.Location = new System.Drawing.Point(142, 75);
+            this.lbl_ChromosomeLength.Name = "lbl_ChromosomeLength";
+            this.lbl_ChromosomeLength.Size = new System.Drawing.Size(101, 13);
+            this.lbl_ChromosomeLength.TabIndex = 25;
+            this.lbl_ChromosomeLength.Text = "ChromosomeLength";
             // 
-            // txt_Chromosomlaenge
+            // txt_ChromosomeLength
             // 
-            this.txt_Chromosomlaenge.Location = new System.Drawing.Point(249, 72);
-            this.txt_Chromosomlaenge.Name = "txt_Chromosomlaenge";
-            this.txt_Chromosomlaenge.Size = new System.Drawing.Size(75, 20);
-            this.txt_Chromosomlaenge.TabIndex = 24;
-            this.txt_Chromosomlaenge.Text = "5";
-            this.txt_Chromosomlaenge.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Chromosomlaenge.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
+            this.txt_ChromosomeLength.Location = new System.Drawing.Point(249, 72);
+            this.txt_ChromosomeLength.Name = "txt_ChromosomeLength";
+            this.txt_ChromosomeLength.Size = new System.Drawing.Size(75, 20);
+            this.txt_ChromosomeLength.TabIndex = 24;
+            this.txt_ChromosomeLength.Text = "5";
+            this.txt_ChromosomeLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_ChromosomeLength.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
             // 
-            // lbl_Rekombinator
+            // lbl_Recombinator
             // 
-            this.lbl_Rekombinator.AutoSize = true;
-            this.lbl_Rekombinator.Location = new System.Drawing.Point(170, 48);
-            this.lbl_Rekombinator.Name = "lbl_Rekombinator";
-            this.lbl_Rekombinator.Size = new System.Drawing.Size(73, 13);
-            this.lbl_Rekombinator.TabIndex = 23;
-            this.lbl_Rekombinator.Text = "Recombinator";
+            this.lbl_Recombinator.AutoSize = true;
+            this.lbl_Recombinator.Location = new System.Drawing.Point(170, 48);
+            this.lbl_Recombinator.Name = "lbl_Recombinator";
+            this.lbl_Recombinator.Size = new System.Drawing.Size(73, 13);
+            this.lbl_Recombinator.TabIndex = 23;
+            this.lbl_Recombinator.Text = "Recombinator";
             // 
-            // cmb_Rekombinator
+            // cmb_Recombinator
             // 
-            this.cmb_Rekombinator.FormattingEnabled = true;
-            this.cmb_Rekombinator.Items.AddRange(new object[] {
+            this.cmb_Recombinator.FormattingEnabled = true;
+            this.cmb_Recombinator.Items.AddRange(new object[] {
             "Crossover",
             "Zip"});
-            this.cmb_Rekombinator.Location = new System.Drawing.Point(249, 46);
-            this.cmb_Rekombinator.Name = "cmb_Rekombinator";
-            this.cmb_Rekombinator.Size = new System.Drawing.Size(75, 21);
-            this.cmb_Rekombinator.TabIndex = 22;
-            this.cmb_Rekombinator.SelectedIndexChanged += new System.EventHandler(this.cmb_Rekombinator_SelectedIndexChanged);
+            this.cmb_Recombinator.Location = new System.Drawing.Point(249, 46);
+            this.cmb_Recombinator.Name = "cmb_Recombinator";
+            this.cmb_Recombinator.Size = new System.Drawing.Size(75, 21);
+            this.cmb_Recombinator.TabIndex = 22;
+            this.cmb_Recombinator.SelectedIndexChanged += new System.EventHandler(this.cmb_Rekombinator_SelectedIndexChanged);
             // 
-            // lbl_Hoehe
+            // lbl_Height
             // 
-            this.lbl_Hoehe.AutoSize = true;
-            this.lbl_Hoehe.Location = new System.Drawing.Point(17, 75);
-            this.lbl_Hoehe.Name = "lbl_Hoehe";
-            this.lbl_Hoehe.Size = new System.Drawing.Size(38, 13);
-            this.lbl_Hoehe.TabIndex = 21;
-            this.lbl_Hoehe.Text = "Height";
+            this.lbl_Height.AutoSize = true;
+            this.lbl_Height.Location = new System.Drawing.Point(17, 75);
+            this.lbl_Height.Name = "lbl_Height";
+            this.lbl_Height.Size = new System.Drawing.Size(38, 13);
+            this.lbl_Height.TabIndex = 21;
+            this.lbl_Height.Text = "Height";
             // 
-            // lbl_Treibstoff
+            // lbl_Engine
             // 
-            this.lbl_Treibstoff.AutoSize = true;
-            this.lbl_Treibstoff.Location = new System.Drawing.Point(28, 49);
-            this.lbl_Treibstoff.Name = "lbl_Treibstoff";
-            this.lbl_Treibstoff.Size = new System.Drawing.Size(27, 13);
-            this.lbl_Treibstoff.TabIndex = 20;
-            this.lbl_Treibstoff.Text = "Fuel";
+            this.lbl_Engine.AutoSize = true;
+            this.lbl_Engine.Location = new System.Drawing.Point(28, 49);
+            this.lbl_Engine.Name = "lbl_Engine";
+            this.lbl_Engine.Size = new System.Drawing.Size(27, 13);
+            this.lbl_Engine.TabIndex = 20;
+            this.lbl_Engine.Text = "Fuel";
             // 
-            // lbl_Gewicht
+            // lbl_Weight
             // 
-            this.lbl_Gewicht.AutoSize = true;
-            this.lbl_Gewicht.Location = new System.Drawing.Point(14, 22);
-            this.lbl_Gewicht.Name = "lbl_Gewicht";
-            this.lbl_Gewicht.Size = new System.Drawing.Size(41, 13);
-            this.lbl_Gewicht.TabIndex = 19;
-            this.lbl_Gewicht.Text = "Weight";
+            this.lbl_Weight.AutoSize = true;
+            this.lbl_Weight.Location = new System.Drawing.Point(14, 22);
+            this.lbl_Weight.Name = "lbl_Weight";
+            this.lbl_Weight.Size = new System.Drawing.Size(41, 13);
+            this.lbl_Weight.TabIndex = 19;
+            this.lbl_Weight.Text = "Weight";
             // 
             // txt_Height
             // 
@@ -421,29 +421,29 @@
             this.txt_Height.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_Height.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
             // 
-            // txt_Treibstoff
+            // txt_Engine
             // 
-            this.txt_Treibstoff.Location = new System.Drawing.Point(61, 46);
-            this.txt_Treibstoff.Name = "txt_Treibstoff";
-            this.txt_Treibstoff.Size = new System.Drawing.Size(75, 20);
-            this.txt_Treibstoff.TabIndex = 17;
-            this.txt_Treibstoff.Text = "100";
-            this.txt_Treibstoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Treibstoff.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
+            this.txt_Engine.Location = new System.Drawing.Point(61, 46);
+            this.txt_Engine.Name = "txt_Engine";
+            this.txt_Engine.Size = new System.Drawing.Size(75, 20);
+            this.txt_Engine.TabIndex = 17;
+            this.txt_Engine.Text = "100";
+            this.txt_Engine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_Engine.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
             // 
-            // txt_Gewicht
+            // txt_Weight
             // 
-            this.txt_Gewicht.Location = new System.Drawing.Point(61, 20);
-            this.txt_Gewicht.Name = "txt_Gewicht";
-            this.txt_Gewicht.Size = new System.Drawing.Size(75, 20);
-            this.txt_Gewicht.TabIndex = 16;
-            this.txt_Gewicht.Text = "10";
-            this.txt_Gewicht.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Gewicht.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
+            this.txt_Weight.Location = new System.Drawing.Point(61, 20);
+            this.txt_Weight.Name = "txt_Weight";
+            this.txt_Weight.Size = new System.Drawing.Size(75, 20);
+            this.txt_Weight.TabIndex = 16;
+            this.txt_Weight.Text = "10";
+            this.txt_Weight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_Weight.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
             // 
             // gb_Population
             // 
-            this.gb_Population.Controls.Add(this.btn_Abspielen);
+            this.gb_Population.Controls.Add(this.btn_Play);
             this.gb_Population.Controls.Add(this.dgv_Population);
             this.gb_Population.Location = new System.Drawing.Point(5, 510);
             this.gb_Population.Name = "gb_Population";
@@ -454,15 +454,15 @@
             // 
             // btn_Abspielen
             // 
-            this.btn_Abspielen.Enabled = false;
-            this.btn_Abspielen.Location = new System.Drawing.Point(591, 139);
-            this.btn_Abspielen.Name = "btn_Abspielen";
-            this.btn_Abspielen.Size = new System.Drawing.Size(75, 23);
-            this.btn_Abspielen.TabIndex = 19;
-            this.btn_Abspielen.TabStop = false;
-            this.btn_Abspielen.Text = "Play";
-            this.btn_Abspielen.UseVisualStyleBackColor = true;
-            this.btn_Abspielen.Click += new System.EventHandler(this.btn_Abspielen_Click);
+            this.btn_Play.Enabled = false;
+            this.btn_Play.Location = new System.Drawing.Point(591, 139);
+            this.btn_Play.Name = "btn_Abspielen";
+            this.btn_Play.Size = new System.Drawing.Size(75, 23);
+            this.btn_Play.TabIndex = 19;
+            this.btn_Play.TabStop = false;
+            this.btn_Play.Text = "Play";
+            this.btn_Play.UseVisualStyleBackColor = true;
+            this.btn_Play.Click += new System.EventHandler(this.btn_Abspielen_Click);
             // 
             // dgv_Population
             // 
@@ -508,20 +508,20 @@
             this.cFitness.ReadOnly = true;
             this.cFitness.Width = 65;
             // 
-            // gb_Simulationsiverlauf
+            // gb_SimulationResults
             // 
-            this.gb_Simulationsiverlauf.Controls.Add(this.chk_Live);
-            this.gb_Simulationsiverlauf.Controls.Add(this.chk_maxFitness);
-            this.gb_Simulationsiverlauf.Controls.Add(this.chk_minFitness);
-            this.gb_Simulationsiverlauf.Controls.Add(this.zgc_Simulationsgraph);
-            this.gb_Simulationsiverlauf.Controls.Add(this.chk_Laenge);
-            this.gb_Simulationsiverlauf.Controls.Add(this.chk_AVGFitness);
-            this.gb_Simulationsiverlauf.Location = new System.Drawing.Point(5, 144);
-            this.gb_Simulationsiverlauf.Name = "gb_Simulationsiverlauf";
-            this.gb_Simulationsiverlauf.Size = new System.Drawing.Size(674, 360);
-            this.gb_Simulationsiverlauf.TabIndex = 18;
-            this.gb_Simulationsiverlauf.TabStop = false;
-            this.gb_Simulationsiverlauf.Text = "Simulationsverlauf";
+            this.gb_SimulationResults.Controls.Add(this.chk_Live);
+            this.gb_SimulationResults.Controls.Add(this.chk_maxFitness);
+            this.gb_SimulationResults.Controls.Add(this.chk_minFitness);
+            this.gb_SimulationResults.Controls.Add(this.zgc_Simulationsgraph);
+            this.gb_SimulationResults.Controls.Add(this.chk_Length);
+            this.gb_SimulationResults.Controls.Add(this.chk_AVGFitness);
+            this.gb_SimulationResults.Location = new System.Drawing.Point(5, 144);
+            this.gb_SimulationResults.Name = "gb_SimulationResults";
+            this.gb_SimulationResults.Size = new System.Drawing.Size(674, 360);
+            this.gb_SimulationResults.TabIndex = 18;
+            this.gb_SimulationResults.TabStop = false;
+            this.gb_SimulationResults.Text = "Simulation Results";
             // 
             // chk_Live
             // 
@@ -572,14 +572,14 @@
             // 
             // chk_Laenge
             // 
-            this.chk_Laenge.AutoSize = true;
-            this.chk_Laenge.Location = new System.Drawing.Point(79, 338);
-            this.chk_Laenge.Name = "chk_Laenge";
-            this.chk_Laenge.Size = new System.Drawing.Size(67, 17);
-            this.chk_Laenge.TabIndex = 2;
-            this.chk_Laenge.Text = "Ø Länge";
-            this.chk_Laenge.UseVisualStyleBackColor = true;
-            this.chk_Laenge.CheckedChanged += new System.EventHandler(this.chk_Duration_CheckedChanged);
+            this.chk_Length.AutoSize = true;
+            this.chk_Length.Location = new System.Drawing.Point(79, 338);
+            this.chk_Length.Name = "chk_Laenge";
+            this.chk_Length.Size = new System.Drawing.Size(67, 17);
+            this.chk_Length.TabIndex = 2;
+            this.chk_Length.Text = "Ø Länge";
+            this.chk_Length.UseVisualStyleBackColor = true;
+            this.chk_Length.CheckedChanged += new System.EventHandler(this.chk_Duration_CheckedChanged);
             // 
             // chk_AVGFitness
             // 
@@ -604,102 +604,102 @@
             // 
             // lbl_AktGeschwindigkeit
             // 
-            this.lbl_AktGeschwindigkeit.AutoSize = true;
-            this.lbl_AktGeschwindigkeit.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AktGeschwindigkeit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_AktGeschwindigkeit.Location = new System.Drawing.Point(878, 10);
-            this.lbl_AktGeschwindigkeit.Name = "lbl_AktGeschwindigkeit";
-            this.lbl_AktGeschwindigkeit.Size = new System.Drawing.Size(23, 26);
-            this.lbl_AktGeschwindigkeit.TabIndex = 0;
-            this.lbl_AktGeschwindigkeit.Text = "0";
+            this.lbl_SpeedValue.AutoSize = true;
+            this.lbl_SpeedValue.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SpeedValue.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_SpeedValue.Location = new System.Drawing.Point(878, 10);
+            this.lbl_SpeedValue.Name = "lbl_AktGeschwindigkeit";
+            this.lbl_SpeedValue.Size = new System.Drawing.Size(23, 26);
+            this.lbl_SpeedValue.TabIndex = 0;
+            this.lbl_SpeedValue.Text = "0";
             // 
             // lbl_AnzGeschwindigkeit
             // 
-            this.lbl_AnzGeschwindigkeit.AutoSize = true;
-            this.lbl_AnzGeschwindigkeit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AnzGeschwindigkeit.Location = new System.Drawing.Point(851, 10);
-            this.lbl_AnzGeschwindigkeit.Name = "lbl_AnzGeschwindigkeit";
-            this.lbl_AnzGeschwindigkeit.Size = new System.Drawing.Size(31, 26);
-            this.lbl_AnzGeschwindigkeit.TabIndex = 20;
-            this.lbl_AnzGeschwindigkeit.Text = "v:";
+            this.lbl_SpeedLabel.AutoSize = true;
+            this.lbl_SpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SpeedLabel.Location = new System.Drawing.Point(851, 10);
+            this.lbl_SpeedLabel.Name = "lbl_AnzGeschwindigkeit";
+            this.lbl_SpeedLabel.Size = new System.Drawing.Size(31, 26);
+            this.lbl_SpeedLabel.TabIndex = 20;
+            this.lbl_SpeedLabel.Text = "v:";
             // 
             // lbl_AnzHoehe
             // 
-            this.lbl_AnzHoehe.AutoSize = true;
-            this.lbl_AnzHoehe.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.lbl_AnzHoehe.Location = new System.Drawing.Point(771, 10);
-            this.lbl_AnzHoehe.Name = "lbl_AnzHoehe";
-            this.lbl_AnzHoehe.Size = new System.Drawing.Size(32, 26);
-            this.lbl_AnzHoehe.TabIndex = 21;
-            this.lbl_AnzHoehe.Text = "h:";
+            this.lbl_HeightLabel.AutoSize = true;
+            this.lbl_HeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.lbl_HeightLabel.Location = new System.Drawing.Point(771, 10);
+            this.lbl_HeightLabel.Name = "lbl_AnzHoehe";
+            this.lbl_HeightLabel.Size = new System.Drawing.Size(32, 26);
+            this.lbl_HeightLabel.TabIndex = 21;
+            this.lbl_HeightLabel.Text = "h:";
             // 
             // lbl_AktHoehe
             // 
-            this.lbl_AktHoehe.AutoSize = true;
-            this.lbl_AktHoehe.Font = new System.Drawing.Font("Impact", 15.75F);
-            this.lbl_AktHoehe.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_AktHoehe.Location = new System.Drawing.Point(798, 10);
-            this.lbl_AktHoehe.Name = "lbl_AktHoehe";
-            this.lbl_AktHoehe.Size = new System.Drawing.Size(23, 26);
-            this.lbl_AktHoehe.TabIndex = 22;
-            this.lbl_AktHoehe.Text = "0";
+            this.lbl_HeightValue.AutoSize = true;
+            this.lbl_HeightValue.Font = new System.Drawing.Font("Impact", 15.75F);
+            this.lbl_HeightValue.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_HeightValue.Location = new System.Drawing.Point(798, 10);
+            this.lbl_HeightValue.Name = "lbl_AktHoehe";
+            this.lbl_HeightValue.Size = new System.Drawing.Size(23, 26);
+            this.lbl_HeightValue.TabIndex = 22;
+            this.lbl_HeightValue.Text = "0";
             // 
             // lbl_AktSchub
             // 
-            this.lbl_AktSchub.AutoSize = true;
-            this.lbl_AktSchub.Font = new System.Drawing.Font("Impact", 15.75F);
-            this.lbl_AktSchub.Location = new System.Drawing.Point(955, 11);
-            this.lbl_AktSchub.Name = "lbl_AktSchub";
-            this.lbl_AktSchub.Size = new System.Drawing.Size(23, 26);
-            this.lbl_AktSchub.TabIndex = 0;
-            this.lbl_AktSchub.Text = "0";
+            this.lbl_ThrustValue.AutoSize = true;
+            this.lbl_ThrustValue.Font = new System.Drawing.Font("Impact", 15.75F);
+            this.lbl_ThrustValue.Location = new System.Drawing.Point(955, 11);
+            this.lbl_ThrustValue.Name = "lbl_AktSchub";
+            this.lbl_ThrustValue.Size = new System.Drawing.Size(23, 26);
+            this.lbl_ThrustValue.TabIndex = 0;
+            this.lbl_ThrustValue.Text = "0";
             // 
             // lbl_AnzSchub
             // 
-            this.lbl_AnzSchub.AutoSize = true;
-            this.lbl_AnzSchub.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.lbl_AnzSchub.Location = new System.Drawing.Point(928, 10);
-            this.lbl_AnzSchub.Name = "lbl_AnzSchub";
-            this.lbl_AnzSchub.Size = new System.Drawing.Size(32, 26);
-            this.lbl_AnzSchub.TabIndex = 0;
-            this.lbl_AnzSchub.Text = "a:";
+            this.lbl_ThrustLabel.AutoSize = true;
+            this.lbl_ThrustLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.lbl_ThrustLabel.Location = new System.Drawing.Point(928, 10);
+            this.lbl_ThrustLabel.Name = "lbl_AnzSchub";
+            this.lbl_ThrustLabel.Size = new System.Drawing.Size(32, 26);
+            this.lbl_ThrustLabel.TabIndex = 0;
+            this.lbl_ThrustLabel.Text = "a:";
             // 
             // lbl_AktTank
             // 
-            this.lbl_AktTank.AutoSize = true;
-            this.lbl_AktTank.Font = new System.Drawing.Font("Impact", 15.75F);
-            this.lbl_AktTank.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_AktTank.Location = new System.Drawing.Point(723, 8);
-            this.lbl_AktTank.Name = "lbl_AktTank";
-            this.lbl_AktTank.Size = new System.Drawing.Size(23, 26);
-            this.lbl_AktTank.TabIndex = 24;
-            this.lbl_AktTank.Text = "0";
+            this.lbl_TankValue.AutoSize = true;
+            this.lbl_TankValue.Font = new System.Drawing.Font("Impact", 15.75F);
+            this.lbl_TankValue.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_TankValue.Location = new System.Drawing.Point(723, 8);
+            this.lbl_TankValue.Name = "lbl_AktTank";
+            this.lbl_TankValue.Size = new System.Drawing.Size(23, 26);
+            this.lbl_TankValue.TabIndex = 24;
+            this.lbl_TankValue.Text = "0";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(686, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
+            this.TankLabel.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.TankLabel.Location = new System.Drawing.Point(686, 8);
+            this.TankLabel.Name = "pictureBox1";
+            this.TankLabel.Size = new System.Drawing.Size(38, 28);
+            this.TankLabel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.TankLabel.TabIndex = 25;
+            this.TankLabel.TabStop = false;
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 697);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lbl_AktTank);
-            this.Controls.Add(this.lbl_AnzSchub);
-            this.Controls.Add(this.lbl_AktSchub);
-            this.Controls.Add(this.lbl_AktHoehe);
-            this.Controls.Add(this.lbl_AnzHoehe);
-            this.Controls.Add(this.lbl_AnzGeschwindigkeit);
+            this.Controls.Add(this.TankLabel);
+            this.Controls.Add(this.lbl_TankValue);
+            this.Controls.Add(this.lbl_ThrustLabel);
+            this.Controls.Add(this.lbl_ThrustValue);
+            this.Controls.Add(this.lbl_HeightValue);
+            this.Controls.Add(this.lbl_HeightLabel);
+            this.Controls.Add(this.lbl_SpeedLabel);
             this.Controls.Add(this.pnl_Animation);
-            this.Controls.Add(this.lbl_AktGeschwindigkeit);
-            this.Controls.Add(this.gb_Simulationsiverlauf);
+            this.Controls.Add(this.lbl_SpeedValue);
+            this.Controls.Add(this.gb_SimulationResults);
             this.Controls.Add(this.gb_Population);
             this.Controls.Add(this.gb_Simulation);
             this.Controls.Add(this.mnu_Menue);
@@ -718,9 +718,9 @@
             this.gb_Simulation.PerformLayout();
             this.gb_Population.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Population)).EndInit();
-            this.gb_Simulationsiverlauf.ResumeLayout(false);
-            this.gb_Simulationsiverlauf.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gb_SimulationResults.ResumeLayout(false);
+            this.gb_SimulationResults.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TankLabel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -729,61 +729,62 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip mnu_Menue;
-        private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem überToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.GroupBox gb_Simulation;
-        private System.Windows.Forms.Label lbl_Selektor;
-        private System.Windows.Forms.ComboBox cmb_Selektor;
-        private System.Windows.Forms.Label lbl_Chromosomlaenge;
-        private System.Windows.Forms.TextBox txt_Chromosomlaenge;
-        private System.Windows.Forms.Label lbl_Rekombinator;
-        private System.Windows.Forms.ComboBox cmb_Rekombinator;
-        private System.Windows.Forms.Label lbl_Hoehe;
-        private System.Windows.Forms.Label lbl_Treibstoff;
-        private System.Windows.Forms.Label lbl_Gewicht;
+        private System.Windows.Forms.Label lbl_Selector;
+        private System.Windows.Forms.ComboBox cmb_Selector;
+        private System.Windows.Forms.Label lbl_ChromosomeLength;
+        private System.Windows.Forms.TextBox txt_ChromosomeLength;
+        private System.Windows.Forms.Label lbl_Recombinator;
+        private System.Windows.Forms.ComboBox cmb_Recombinator;
+        private System.Windows.Forms.Label lbl_Height;
+        private System.Windows.Forms.Label lbl_Engine;
+        private System.Windows.Forms.Label lbl_Weight;
         private System.Windows.Forms.TextBox txt_Height;
-        private System.Windows.Forms.TextBox txt_Treibstoff;
-        private System.Windows.Forms.TextBox txt_Gewicht;
+        private System.Windows.Forms.TextBox txt_Engine;
+        private System.Windows.Forms.TextBox txt_Weight;
         private System.Windows.Forms.GroupBox gb_Population;
         private System.Windows.Forms.DataGridView dgv_Population;
-        private System.Windows.Forms.TextBox txt_Rundenazahl;
-        private System.Windows.Forms.Button btn_Simuliere;
-        private System.Windows.Forms.Label lbl_Rundenazahl;
-        private System.Windows.Forms.Button btn_Zuruecksetzen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cLaenge;
+        private System.Windows.Forms.TextBox txt_RoundNumber;
+        private System.Windows.Forms.Button btn_Simulate;
+        private System.Windows.Forms.Label lbl_RoundNumber;
+        private System.Windows.Forms.Button btn_Reset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cLength;
         private System.Windows.Forms.DataGridViewTextBoxColumn cGene;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFitness;
-        private System.Windows.Forms.GroupBox gb_Simulationsiverlauf;
+        private System.Windows.Forms.GroupBox gb_SimulationResults;
         private ZedGraph.ZedGraphControl zgc_Simulationsgraph;
         private System.Windows.Forms.CheckBox chk_AVGFitness;
-        private System.Windows.Forms.CheckBox chk_Laenge;
+        private System.Windows.Forms.CheckBox chk_Length;
         private System.Windows.Forms.CheckBox chk_maxFitness;
         private System.Windows.Forms.CheckBox chk_minFitness;
-        private System.Windows.Forms.Label lbl_Verlustrate;
-        private System.Windows.Forms.Label lbl_Mutationsrate;
-        private System.Windows.Forms.Label lbl_Duplikationsrate;
-        private System.Windows.Forms.TextBox txt_Verlustrate;
-        private System.Windows.Forms.TextBox txt_Mutationsrate;
-        private System.Windows.Forms.TextBox txt_Duplikationsrate;
+        private System.Windows.Forms.Label lbl_LossRate;
+        private System.Windows.Forms.Label lbl_MutationsRate;
+        private System.Windows.Forms.Label lbl_DuplicationsRate;
+        private System.Windows.Forms.TextBox txt_LossRate;
+        private System.Windows.Forms.TextBox txt_MutationsRate;
+        private System.Windows.Forms.TextBox txt_DuplicationsRate;
         private System.Windows.Forms.Panel pnl_Animation;
-        private System.Windows.Forms.Button btn_Abspielen;
+        private System.Windows.Forms.Button btn_Play;
         private System.Windows.Forms.Button btn_AutoSim;
-        private System.Windows.Forms.Label lbl_AktGeschwindigkeit;
-        private System.Windows.Forms.Label lbl_AnzGeschwindigkeit;
-        private System.Windows.Forms.Label lbl_AnzHoehe;
-        private System.Windows.Forms.Label lbl_AktHoehe;
-        private System.Windows.Forms.Label lbl_AktSchub;
-        private System.Windows.Forms.Label lbl_AnzSchub;
+        private System.Windows.Forms.Label lbl_SpeedValue;
+        private System.Windows.Forms.Label lbl_SpeedLabel;
+        private System.Windows.Forms.Label lbl_HeightLabel;
+        private System.Windows.Forms.Label lbl_HeightValue;
+        private System.Windows.Forms.Label lbl_ThrustValue;
+        private System.Windows.Forms.Label lbl_ThrustLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_Fitness;
-        private System.Windows.Forms.Button btn_SimAbbrechen;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_Einstellungen;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_RaumfahrerGewicht;
-        private System.Windows.Forms.Label lbl_AktTank;
+        private System.Windows.Forms.Button btn_SimAbort;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_Settings;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_SpacemanHeight;
+        private System.Windows.Forms.Label lbl_TankValue;
         private System.Windows.Forms.CheckBox chk_Live;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox TankLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cLaenge;
 
     }
 }
