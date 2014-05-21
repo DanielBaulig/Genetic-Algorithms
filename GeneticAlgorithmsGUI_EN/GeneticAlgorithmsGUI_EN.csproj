@@ -117,20 +117,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Weltraum.bmp" />
+    <EmbeddedResource Include="Space.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Triebwerk.gif" />
+    <EmbeddedResource Include="Engine.gif" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Explosion.gif" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Fahne.png" />
+    <EmbeddedResource Include="Flag.png" />
     <Content Include="Mond.ico" />
-    <EmbeddedResource Include="Raumfahrer.gif" />
-    <EmbeddedResource Include="Raumschiff.gif" />
-    <EmbeddedResource Include="Raumschiff_leer.gif" />
+    <EmbeddedResource Include="Spaceman.gif" />
+    <EmbeddedResource Include="Spaceship.gif" />
+    <EmbeddedResource Include="SpaceshipEmpty.gif" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

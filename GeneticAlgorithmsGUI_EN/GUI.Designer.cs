@@ -120,7 +120,7 @@
             this.tsmi_Einstellungen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_RaumfahrerGewicht});
             this.tsmi_Einstellungen.Name = "tsmi_Einstellungen";
-            this.tsmi_Einstellungen.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_Einstellungen.Size = new System.Drawing.Size(116, 22);
             this.tsmi_Einstellungen.Text = "Settings";
             // 
             // tsmi_RaumfahrerGewicht
@@ -133,7 +133,7 @@
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.beendenToolStripMenuItem.Text = "Quit";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -148,7 +148,7 @@
             // überToolStripMenuItem
             // 
             this.überToolStripMenuItem.Name = "überToolStripMenuItem";
-            this.überToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.überToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.überToolStripMenuItem.Text = "About";
             this.überToolStripMenuItem.Click += new System.EventHandler(this.überToolStripMenuItem_Click);
             // 
@@ -185,22 +185,22 @@
             this.gb_Simulation.Size = new System.Drawing.Size(674, 102);
             this.gb_Simulation.TabIndex = 16;
             this.gb_Simulation.TabStop = false;
-            this.gb_Simulation.Text = "Simulationsparameter";
+            this.gb_Simulation.Text = "Simulation Parameters";
             // 
             // btn_SimAbbrechen
             // 
-            this.btn_SimAbbrechen.Location = new System.Drawing.Point(561, 67);
+            this.btn_SimAbbrechen.Location = new System.Drawing.Point(580, 65);
             this.btn_SimAbbrechen.Name = "btn_SimAbbrechen";
             this.btn_SimAbbrechen.Size = new System.Drawing.Size(86, 23);
             this.btn_SimAbbrechen.TabIndex = 41;
-            this.btn_SimAbbrechen.Text = "Abbrechen";
+            this.btn_SimAbbrechen.Text = "Abort";
             this.btn_SimAbbrechen.UseVisualStyleBackColor = true;
             this.btn_SimAbbrechen.Click += new System.EventHandler(this.btn_SimAbbrechen_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(558, 23);
+            this.label1.Location = new System.Drawing.Point(577, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 40;
@@ -208,7 +208,7 @@
             // 
             // txt_Fitness
             // 
-            this.txt_Fitness.Location = new System.Drawing.Point(614, 20);
+            this.txt_Fitness.Location = new System.Drawing.Point(633, 18);
             this.txt_Fitness.Name = "txt_Fitness";
             this.txt_Fitness.Size = new System.Drawing.Size(33, 20);
             this.txt_Fitness.TabIndex = 39;
@@ -218,7 +218,7 @@
             // 
             // btn_AutoSim
             // 
-            this.btn_AutoSim.Location = new System.Drawing.Point(561, 43);
+            this.btn_AutoSim.Location = new System.Drawing.Point(580, 41);
             this.btn_AutoSim.Name = "btn_AutoSim";
             this.btn_AutoSim.Size = new System.Drawing.Size(86, 23);
             this.btn_AutoSim.TabIndex = 38;
@@ -229,33 +229,33 @@
             // lbl_Verlustrate
             // 
             this.lbl_Verlustrate.AutoSize = true;
-            this.lbl_Verlustrate.Location = new System.Drawing.Point(340, 75);
+            this.lbl_Verlustrate.Location = new System.Drawing.Point(361, 73);
             this.lbl_Verlustrate.Name = "lbl_Verlustrate";
-            this.lbl_Verlustrate.Size = new System.Drawing.Size(57, 13);
+            this.lbl_Verlustrate.Size = new System.Drawing.Size(55, 13);
             this.lbl_Verlustrate.TabIndex = 37;
-            this.lbl_Verlustrate.Text = "Verlustrate";
+            this.lbl_Verlustrate.Text = "Loss Rate";
             // 
             // lbl_Mutationsrate
             // 
             this.lbl_Mutationsrate.AutoSize = true;
-            this.lbl_Mutationsrate.Location = new System.Drawing.Point(326, 49);
+            this.lbl_Mutationsrate.Location = new System.Drawing.Point(337, 49);
             this.lbl_Mutationsrate.Name = "lbl_Mutationsrate";
-            this.lbl_Mutationsrate.Size = new System.Drawing.Size(71, 13);
+            this.lbl_Mutationsrate.Size = new System.Drawing.Size(79, 13);
             this.lbl_Mutationsrate.TabIndex = 36;
-            this.lbl_Mutationsrate.Text = "Mutationsrate";
+            this.lbl_Mutationsrate.Text = "Mutations Rate";
             // 
             // lbl_Duplikationsrate
             // 
             this.lbl_Duplikationsrate.AutoSize = true;
-            this.lbl_Duplikationsrate.Location = new System.Drawing.Point(314, 22);
+            this.lbl_Duplikationsrate.Location = new System.Drawing.Point(328, 20);
             this.lbl_Duplikationsrate.Name = "lbl_Duplikationsrate";
-            this.lbl_Duplikationsrate.Size = new System.Drawing.Size(83, 13);
+            this.lbl_Duplikationsrate.Size = new System.Drawing.Size(86, 13);
             this.lbl_Duplikationsrate.TabIndex = 35;
-            this.lbl_Duplikationsrate.Text = "Duplikationsrate";
+            this.lbl_Duplikationsrate.Text = "Duplication Rate";
             // 
             // txt_Verlustrate
             // 
-            this.txt_Verlustrate.Location = new System.Drawing.Point(403, 72);
+            this.txt_Verlustrate.Location = new System.Drawing.Point(422, 70);
             this.txt_Verlustrate.Name = "txt_Verlustrate";
             this.txt_Verlustrate.Size = new System.Drawing.Size(55, 20);
             this.txt_Verlustrate.TabIndex = 34;
@@ -265,7 +265,7 @@
             // 
             // txt_Mutationsrate
             // 
-            this.txt_Mutationsrate.Location = new System.Drawing.Point(403, 47);
+            this.txt_Mutationsrate.Location = new System.Drawing.Point(422, 45);
             this.txt_Mutationsrate.Name = "txt_Mutationsrate";
             this.txt_Mutationsrate.Size = new System.Drawing.Size(55, 20);
             this.txt_Mutationsrate.TabIndex = 33;
@@ -275,7 +275,7 @@
             // 
             // txt_Duplikationsrate
             // 
-            this.txt_Duplikationsrate.Location = new System.Drawing.Point(403, 19);
+            this.txt_Duplikationsrate.Location = new System.Drawing.Point(422, 17);
             this.txt_Duplikationsrate.Name = "txt_Duplikationsrate";
             this.txt_Duplikationsrate.Size = new System.Drawing.Size(55, 20);
             this.txt_Duplikationsrate.TabIndex = 32;
@@ -285,26 +285,26 @@
             // 
             // btn_Zuruecksetzen
             // 
-            this.btn_Zuruecksetzen.Location = new System.Drawing.Point(469, 67);
+            this.btn_Zuruecksetzen.Location = new System.Drawing.Point(488, 65);
             this.btn_Zuruecksetzen.Name = "btn_Zuruecksetzen";
             this.btn_Zuruecksetzen.Size = new System.Drawing.Size(86, 23);
             this.btn_Zuruecksetzen.TabIndex = 31;
-            this.btn_Zuruecksetzen.Text = "Zurücksetzen";
+            this.btn_Zuruecksetzen.Text = "Return";
             this.btn_Zuruecksetzen.UseVisualStyleBackColor = true;
             this.btn_Zuruecksetzen.Click += new System.EventHandler(this.btn_Zuruecksetzten_Click);
             // 
             // lbl_Rundenazahl
             // 
             this.lbl_Rundenazahl.AutoSize = true;
-            this.lbl_Rundenazahl.Location = new System.Drawing.Point(464, 22);
+            this.lbl_Rundenazahl.Location = new System.Drawing.Point(483, 20);
             this.lbl_Rundenazahl.Name = "lbl_Rundenazahl";
-            this.lbl_Rundenazahl.Size = new System.Drawing.Size(45, 13);
+            this.lbl_Rundenazahl.Size = new System.Drawing.Size(44, 13);
             this.lbl_Rundenazahl.TabIndex = 30;
-            this.lbl_Rundenazahl.Text = "Runden";
+            this.lbl_Rundenazahl.Text = "Rounds";
             // 
             // txt_Rundenazahl
             // 
-            this.txt_Rundenazahl.Location = new System.Drawing.Point(512, 19);
+            this.txt_Rundenazahl.Location = new System.Drawing.Point(531, 17);
             this.txt_Rundenazahl.Name = "txt_Rundenazahl";
             this.txt_Rundenazahl.Size = new System.Drawing.Size(43, 20);
             this.txt_Rundenazahl.TabIndex = 29;
@@ -314,22 +314,22 @@
             // 
             // btn_Simuliere
             // 
-            this.btn_Simuliere.Location = new System.Drawing.Point(469, 43);
+            this.btn_Simuliere.Location = new System.Drawing.Point(488, 41);
             this.btn_Simuliere.Name = "btn_Simuliere";
             this.btn_Simuliere.Size = new System.Drawing.Size(86, 23);
             this.btn_Simuliere.TabIndex = 28;
-            this.btn_Simuliere.Text = "Simuliere";
+            this.btn_Simuliere.Text = "Simulate";
             this.btn_Simuliere.UseVisualStyleBackColor = true;
             this.btn_Simuliere.Click += new System.EventHandler(this.btn_Simuliere_Click);
             // 
             // lbl_Selektor
             // 
             this.lbl_Selektor.AutoSize = true;
-            this.lbl_Selektor.Location = new System.Drawing.Point(183, 23);
+            this.lbl_Selektor.Location = new System.Drawing.Point(197, 23);
             this.lbl_Selektor.Name = "lbl_Selektor";
             this.lbl_Selektor.Size = new System.Drawing.Size(46, 13);
             this.lbl_Selektor.TabIndex = 27;
-            this.lbl_Selektor.Text = "Selektor";
+            this.lbl_Selektor.Text = "Selector";
             // 
             // cmb_Selektor
             // 
@@ -338,7 +338,7 @@
             "Alpha",
             "PieCake",
             "Random"});
-            this.cmb_Selektor.Location = new System.Drawing.Point(235, 19);
+            this.cmb_Selektor.Location = new System.Drawing.Point(249, 19);
             this.cmb_Selektor.Name = "cmb_Selektor";
             this.cmb_Selektor.Size = new System.Drawing.Size(75, 21);
             this.cmb_Selektor.TabIndex = 26;
@@ -347,15 +347,15 @@
             // lbl_Chromosomlaenge
             // 
             this.lbl_Chromosomlaenge.AutoSize = true;
-            this.lbl_Chromosomlaenge.Location = new System.Drawing.Point(141, 75);
+            this.lbl_Chromosomlaenge.Location = new System.Drawing.Point(142, 75);
             this.lbl_Chromosomlaenge.Name = "lbl_Chromosomlaenge";
-            this.lbl_Chromosomlaenge.Size = new System.Drawing.Size(88, 13);
+            this.lbl_Chromosomlaenge.Size = new System.Drawing.Size(101, 13);
             this.lbl_Chromosomlaenge.TabIndex = 25;
-            this.lbl_Chromosomlaenge.Text = "Chromosomlänge";
+            this.lbl_Chromosomlaenge.Text = "ChromosomeLength";
             // 
             // txt_Chromosomlaenge
             // 
-            this.txt_Chromosomlaenge.Location = new System.Drawing.Point(235, 72);
+            this.txt_Chromosomlaenge.Location = new System.Drawing.Point(249, 72);
             this.txt_Chromosomlaenge.Name = "txt_Chromosomlaenge";
             this.txt_Chromosomlaenge.Size = new System.Drawing.Size(75, 20);
             this.txt_Chromosomlaenge.TabIndex = 24;
@@ -366,11 +366,11 @@
             // lbl_Rekombinator
             // 
             this.lbl_Rekombinator.AutoSize = true;
-            this.lbl_Rekombinator.Location = new System.Drawing.Point(156, 49);
+            this.lbl_Rekombinator.Location = new System.Drawing.Point(170, 48);
             this.lbl_Rekombinator.Name = "lbl_Rekombinator";
             this.lbl_Rekombinator.Size = new System.Drawing.Size(73, 13);
             this.lbl_Rekombinator.TabIndex = 23;
-            this.lbl_Rekombinator.Text = "Rekombinator";
+            this.lbl_Rekombinator.Text = "Recombinator";
             // 
             // cmb_Rekombinator
             // 
@@ -378,7 +378,7 @@
             this.cmb_Rekombinator.Items.AddRange(new object[] {
             "Crossover",
             "Zip"});
-            this.cmb_Rekombinator.Location = new System.Drawing.Point(235, 46);
+            this.cmb_Rekombinator.Location = new System.Drawing.Point(249, 46);
             this.cmb_Rekombinator.Name = "cmb_Rekombinator";
             this.cmb_Rekombinator.Size = new System.Drawing.Size(75, 21);
             this.cmb_Rekombinator.TabIndex = 22;
@@ -387,34 +387,34 @@
             // lbl_Hoehe
             // 
             this.lbl_Hoehe.AutoSize = true;
-            this.lbl_Hoehe.Location = new System.Drawing.Point(22, 75);
+            this.lbl_Hoehe.Location = new System.Drawing.Point(17, 75);
             this.lbl_Hoehe.Name = "lbl_Hoehe";
-            this.lbl_Hoehe.Size = new System.Drawing.Size(33, 13);
+            this.lbl_Hoehe.Size = new System.Drawing.Size(38, 13);
             this.lbl_Hoehe.TabIndex = 21;
-            this.lbl_Hoehe.Text = "Höhe";
+            this.lbl_Hoehe.Text = "Height";
             // 
             // lbl_Treibstoff
             // 
             this.lbl_Treibstoff.AutoSize = true;
-            this.lbl_Treibstoff.Location = new System.Drawing.Point(4, 49);
+            this.lbl_Treibstoff.Location = new System.Drawing.Point(28, 49);
             this.lbl_Treibstoff.Name = "lbl_Treibstoff";
-            this.lbl_Treibstoff.Size = new System.Drawing.Size(51, 13);
+            this.lbl_Treibstoff.Size = new System.Drawing.Size(27, 13);
             this.lbl_Treibstoff.TabIndex = 20;
-            this.lbl_Treibstoff.Text = "Treibstoff";
+            this.lbl_Treibstoff.Text = "Fuel";
             // 
             // lbl_Gewicht
             // 
             this.lbl_Gewicht.AutoSize = true;
-            this.lbl_Gewicht.Location = new System.Drawing.Point(9, 23);
+            this.lbl_Gewicht.Location = new System.Drawing.Point(14, 22);
             this.lbl_Gewicht.Name = "lbl_Gewicht";
-            this.lbl_Gewicht.Size = new System.Drawing.Size(46, 13);
+            this.lbl_Gewicht.Size = new System.Drawing.Size(41, 13);
             this.lbl_Gewicht.TabIndex = 19;
-            this.lbl_Gewicht.Text = "Gewicht";
+            this.lbl_Gewicht.Text = "Weight";
             // 
-            // txt_Hoehe
+            // txt_Height
             // 
             this.txt_Height.Location = new System.Drawing.Point(61, 72);
-            this.txt_Height.Name = "txt_Hoehe";
+            this.txt_Height.Name = "txt_Height";
             this.txt_Height.Size = new System.Drawing.Size(75, 20);
             this.txt_Height.TabIndex = 18;
             this.txt_Height.Text = "100";
@@ -459,7 +459,8 @@
             this.btn_Abspielen.Name = "btn_Abspielen";
             this.btn_Abspielen.Size = new System.Drawing.Size(75, 23);
             this.btn_Abspielen.TabIndex = 19;
-            this.btn_Abspielen.Text = "Abspielen";
+            this.btn_Abspielen.TabStop = false;
+            this.btn_Abspielen.Text = "Play";
             this.btn_Abspielen.UseVisualStyleBackColor = true;
             this.btn_Abspielen.Click += new System.EventHandler(this.btn_Abspielen_Click);
             // 

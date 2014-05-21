@@ -86,19 +86,19 @@ namespace GeneticAlgorithmsGUI_EN
             Stream stream = null;
 
             // Load Pictures from the Assembly Resources
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Space.bmp");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI_EN.Space.bmp");
             bmpSpace = new Bitmap(stream);
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Spaceship.gif");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI_EN.Spaceship.gif");
             bmpSpaceshipIntact = new Bitmap(stream);
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Explosion.gif");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI_EN.Explosion.gif");
             bmpSpaceshipBroken = new Bitmap(stream);
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Engine.gif");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI_EN.Engine.gif");
             bmpEngine = new Bitmap(stream);
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.SpaceshipEmpty.gif");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI_EN.SpaceshipEmpty.gif");
             bmpSpaceshipEmpty = new Bitmap(stream);
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Spaceman.gif");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI_EN.Spaceman.gif");
             bmpSpaceman = new Bitmap(stream);
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Fahne.png");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI_EN.Flag.png");
             bmpFlag = new Bitmap(stream);
 
             // Initialisation of the DoubleBuffer
