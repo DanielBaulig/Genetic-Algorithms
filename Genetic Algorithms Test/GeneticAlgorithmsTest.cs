@@ -5,6 +5,8 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GeneticAlgorithms;
 using GeneticAlgorithms.Example_Classes;
+using GeneticAlgorithms.Example_Classes.MondLandungs;
+
 using System.Collections;
 
 namespace GeneticAlgorithmsTest
@@ -307,7 +309,7 @@ namespace GeneticAlgorithmsTest
             Assert.AreEqual(10, pilot.Gewicht);
             Raumschiff schiff = new Raumschiff(pilot, 100, 100, 1, true);
             pilot.SteuereRaumschiff(schiff);
-            Assert.AreEqual(100-1, schiff.Treibstoff);
+            Assert.AreEqual(100 - 1, schiff.Treibstoff);
             Assert.AreEqual(1, schiff.Geschwindigkeit);
             pilot.SteuereRaumschiff(schiff);
             Assert.AreEqual(100 - 2, schiff.Treibstoff);

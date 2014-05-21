@@ -10,6 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 using GeneticAlgorithms;
 using GeneticAlgorithms.Example_Classes;
+using GeneticAlgorithms.Example_Classes.MondLandungs;
 using ZedGraph;
 
 namespace GeneticAlgorithmsGUI

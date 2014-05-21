@@ -115,17 +115,17 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // tsmi_Einstellungen
+            // tsmi_Settings
             // 
             this.tsmi_Settings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_SpacemanHeight});
-            this.tsmi_Settings.Name = "tsmi_Einstellungen";
+            this.tsmi_Settings.Name = "tsmi_Settings";
             this.tsmi_Settings.Size = new System.Drawing.Size(116, 22);
             this.tsmi_Settings.Text = "Settings";
             // 
-            // tsmi_RaumfahrerGewicht
+            // tsmi_SpacemanHeight
             // 
-            this.tsmi_SpacemanHeight.Name = "tsmi_RaumfahrerGewicht";
+            this.tsmi_SpacemanHeight.Name = "tsmi_SpacemanHeight";
             this.tsmi_SpacemanHeight.Size = new System.Drawing.Size(170, 22);
             this.tsmi_SpacemanHeight.Text = "Spaceman Weight";
             this.tsmi_SpacemanHeight.Click += new System.EventHandler(this.gewichtToolStripMenuItem_Click);
@@ -187,10 +187,10 @@
             this.gb_Simulation.TabStop = false;
             this.gb_Simulation.Text = "Simulation Parameters";
             // 
-            // btn_SimAbbrechen
+            // btn_SimAbort
             // 
             this.btn_SimAbort.Location = new System.Drawing.Point(580, 65);
-            this.btn_SimAbort.Name = "btn_SimAbbrechen";
+            this.btn_SimAbort.Name = "btn_SimAbort";
             this.btn_SimAbort.Size = new System.Drawing.Size(86, 23);
             this.btn_SimAbort.TabIndex = 41;
             this.btn_SimAbort.Text = "Abort";
@@ -226,57 +226,57 @@
             this.btn_AutoSim.UseVisualStyleBackColor = true;
             this.btn_AutoSim.Click += new System.EventHandler(this.btn_Simuliere_Click);
             // 
-            // lbl_Verlustrate
+            // lbl_LossRate
             // 
             this.lbl_LossRate.AutoSize = true;
             this.lbl_LossRate.Location = new System.Drawing.Point(361, 73);
-            this.lbl_LossRate.Name = "lbl_Verlustrate";
+            this.lbl_LossRate.Name = "lbl_LossRate";
             this.lbl_LossRate.Size = new System.Drawing.Size(55, 13);
             this.lbl_LossRate.TabIndex = 37;
             this.lbl_LossRate.Text = "Loss Rate";
             // 
-            // lbl_Mutationsrate
+            // lbl_MutationsRate
             // 
             this.lbl_MutationsRate.AutoSize = true;
             this.lbl_MutationsRate.Location = new System.Drawing.Point(337, 49);
-            this.lbl_MutationsRate.Name = "lbl_Mutationsrate";
+            this.lbl_MutationsRate.Name = "lbl_MutationsRate";
             this.lbl_MutationsRate.Size = new System.Drawing.Size(79, 13);
             this.lbl_MutationsRate.TabIndex = 36;
             this.lbl_MutationsRate.Text = "Mutations Rate";
             // 
-            // lbl_Duplikationsrate
+            // lbl_DuplicationsRate
             // 
             this.lbl_DuplicationsRate.AutoSize = true;
             this.lbl_DuplicationsRate.Location = new System.Drawing.Point(328, 20);
-            this.lbl_DuplicationsRate.Name = "lbl_Duplikationsrate";
+            this.lbl_DuplicationsRate.Name = "lbl_DuplicationsRate";
             this.lbl_DuplicationsRate.Size = new System.Drawing.Size(86, 13);
             this.lbl_DuplicationsRate.TabIndex = 35;
             this.lbl_DuplicationsRate.Text = "Duplication Rate";
             // 
-            // txt_Verlustrate
+            // txt_LossRate
             // 
             this.txt_LossRate.Location = new System.Drawing.Point(422, 70);
-            this.txt_LossRate.Name = "txt_Verlustrate";
+            this.txt_LossRate.Name = "txt_LossRate";
             this.txt_LossRate.Size = new System.Drawing.Size(55, 20);
             this.txt_LossRate.TabIndex = 34;
             this.txt_LossRate.Text = "0,000";
             this.txt_LossRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_LossRate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
-            // txt_Mutationsrate
+            // txt_MutationsRate
             // 
             this.txt_MutationsRate.Location = new System.Drawing.Point(422, 45);
-            this.txt_MutationsRate.Name = "txt_Mutationsrate";
+            this.txt_MutationsRate.Name = "txt_MutationsRate";
             this.txt_MutationsRate.Size = new System.Drawing.Size(55, 20);
             this.txt_MutationsRate.TabIndex = 33;
             this.txt_MutationsRate.Text = "0,010";
             this.txt_MutationsRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_MutationsRate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Float_Validating);
             // 
-            // txt_Duplikationsrate
+            // txt_DuplicationsRate
             // 
             this.txt_DuplicationsRate.Location = new System.Drawing.Point(422, 17);
-            this.txt_DuplicationsRate.Name = "txt_Duplikationsrate";
+            this.txt_DuplicationsRate.Name = "txt_DuplicationsRate";
             this.txt_DuplicationsRate.Size = new System.Drawing.Size(55, 20);
             this.txt_DuplicationsRate.TabIndex = 32;
             this.txt_DuplicationsRate.Text = "0,000";
@@ -452,11 +452,11 @@
             this.gb_Population.TabStop = false;
             this.gb_Population.Text = "Population";
             // 
-            // btn_Abspielen
+            // btn_Play
             // 
             this.btn_Play.Enabled = false;
             this.btn_Play.Location = new System.Drawing.Point(591, 139);
-            this.btn_Play.Name = "btn_Abspielen";
+            this.btn_Play.Name = "btn_Play";
             this.btn_Play.Size = new System.Drawing.Size(75, 23);
             this.btn_Play.TabIndex = 19;
             this.btn_Play.TabStop = false;
@@ -570,11 +570,11 @@
             this.zgc_Simulationsgraph.Size = new System.Drawing.Size(662, 316);
             this.zgc_Simulationsgraph.TabIndex = 0;
             // 
-            // chk_Laenge
+            // chk_Length
             // 
             this.chk_Length.AutoSize = true;
             this.chk_Length.Location = new System.Drawing.Point(79, 338);
-            this.chk_Length.Name = "chk_Laenge";
+            this.chk_Length.Name = "chk_Length";
             this.chk_Length.Size = new System.Drawing.Size(67, 17);
             this.chk_Length.TabIndex = 2;
             this.chk_Length.Text = "Ø Länge";
@@ -602,84 +602,84 @@
             this.pnl_Animation.TabIndex = 19;
             this.pnl_Animation.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Animation_Paint);
             // 
-            // lbl_AktGeschwindigkeit
+            // lbl_SpeedValue
             // 
             this.lbl_SpeedValue.AutoSize = true;
             this.lbl_SpeedValue.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_SpeedValue.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_SpeedValue.Location = new System.Drawing.Point(878, 10);
-            this.lbl_SpeedValue.Name = "lbl_AktGeschwindigkeit";
+            this.lbl_SpeedValue.Name = "lbl_SpeedValue";
             this.lbl_SpeedValue.Size = new System.Drawing.Size(23, 26);
             this.lbl_SpeedValue.TabIndex = 0;
             this.lbl_SpeedValue.Text = "0";
             // 
-            // lbl_AnzGeschwindigkeit
+            // lbl_SpeedLabel
             // 
             this.lbl_SpeedLabel.AutoSize = true;
             this.lbl_SpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_SpeedLabel.Location = new System.Drawing.Point(851, 10);
-            this.lbl_SpeedLabel.Name = "lbl_AnzGeschwindigkeit";
+            this.lbl_SpeedLabel.Name = "lbl_SpeedLabel";
             this.lbl_SpeedLabel.Size = new System.Drawing.Size(31, 26);
             this.lbl_SpeedLabel.TabIndex = 20;
             this.lbl_SpeedLabel.Text = "v:";
             // 
-            // lbl_AnzHoehe
+            // lbl_HeightLabel
             // 
             this.lbl_HeightLabel.AutoSize = true;
             this.lbl_HeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.lbl_HeightLabel.Location = new System.Drawing.Point(771, 10);
-            this.lbl_HeightLabel.Name = "lbl_AnzHoehe";
+            this.lbl_HeightLabel.Name = "lbl_HeightLabel";
             this.lbl_HeightLabel.Size = new System.Drawing.Size(32, 26);
             this.lbl_HeightLabel.TabIndex = 21;
             this.lbl_HeightLabel.Text = "h:";
             // 
-            // lbl_AktHoehe
+            // lbl_HeightValue
             // 
             this.lbl_HeightValue.AutoSize = true;
             this.lbl_HeightValue.Font = new System.Drawing.Font("Impact", 15.75F);
             this.lbl_HeightValue.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_HeightValue.Location = new System.Drawing.Point(798, 10);
-            this.lbl_HeightValue.Name = "lbl_AktHoehe";
+            this.lbl_HeightValue.Name = "lbl_HeightValue";
             this.lbl_HeightValue.Size = new System.Drawing.Size(23, 26);
             this.lbl_HeightValue.TabIndex = 22;
             this.lbl_HeightValue.Text = "0";
             // 
-            // lbl_AktSchub
+            // lbl_ThrustValue
             // 
             this.lbl_ThrustValue.AutoSize = true;
             this.lbl_ThrustValue.Font = new System.Drawing.Font("Impact", 15.75F);
             this.lbl_ThrustValue.Location = new System.Drawing.Point(955, 11);
-            this.lbl_ThrustValue.Name = "lbl_AktSchub";
+            this.lbl_ThrustValue.Name = "lbl_ThrustValue";
             this.lbl_ThrustValue.Size = new System.Drawing.Size(23, 26);
             this.lbl_ThrustValue.TabIndex = 0;
             this.lbl_ThrustValue.Text = "0";
             // 
-            // lbl_AnzSchub
+            // lbl_ThrustLabel
             // 
             this.lbl_ThrustLabel.AutoSize = true;
             this.lbl_ThrustLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.lbl_ThrustLabel.Location = new System.Drawing.Point(928, 10);
-            this.lbl_ThrustLabel.Name = "lbl_AnzSchub";
+            this.lbl_ThrustLabel.Name = "lbl_ThrustLabel";
             this.lbl_ThrustLabel.Size = new System.Drawing.Size(32, 26);
             this.lbl_ThrustLabel.TabIndex = 0;
             this.lbl_ThrustLabel.Text = "a:";
             // 
-            // lbl_AktTank
+            // lbl_TankValue
             // 
             this.lbl_TankValue.AutoSize = true;
             this.lbl_TankValue.Font = new System.Drawing.Font("Impact", 15.75F);
             this.lbl_TankValue.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_TankValue.Location = new System.Drawing.Point(723, 8);
-            this.lbl_TankValue.Name = "lbl_AktTank";
+            this.lbl_TankValue.Name = "lbl_TankValue";
             this.lbl_TankValue.Size = new System.Drawing.Size(23, 26);
             this.lbl_TankValue.TabIndex = 24;
             this.lbl_TankValue.Text = "0";
             // 
-            // pictureBox1
+            // TankLabel
             // 
-            this.TankLabel.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.TankLabel.Image = ((System.Drawing.Image)(resources.GetObject("TankLabel.Image")));
             this.TankLabel.Location = new System.Drawing.Point(686, 8);
-            this.TankLabel.Name = "pictureBox1";
+            this.TankLabel.Name = "TankLabel";
             this.TankLabel.Size = new System.Drawing.Size(38, 28);
             this.TankLabel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.TankLabel.TabIndex = 25;
@@ -710,7 +710,7 @@
             this.MaximizeBox = false;
             this.Name = "GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mondlandung";
+            this.Text = "Moonlanding";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GUI_FormClosing);
             this.mnu_Menue.ResumeLayout(false);
             this.mnu_Menue.PerformLayout();
