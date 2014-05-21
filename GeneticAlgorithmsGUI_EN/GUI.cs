@@ -86,17 +86,17 @@ namespace GeneticAlgorithmsGUI_EN
             Stream stream = null;
 
             // Load Pictures from the Assembly Resources
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Weltraum.bmp");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Space.bmp");
             bmpSpace = new Bitmap(stream);
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Raumschiff.gif");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Spaceship.gif");
             bmpSpaceshipIntact = new Bitmap(stream);
             stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Explosion.gif");
             bmpSpaceshipBroken = new Bitmap(stream);
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Triebwerk.gif");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Engine.gif");
             bmpEngine = new Bitmap(stream);
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Raumschiff_leer.gif");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.SpaceshipEmpty.gif");
             bmpSpaceshipEmpty = new Bitmap(stream);
-            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Raumfahrer.gif");
+            stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Spaceman.gif");
             bmpSpaceman = new Bitmap(stream);
             stream = myAssembly.GetManifestResourceStream("GeneticAlgorithmsGUI.Fahne.png");
             bmpFlag = new Bitmap(stream);
@@ -109,10 +109,10 @@ namespace GeneticAlgorithmsGUI_EN
 
 
         /// <summary>
-        /// Paint Ereignis
+        /// Paint Event
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Caller Object</param>
+        /// <param name="e">Event Object</param>
         private void pnl_Animation_Paint(object sender, PaintEventArgs e)
         {
             drawClearBackground();
@@ -120,7 +120,7 @@ namespace GeneticAlgorithmsGUI_EN
 
 
         /// <summary>
-        /// leere Weltraum-/Mondlandschaft zeichnen
+        /// empty Space-/Moonscape draw
         /// </summary>
         private void drawClearBackground()
         {
@@ -129,38 +129,38 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Raumschiffbild auf dem Hintergrund in bestimmter Höhe platzieren
+        /// Spaceship Image on the Background in place at certain level
         /// </summary>
-        /// <param name="hoehe">Höhe des Raumschiffs</param>
-        /// <param name="schub">gegebener Schub</param>
-        public void setzeRaumschiff(int hoehe, int schub)
+        /// <param name="height">Height of the Spaceship</param>
+        /// <param name="thrust">Given Thrust</param>
+        public void setSpaceship(int height, int thrust)
         {
             gBuffer.DrawImage(bmpSpace, 0, 0, 300, 650);
-            float yPosition = 550.0f/Convert.ToInt64(txt_Hoehe.Text);
-            yPosition *= hoehe;
+            float yPosition = 550.0f/Convert.ToInt64(txt_Height.Text);
+            yPosition *= height;
             yPosition = 550 - yPosition;
-            int skalierterSchub = schub * 2;
+            int scaledThrust = thrust * 2;
 
-            gBuffer.DrawImage(bmpEngine, 150 - (skalierterSchub / 2), yPosition + 65, skalierterSchub, skalierterSchub);
+            gBuffer.DrawImage(bmpEngine, 150 - (scaledThrust / 2), yPosition + 65, scaledThrust, scaledThrust);
             gBuffer.DrawImage(bmpSpaceship, 100, Convert.ToInt32(yPosition), 100, 100);
             pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
         }
 
         /// <summary>
-        /// Beenden der Anwendung
+        /// End the Application
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
-        private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
         /// <summary>
-        /// "Über"-Dialogfenster anzeigen
+        /// "About"-ViewDialogBox
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void überToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(this, "Mondlandungs-Simulation mit genetischen Algorithmen\n\nVersion 1.0\n\nEntwickelt von Daniel Baulig, Jonas Heil, Christian Kleemann, Sven Sperner\n\nZedGraph Control von http://www.zedgraph.org unter LGPL", "Über");
@@ -168,10 +168,10 @@ namespace GeneticAlgorithmsGUI_EN
 
 
         /// <summary>
-        /// Validierung eines eingegebenen Ganzzahl-Parameters
+        /// Validation of an input integer parameter
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void txt_Int_Validating(object sender, CancelEventArgs e)
         {
             try
@@ -181,17 +181,17 @@ namespace GeneticAlgorithmsGUI_EN
             }
             catch (FormatException exception)
             {
-                MessageBox.Show("Kein positiver Ganzzahlwert!");
+                MessageBox.Show("No positive integer!");
                 (sender as TextBox).SelectAll();
                 e.Cancel = true;
             }
         }
 
         /// <summary>
-        /// Validierung eines eingegebenen Fliesskomma-Parameters
+        /// Validation of an input floating-point parameter
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void txt_Float_Validating(object sender, CancelEventArgs e)
         {
             try
@@ -201,17 +201,17 @@ namespace GeneticAlgorithmsGUI_EN
             }
             catch (FormatException exception)
             {
-                MessageBox.Show("Kein positiver Gleitkommawert!");
+                MessageBox.Show("No positive floating point value!");
                 (sender as TextBox).SelectAll();
                 e.Cancel = true;
             }
         }
 
         /// <summary>
-        /// Durchschnittliche Fitness der Population ein-/ausblenden
+        /// Hide average fitness of the population
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void chk_AVGFitness_CheckedChanged(object sender, EventArgs e)
         {
             avgFitnessCurve.IsVisible = (sender as CheckBox).Checked;
@@ -221,11 +221,11 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Durchschnittliche Chromosomlänge der Population ein-/ausblenden
+        /// Toggle average chromosome length of the population
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
-        private void chk_Laenge_CheckedChanged(object sender, EventArgs e)
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
+        private void chk_Duration_CheckedChanged(object sender, EventArgs e)
         {
             avgLengthCurve.IsVisible = (sender as CheckBox).Checked;
             zgc_Simulationsgraph.GraphPane.YAxisList[1].IsVisible = avgLengthCurve.IsVisible = (sender as CheckBox).Checked;
@@ -234,10 +234,10 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Minimale Fitness der Population ein-/ausblenden
+        /// Hide Minimum fitness of the population
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void chk_minFitness_CheckedChanged(object sender, EventArgs e)
         {
             minFitnessCurve.IsVisible = (sender as CheckBox).Checked;
@@ -247,10 +247,10 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Maximale Fitness der Population ein-/ausblenden
+        /// Hide Maximum fitness of the population
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void chk_maxFitness_CheckedChanged(object sender, EventArgs e)
         {
             maxFitnessCurve.IsVisible = (sender as CheckBox).Checked;
@@ -260,10 +260,10 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Simulationsergebnisse zurücksetzen
+        /// Reset the simulation results
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void btn_Zuruecksetzten_Click(object sender, EventArgs e)
         {
             avgLengthList.Clear();
@@ -278,7 +278,7 @@ namespace GeneticAlgorithmsGUI_EN
             cmb_Rekombinator.Enabled = true;
             txt_Chromosomlaenge.Enabled = true;
             txt_Gewicht.Enabled = true;
-            txt_Hoehe.Enabled = true;
+            txt_Height.Enabled = true;
             txt_Treibstoff.Enabled = true;
             txt_Mutationsrate.Enabled = true;
             txt_Verlustrate.Enabled = true;
@@ -306,10 +306,10 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Simulationsrunde durchlaufen
+        /// Go through the simulation rounds
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void OnSimulationTurn(object sender, EventArgs e)
         {
             turn ++;
@@ -333,10 +333,10 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Simulation starten
+        /// Simulation start
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void btn_Simuliere_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
@@ -352,13 +352,13 @@ namespace GeneticAlgorithmsGUI_EN
                 cmb_Rekombinator.Enabled = false;
                 cmb_Selektor.Enabled = false;
                 txt_Gewicht.Enabled = false;
-                txt_Hoehe.Enabled = false;
+                txt_Height.Enabled = false;
                 txt_Treibstoff.Enabled = false;
                 txt_Mutationsrate.Enabled = false;
                 txt_Verlustrate.Enabled = false;
                 txt_Duplikationsrate.Enabled = false;
                 IntGene.MaxValue = Convert.ToInt32(txt_Treibstoff.Text);
-                MoonSim = new MondlandungsSimulation(Convert.ToInt32(txt_Hoehe.Text), Convert.ToInt32(txt_Treibstoff.Text), Convert.ToInt32(txt_Gewicht.Text), tsmi_RaumfahrerGewicht.Checked);
+                MoonSim = new MondlandungsSimulation(Convert.ToInt32(txt_Height.Text), Convert.ToInt32(txt_Treibstoff.Text), Convert.ToInt32(txt_Gewicht.Text), tsmi_RaumfahrerGewicht.Checked);
                 GenSim = new GeneticSimulation<IntGene>(100, Convert.ToInt32(txt_Chromosomlaenge.Text), MoonSim, recombinationProvider, selectionProvider);
                 GenSim.SimulationTurn += OnSimulationTurn;
                 GenSim.GeneMutationRate = Convert.ToDouble(txt_Mutationsrate.Text);
@@ -408,10 +408,10 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Selektor ausgewählt
+        /// Selected selector
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void cmb_Selektor_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch ((sender as ComboBox).SelectedIndex)
@@ -432,10 +432,10 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Rekombinator ausgewählt
+        /// Selected recombinator
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void cmb_Rekombinator_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch ((sender as ComboBox).SelectedIndex)
@@ -453,21 +453,21 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Raumfahrer und Raumschiff in bestimmter Höhe auf den Hintergrund zeichnen
+        /// Draw spaceman and spaceship at a certain level on the background
         /// </summary>
-        /// <param name="x">Höhe</param>
-        private void setzeRaumfahrer(int x)
+        /// <param name="x">Height</param>
+        private void setSpaceman(int x)
         {
-            setzeRaumschiff(0, 0);
+            setSpaceship(0, 0);
             gBuffer.DrawImage(bmpSpaceman, x, 590, 25, 50);
             pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
         }
 
         /// <summary>
-        /// Mondlandungsssimulationsrunde durchlaufen
+        /// Moon touchdown simulations round through
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void OnMondlandungsSimulationTurn(object sender, EventArgs e)
         {
             MondlandungsSimulationEventArgs mondlandungsArgs = e as MondlandungsSimulationEventArgs;
@@ -485,7 +485,7 @@ namespace GeneticAlgorithmsGUI_EN
                     {
                         floatHoehe += mondlandungsArgs.Raumschiff.Geschwindigkeit / 10.0f;
                         System.Threading.Thread.Sleep(10);
-                        setzeRaumschiff(Convert.ToInt32(floatHoehe), mondlandungsArgs.Schub);
+                        setSpaceship(Convert.ToInt32(floatHoehe), mondlandungsArgs.Schub);
                     }
                 //Raumschiff fliegt abwärts
                 else
@@ -495,10 +495,10 @@ namespace GeneticAlgorithmsGUI_EN
                         System.Threading.Thread.Sleep(10);
                         if (floatHoehe <= 0)
                         {
-                            setzeRaumschiff(0, mondlandungsArgs.Schub);
+                            setSpaceship(0, mondlandungsArgs.Schub);
                         }
                         else
-                            setzeRaumschiff(Convert.ToInt32(floatHoehe), mondlandungsArgs.Schub);
+                            setSpaceship(Convert.ToInt32(floatHoehe), mondlandungsArgs.Schub);
                     }
                 finalHeight = mondlandungsArgs.Raumschiff.Hoehe;
 
@@ -509,32 +509,32 @@ namespace GeneticAlgorithmsGUI_EN
                     if ((mondlandungsArgs.Raumschiff.Geschwindigkeit + 10) < 0)
                     {
                         bmpSpaceship = bmpSpaceshipBroken;
-                        setzeRaumschiff(0, 0);
+                        setSpaceship(0, 0);
                     }
                     else
                     {
                         //wegsehen: ugly code!
                         //Raumfahrer-Animation
-                        setzeRaumschiff(0, 0);
+                        setSpaceship(0, 0);
                         System.Threading.Thread.Sleep(500);
                         bmpSpaceship = bmpSpaceshipEmpty;
-                        setzeRaumschiff(0, 0);
+                        setSpaceship(0, 0);
                         System.Threading.Thread.Sleep(500);
-                        setzeRaumfahrer(100);
+                        setSpaceman(100);
                         System.Threading.Thread.Sleep(100);
-                        setzeRaumfahrer(110);
+                        setSpaceman(110);
                         System.Threading.Thread.Sleep(100);
-                        setzeRaumfahrer(120);
+                        setSpaceman(120);
                         System.Threading.Thread.Sleep(100);
-                        setzeRaumfahrer(130);
+                        setSpaceman(130);
                         System.Threading.Thread.Sleep(100);
-                        setzeRaumfahrer(140);
+                        setSpaceman(140);
                         System.Threading.Thread.Sleep(100);
-                        setzeRaumfahrer(150);
+                        setSpaceman(150);
                         System.Threading.Thread.Sleep(100);
-                        setzeRaumfahrer(160);
+                        setSpaceman(160);
                         System.Threading.Thread.Sleep(100);
-                        setzeRaumfahrer(170);
+                        setSpaceman(170);
                         System.Threading.Thread.Sleep(100);
                         gBuffer.DrawImage(bmpFlag, 200, 560, 37, 75);
                         pnl_Animation.CreateGraphics().DrawImageUnscaled(_backBuffer, 0, 0);
@@ -546,10 +546,10 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Abspielen einer Mondlandung mit aus Populationsliste gewähltem Chromosom
+        /// Playing a moon landing with the selected population list of chromosomes
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void btn_Abspielen_Click(object sender, EventArgs e)
         {
             if (dgv_Population.SelectedRows.Count > 0)
@@ -557,7 +557,7 @@ namespace GeneticAlgorithmsGUI_EN
                 btn_Abspielen.Enabled = false;
                 Cursor = Cursors.WaitCursor;
                 bmpSpaceship = bmpSpaceshipIntact;
-                finalHeight = Convert.ToInt32(txt_Hoehe.Text);
+                finalHeight = Convert.ToInt32(txt_Height.Text);
                 MoonSim.SimulationTurn += OnMondlandungsSimulationTurn;
                 (dgv_Population.SelectedRows[0].Tag as Chromosome<IntGene>).computeFitness(MoonSim);
                 MoonSim.SimulationTurn -= OnMondlandungsSimulationTurn;
@@ -567,30 +567,30 @@ namespace GeneticAlgorithmsGUI_EN
         }
 
         /// <summary>
-        /// Simulationsdurchlauf abbrechen
+        /// Abort simulation running
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void btn_SimAbbrechen_Click(object sender, EventArgs e)
         {
             simulationAbort = true;
         }
 
         /// <summary>
-        /// Gewicht des Raumfahrers zum Raumschiffgewicht hinzuzählen / abziehen
+        /// Weight of the space traveler should include / remove the spacecraft weight
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void gewichtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (sender as ToolStripMenuItem).Checked = !(sender as ToolStripMenuItem).Checked;
         }
 
         /// <summary>
-        /// Abbrechen evtl. laufender Simulation beim Beenden des Programms.
+        /// Cancel any simulation is running when you exit the program.
         /// </summary>
-        /// <param name="sender">aufrufendes Objekt</param>
-        /// <param name="e">EreignisObjekt</param>
+        /// <param name="sender">Sender Object</param>
+        /// <param name="e">Event Object</param>
         private void GUI_FormClosing(object sender, FormClosingEventArgs e)
         {
             simulationAbort = true;

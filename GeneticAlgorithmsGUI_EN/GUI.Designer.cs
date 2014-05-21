@@ -61,7 +61,7 @@
             this.lbl_Hoehe = new System.Windows.Forms.Label();
             this.lbl_Treibstoff = new System.Windows.Forms.Label();
             this.lbl_Gewicht = new System.Windows.Forms.Label();
-            this.txt_Hoehe = new System.Windows.Forms.TextBox();
+            this.txt_Height = new System.Windows.Forms.TextBox();
             this.txt_Treibstoff = new System.Windows.Forms.TextBox();
             this.txt_Gewicht = new System.Windows.Forms.TextBox();
             this.gb_Population = new System.Windows.Forms.GroupBox();
@@ -135,7 +135,7 @@
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
             this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.beendenToolStripMenuItem.Text = "Quit";
-            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
+            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
             // hilfeToolStripMenuItem
             // 
@@ -177,7 +177,7 @@
             this.gb_Simulation.Controls.Add(this.lbl_Hoehe);
             this.gb_Simulation.Controls.Add(this.lbl_Treibstoff);
             this.gb_Simulation.Controls.Add(this.lbl_Gewicht);
-            this.gb_Simulation.Controls.Add(this.txt_Hoehe);
+            this.gb_Simulation.Controls.Add(this.txt_Height);
             this.gb_Simulation.Controls.Add(this.txt_Treibstoff);
             this.gb_Simulation.Controls.Add(this.txt_Gewicht);
             this.gb_Simulation.Location = new System.Drawing.Point(5, 36);
@@ -413,13 +413,13 @@
             // 
             // txt_Hoehe
             // 
-            this.txt_Hoehe.Location = new System.Drawing.Point(61, 72);
-            this.txt_Hoehe.Name = "txt_Hoehe";
-            this.txt_Hoehe.Size = new System.Drawing.Size(75, 20);
-            this.txt_Hoehe.TabIndex = 18;
-            this.txt_Hoehe.Text = "100";
-            this.txt_Hoehe.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_Hoehe.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
+            this.txt_Height.Location = new System.Drawing.Point(61, 72);
+            this.txt_Height.Name = "txt_Hoehe";
+            this.txt_Height.Size = new System.Drawing.Size(75, 20);
+            this.txt_Height.TabIndex = 18;
+            this.txt_Height.Text = "100";
+            this.txt_Height.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_Height.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Int_Validating);
             // 
             // txt_Treibstoff
             // 
@@ -578,7 +578,7 @@
             this.chk_Laenge.TabIndex = 2;
             this.chk_Laenge.Text = "Ø Länge";
             this.chk_Laenge.UseVisualStyleBackColor = true;
-            this.chk_Laenge.CheckedChanged += new System.EventHandler(this.chk_Laenge_CheckedChanged);
+            this.chk_Laenge.CheckedChanged += new System.EventHandler(this.chk_Duration_CheckedChanged);
             // 
             // chk_AVGFitness
             // 
@@ -742,7 +742,7 @@
         private System.Windows.Forms.Label lbl_Hoehe;
         private System.Windows.Forms.Label lbl_Treibstoff;
         private System.Windows.Forms.Label lbl_Gewicht;
-        private System.Windows.Forms.TextBox txt_Hoehe;
+        private System.Windows.Forms.TextBox txt_Height;
         private System.Windows.Forms.TextBox txt_Treibstoff;
         private System.Windows.Forms.TextBox txt_Gewicht;
         private System.Windows.Forms.GroupBox gb_Population;
