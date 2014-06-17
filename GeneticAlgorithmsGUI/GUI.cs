@@ -9,8 +9,8 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using GeneticAlgorithms;
-using GeneticAlgorithms.Example_Classes;
-using GeneticAlgorithms.Example_Classes.MondLandungs;
+using GeneticAlgorithms.ExampleClasses;
+using GeneticAlgorithms.ExampleClasses.MondLandungs;
 using ZedGraph;
 
 namespace GeneticAlgorithmsGUI

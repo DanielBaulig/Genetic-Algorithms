@@ -23,7 +23,7 @@
  */
 using System;
 
-namespace GeneticAlgorithms.Example_Classes
+namespace GeneticAlgorithms.ExampleClasses
 {
     public class IntGene :
         IGene

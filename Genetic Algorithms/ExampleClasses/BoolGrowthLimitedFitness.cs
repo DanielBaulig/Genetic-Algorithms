@@ -23,20 +23,21 @@
  */
 using System.Collections;
 
-namespace GeneticAlgorithms.Example_Classes
+namespace GeneticAlgorithms.ExampleClasses
 {
-    public class AlphaSelector : ISelectionProvider
+    public class BoolGrowthLimitedFitness : IFitnessFunctionProvider
     {
+        #region IFitnessFunctionProvider Member
 
-        #region ISelectionProvider Member
-
-        public IChromosome select(ArrayList population, float totalFitness)
+        public float ComputeFitness(ArrayList genes)
         {
-            IChromosome alphaChromosome = null;
-            foreach (IChromosome chromosome in population)
-                if (alphaChromosome == null || alphaChromosome.Fitness < chromosome.Fitness)
-                    alphaChromosome = chromosome;
-            return alphaChromosome;
+            float sum = 0;
+            foreach (BoolGene gene in genes)
+            {
+                if (gene == true)
+                    sum += 1;
+            }
+            return sum * 10 - genes.Count*genes.Count;
         }
 
         #endregion

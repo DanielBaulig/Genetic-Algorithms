@@ -21,23 +21,30 @@
  *  If you wish to donate, please have a look at my Amazon Wishlist:
  *  http://www.amazon.de/wishlist/1GWSB78PYVFBQ
  */
+using System;
 using System.Collections;
 
-namespace GeneticAlgorithms.Example_Classes
+namespace GeneticAlgorithms.ExampleClasses
 {
-    public class BoolGrowthLimitedFitness : IFitnessFunctionProvider
+    public class AsymmetricCrossoverRecombinator : IRecombinationProvider
     {
-        #region IFitnessFunctionProvider Member
 
-        public float ComputeFitness(ArrayList genes)
+        Random random = new Random();
+        #region IRecombinationProvider Member
+
+        public ArrayList Recombine(ArrayList maleGenes, ArrayList femaleGenes)
         {
-            float sum = 0;
-            foreach (BoolGene gene in genes)
-            {
-                if (gene == true)
-                    sum += 1;
-            }
-            return sum * 10 - genes.Count*genes.Count;
+            double maleConstraint = random.NextDouble();
+            int maleCount = (int)Math.Ceiling(maleGenes.Count * maleConstraint);
+            int femaleCount = (int)Math.Floor(femaleGenes.Count * (1-maleConstraint));
+            ArrayList child = new ArrayList(maleCount + femaleCount);
+            child.InsertRange(0, maleGenes.GetRange(0, maleCount));
+            child.InsertRange(maleCount, femaleGenes.GetRange(femaleGenes.Count - femaleCount, femaleCount));
+
+            for (int i = 0; i < child.Count; i++)
+                child[i] = (child[i] as IGene).Clone();
+
+            return child;
         }
 
         #endregion

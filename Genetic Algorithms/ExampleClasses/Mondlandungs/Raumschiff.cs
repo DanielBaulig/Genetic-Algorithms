@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GeneticAlgorithms.Example_Classes.MondLandungs
+namespace GeneticAlgorithms.ExampleClasses.MondLandungs
 {
     /// <summary>
     /// Repräsentiert ein Raumschiff mit den Eigenschaften Treibstoff, Gewicht, Geschwindigkeit, Höhe und einem Raumfahrer

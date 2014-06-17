@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GeneticAlgorithms;
-using GeneticAlgorithms.Example_Classes;
-using GeneticAlgorithms.Example_Classes.MondLandungs;
+using GeneticAlgorithms.ExampleClasses;
+using GeneticAlgorithms.ExampleClasses.MondLandungs;
 
 using System.Collections;
 

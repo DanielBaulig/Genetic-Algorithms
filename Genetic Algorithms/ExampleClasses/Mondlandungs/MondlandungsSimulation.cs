@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GeneticAlgorithms;
-using GeneticAlgorithms.Example_Classes;
+using GeneticAlgorithms.ExampleClasses;
 
-namespace GeneticAlgorithms.Example_Classes.MondLandungs
+namespace GeneticAlgorithms.ExampleClasses.MondLandungs
 {
     public class MondlandungsSimulationEventArgs : EventArgs
     {
