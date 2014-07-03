@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
-using GeneticAlgorithms.Example_Classes;
+using GeneticAlgorithms.ExampleClasses;
 
-namespace GeneticAlgorithms
+namespace GeneticAlgorithms.ExampleClasses.MondLandungs
 {
     /// <summary>
     /// Repräsentiert einen Raumfahrer mit den Eigenschaften Kommandoliste, nächstes Kommando und Gewicht

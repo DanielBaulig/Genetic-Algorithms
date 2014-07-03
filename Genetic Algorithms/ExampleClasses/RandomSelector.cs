@@ -22,29 +22,25 @@
  *  http://www.amazon.de/wishlist/1GWSB78PYVFBQ
  */
 using System;
-using System.Collections;
+using System.Collections.Generic;
 
-namespace GeneticAlgorithms.Example_Classes
+namespace GeneticAlgorithms.ExampleClasses
 {
-    public class AsymmetricCrossoverRecombinator : IRecombinationProvider
+    public class RandomSelector : ISelectionProvider
     {
+        #region ISelectionProvider Member
 
-        Random random = new Random();
-        #region IRecombinationProvider Member
+        static protected Random randomizer;
 
-        public ArrayList Recombine(ArrayList maleGenes, ArrayList femaleGenes)
+        public RandomSelector()
         {
-            double maleConstraint = random.NextDouble();
-            int maleCount = (int)Math.Ceiling(maleGenes.Count * maleConstraint);
-            int femaleCount = (int)Math.Floor(femaleGenes.Count * (1-maleConstraint));
-            ArrayList child = new ArrayList(maleCount + femaleCount);
-            child.InsertRange(0, maleGenes.GetRange(0, maleCount));
-            child.InsertRange(maleCount, femaleGenes.GetRange(femaleGenes.Count - femaleCount, femaleCount));
+            if (RandomSelector.randomizer == null)
+                RandomSelector.randomizer = new Random();
+        }
 
-            for (int i = 0; i < child.Count; i++)
-                child[i] = (child[i] as IGene).Clone();
-
-            return child;
+        public IChromosome select(System.Collections.ArrayList population, float totalFitness)
+        {
+            return population[RandomSelector.randomizer.Next(0, population.Count)] as IChromosome;
         }
 
         #endregion

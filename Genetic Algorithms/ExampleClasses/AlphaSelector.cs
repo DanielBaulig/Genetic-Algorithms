@@ -23,22 +23,20 @@
  */
 using System.Collections;
 
-namespace GeneticAlgorithms.Example_Classes
+namespace GeneticAlgorithms.ExampleClasses
 {
-    public class BoolSumFitness : 
-        IFitnessFunctionProvider
+    public class AlphaSelector : ISelectionProvider
     {
-        #region IFitnessFunctionProvider Member
 
-        public float ComputeFitness(ArrayList genes)
+        #region ISelectionProvider Member
+
+        public IChromosome select(ArrayList population, float totalFitness)
         {
-            float sum = 0;
-            foreach(BoolGene gene in genes)
-            {
-                if (gene == true)
-                    sum += 1;
-            }
-            return sum;
+            IChromosome alphaChromosome = null;
+            foreach (IChromosome chromosome in population)
+                if (alphaChromosome == null || alphaChromosome.Fitness < chromosome.Fitness)
+                    alphaChromosome = chromosome;
+            return alphaChromosome;
         }
 
         #endregion

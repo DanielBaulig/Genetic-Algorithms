@@ -21,26 +21,24 @@
  *  If you wish to donate, please have a look at my Amazon Wishlist:
  *  http://www.amazon.de/wishlist/1GWSB78PYVFBQ
  */
-using System;
-using System.Collections.Generic;
+using System.Collections;
 
-namespace GeneticAlgorithms.Example_Classes
+namespace GeneticAlgorithms.ExampleClasses
 {
-    public class RandomSelector : ISelectionProvider
+    public class BoolSumFitness : 
+        IFitnessFunctionProvider
     {
-        #region ISelectionProvider Member
+        #region IFitnessFunctionProvider Member
 
-        static protected Random randomizer;
-
-        public RandomSelector()
+        public float ComputeFitness(ArrayList genes)
         {
-            if (RandomSelector.randomizer == null)
-                RandomSelector.randomizer = new Random();
-        }
-
-        public IChromosome select(System.Collections.ArrayList population, float totalFitness)
-        {
-            return population[RandomSelector.randomizer.Next(0, population.Count)] as IChromosome;
+            float sum = 0;
+            foreach(BoolGene gene in genes)
+            {
+                if (gene == true)
+                    sum += 1;
+            }
+            return sum;
         }
 
         #endregion
